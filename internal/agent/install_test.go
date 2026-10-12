@@ -141,7 +141,9 @@ func TestInstallWithoutNodeParses(t *testing.T) {
 		if err != nil {
 			continue
 		}
-		if out, err := exec.Command(p, "-n", "-c", c).CombinedOutput(); err != nil {
+		command := exec.Command(p, "-n")
+		command.Stdin = strings.NewReader(c + "\n")
+		if out, err := command.CombinedOutput(); err != nil {
 			t.Errorf("%s -n: %v %s", sh, err, out)
 		}
 	}
