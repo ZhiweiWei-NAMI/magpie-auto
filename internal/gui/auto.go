@@ -3,7 +3,6 @@ package gui
 import (
 	"encoding/json"
 	"errors"
-	"mime"
 	"net/http"
 	"path/filepath"
 	"sync"
@@ -47,7 +46,7 @@ func stopAuto() {
 	}
 }
 
-// Auto shares the console's authentication and owns its requests and tool runs.
+// Auto shares the console's authentication and owns durable inference requests.
 func autoRoutes(mux *http.ServeMux) {
 	decode := func(w http.ResponseWriter, r *http.Request, value any) error {
 		return json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<20)).Decode(value)
@@ -72,27 +71,6 @@ func autoRoutes(mux *http.ServeMux) {
 	})
 	handle("GET /api/auto/tasks/{id}", func(_ http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
 		return m.Task(r.PathValue("id"))
-	})
-	mux.HandleFunc("GET /api/auto/tasks/{id}/artifacts/{artifact}", func(w http.ResponseWriter, r *http.Request) {
-		m, err := autoManager()
-		if err != nil {
-			fail(w, err)
-			return
-		}
-		f, err := m.OpenArtifact(r.PathValue("id"), r.PathValue("artifact"))
-		if err != nil {
-			fail(w, err)
-			return
-		}
-		defer f.Close()
-		info, err := f.Stat()
-		if err != nil {
-			fail(w, err)
-			return
-		}
-		w.Header().Set("Cache-Control", "no-store")
-		w.Header().Set("Content-Disposition", mime.FormatMediaType("attachment", map[string]string{"filename": info.Name()}))
-		http.ServeContent(w, r, info.Name(), info.ModTime(), f)
 	})
 	handle("POST /api/auto/config", func(w http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
 		var c autowork.Config

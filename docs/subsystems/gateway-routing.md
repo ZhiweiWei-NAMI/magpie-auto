@@ -275,4 +275,4 @@ never read real providers or accounts.
 
 ## Auto model requests
 
-Optional Auto tasks use `Server.AutoChat` through the normal Chat transport and its provider authentication, translation and usage accounting. A configured GLM model returns prompt-constrained JSON for context and route selection; Go validates the selected explicit model route and effort. Workspace routes pass bounded function-call turns through that transport and execute only the configured local file tools. Auto does not use System One/Jev or subscription bridges.
+Optional Auto inference tasks use `Server.AutoChat` through the normal Chat transport and its provider authentication, translation and usage accounting. Decisions use genuine Jev Free through its separate System One API. `POST /v1/auto/decide` exposes those decisions to dsh; it does not execute tools or manage native children. Existing `dsh-workbuddy` requests forward the native dsh session ID to the local WorkBuddy service to preserve account binding. See [Auto decisions and dsh execution](auto-dsh.md).

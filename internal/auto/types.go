@@ -1,4 +1,4 @@
-// Package auto owns bounded chat and native workspace tasks.
+// Package auto provides Jev decisions and durable inference history; clients execute tools.
 package auto
 
 import (
@@ -10,6 +10,7 @@ import (
 type Config struct {
 	Enabled       bool    `json:"enabled"`
 	Decider       string  `json:"decider"`
+	JevKeyFile    string  `json:"jevKeyFile,omitempty"`
 	Routes        []Route `json:"routes"`
 	MaxConcurrent int     `json:"maxConcurrent"`
 	ContextBytes  int     `json:"contextBytes"`
@@ -30,8 +31,8 @@ type Preferences struct {
 	Speed   float64 `json:"speed"`
 }
 
-// A nil emitter requests one non-streamed JSON decision. Usage is copied only
-// from the provider's reply; absent counters and cache measurements stay absent.
+// ChatTransport serves execution-model inference. Jev uses its own typed API.
+// Usage comes from the provider; absent counters and cache measurements stay absent.
 type ChatTransport func(context.Context, string, string, string, func(string, string)) (ChatResult, error)
 type ChatResult struct {
 	Text      string

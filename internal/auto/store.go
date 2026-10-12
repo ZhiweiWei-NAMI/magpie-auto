@@ -67,28 +67,13 @@ func (m *Manager) remember(t *Task, e Event) {
 	t.Events = append(t.Events, e)
 	t.Updated = e.At
 	if e.Kind == "assistant" || e.Kind == "feedback" || e.Kind == "tool_result" {
-		source := Source{ID: e.ID, TaskID: e.TaskID, RunID: e.RunID, Kind: e.Kind, Text: bounded(e.Text, 1200)}
+		source := Source{ID: e.ID, TaskID: e.TaskID, RunID: e.RunID, Kind: e.Kind, Text: e.Text}
 		for _, run := range t.Runs {
 			if run.ID == e.RunID {
 				source.Status = run.Status
 			}
 		}
 		t.Sources = append(t.Sources, source)
-		for len(t.Sources) > 16 {
-			drop := 0
-			if t.Sources[0].Kind == "assistant" && !slices.ContainsFunc(t.Sources[1:], func(s Source) bool { return s.Kind == "assistant" }) {
-				drop = 1
-			}
-			t.Sources = slices.Delete(t.Sources, drop, drop+1)
-		}
-	}
-	if e.Kind == "tool_result" {
-		var record toolRecord
-		if json.Unmarshal([]byte(e.Text), &record) == nil && record.Artifact != nil {
-			a := *record.Artifact
-			a.TaskID, a.RunID, a.SourceID = e.TaskID, e.RunID, e.ID
-			t.Artifacts = append(t.Artifacts, a)
-		}
 	}
 }
 func (m *Manager) eventLocked(t *Task, e Event) error {
@@ -199,3 +184,6 @@ func (m *Manager) refreshLocked(t *Task) {
 	}
 	t.State = s
 }
+
+// StoredConfig shares the console configuration with the client decision API.
+func StoredConfig(dir string) (Config, error) { state, err := loadState(dir); return state.Config, err }

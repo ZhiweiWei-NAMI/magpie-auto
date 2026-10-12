@@ -551,6 +551,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /v1/messages", keepsSignIn(s.handle(provider.Anthropic)))
 	mux.HandleFunc("POST /messages", keepsSignIn(s.handle(provider.Anthropic)))
 	mux.HandleFunc("POST /v1/systemone", s.serveSystemOne)
+	mux.HandleFunc("POST /v1/auto/decide", s.serveAutoPlan)
 	mux.HandleFunc("POST /v1/messages/count_tokens", keepsSignIn(s.countTokens))
 	mux.HandleFunc("POST /v1/images/generations", s.images(false))
 	mux.HandleFunc("POST /images/generations", s.images(false))
@@ -3155,6 +3156,12 @@ func (s *Server) forwardOnce(ctx context.Context, p provider.Provider, to provid
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json, text/event-stream")
 	req.Header.Set("User-Agent", "magpie/"+Version)
+	if p.ID == "dsh-workbuddy" {
+		// WorkBuddy binds one account to each dsh session; metadata stays out of the prompt.
+		if id := in.Get("x-deepseek-harness-session-id"); id != "" {
+			req.Header.Set("x-wb-session-id", id)
+		}
+	}
 	if to == provider.Anthropic {
 		req.Header.Set("anthropic-version", "2023-06-01")
 		for _, h := range []string{"anthropic-version", "anthropic-beta"} {
@@ -5174,7 +5181,7 @@ const AccountHeader = "X-Magpie-Account"
 
 // sessionOf is the session a request names, "" when it names none.
 func sessionOf(in http.Header) string {
-	for _, h := range append([]string{SessionHeader}, sessionHeaders...) {
+	for _, h := range append([]string{SessionHeader, "x-deepseek-harness-session-id"}, sessionHeaders...) {
 		if v := strings.TrimSpace(in.Get(h)); v != "" {
 			if len(v) > 128 {
 				v = v[:128]

@@ -2287,3 +2287,7 @@ and de. English and Chinese, Chromium and WebKit.
 node --test internal/gui/tests/tencent-access-key.test.cjs
 go test -tags nogui ./internal/gui -run TestProviderListTellsTencentAccessKey
 ```
+
+## Jev Auto configuration
+
+`auto-jev.test.cjs` checks saving a local Console key-file path with an inference route, without workspace executor fields, in English, Chinese, Traditional Chinese, Japanese and German on both engines. It uses fixture paths and never reads a Console key.

@@ -190,6 +190,6 @@ webkit`). Set `NODE_PATH` when Playwright is installed outside the repo. The
 Test workflow in CI does not run this suite, so a GUI change must run it
 locally and report the result. See [`tests/README.md`](../../internal/gui/tests/README.md).
 
-## Auto workspace
+## Auto decisions
 
-The opt-in Auto view owns durable tasks and cancellable runs beside external Sessions. `auto.go` uses the existing authenticated GUI handler; `assets/auto.js` shows tasks, conversation, bounded context sources, preferences, feedback and artifact downloads. Gateway routes provide inference; workspace routes run bounded native file tools in an explicitly configured folder, with writes disabled by default. Raw history is local; task-list reads contain summaries. External CLI sessions, shell commands and network tools are unsupported.
+The opt-in Auto view keeps durable inference tasks and cancellable model requests beside external Sessions. `auto.go` uses the existing authenticated GUI handler; `assets/auto.js` configures Jev Free and the local Console key-file path. The server reads the key; the page receives only its path. Inference routes use the normal model transport. Tool execution and native children belong to dsh and [dsh-auto](auto-dsh.md); the previous workspace executor and artifact download route were removed. Raw task sources preserve complete text.

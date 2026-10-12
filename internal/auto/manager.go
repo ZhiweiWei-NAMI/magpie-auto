@@ -87,16 +87,11 @@ func validateConfig(c Config) error {
 	}
 	seen := map[string]bool{}
 	for _, r := range c.Routes {
-		if r.ID == "" || len(r.ID) > 80 || seen[r.ID] || !slices.Contains([]string{"gateway", "workspace"}, r.Adapter) || r.Model == "" || len(r.Label)+len(r.Description) > 300 || len(r.Efforts) > 8 {
+		if r.ID == "" || len(r.ID) > 80 || seen[r.ID] || r.Adapter != "gateway" || r.Model == "" || len(r.Label)+len(r.Description) > 300 || len(r.Efforts) > 8 {
 			return errors.New("routes require unique IDs, supported adapters, a configured model and short role metadata")
 		}
-		if r.Adapter == "workspace" {
-			info, err := os.Stat(r.Workspace)
-			if !filepath.IsAbs(r.Workspace) || err != nil || !info.IsDir() {
-				return errors.New("workspace routes require an existing absolute directory")
-			}
-		} else if r.AllowWrites || r.Workspace != "" {
-			return errors.New("gateway inference routes cannot receive workspace permissions")
+		if r.AllowWrites || r.Workspace != "" {
+			return errors.New("Magpie provides inference; dsh owns workspace and tool permissions")
 		}
 		seen[r.ID] = true
 		for i, e := range r.Efforts {
@@ -125,11 +120,11 @@ func (m *Manager) configuredLocked() error {
 	if err := validateConfig(m.config); err != nil {
 		return err
 	}
-	if m.config.Decider == "" || len(m.config.Routes) == 0 || m.transport == nil {
-		return errors.New("Auto is unconfigured: select a GLM decision model and at least one gateway route")
+	if m.config.Decider != JevFree || m.config.JevKeyFile == "" || len(m.config.Routes) == 0 || m.transport == nil {
+		return errors.New("Auto is unconfigured: select Jev Free, a Console key file, and at least one inference route")
 	}
 	if m.checkModel != nil {
-		for _, model := range append([]string{m.config.Decider}, routeModels(m.config.Routes)...) {
+		for _, model := range routeModels(m.config.Routes) {
 			if err := m.checkModel(model); err != nil {
 				return fmt.Errorf("Auto model %q is unavailable: %w", model, err)
 			}
@@ -361,22 +356,11 @@ func (m *Manager) execute(ctx context.Context, c Config, task Task) {
 	defer m.wg.Done()
 	run := latest(&task)
 	sources := offeredSources(task, c.ContextBytes-len(run.Request.Message))
-	prompt, err := decisionPrompt(c, task, run.Request, sources)
-	for err != nil && len(sources) > 0 {
-		drop := max(0, slices.IndexFunc(sources, func(s Source) bool { return s.Kind == "feedback" }))
-		sources = slices.Delete(sources, drop, drop+1)
-		prompt, err = decisionPrompt(c, task, run.Request, sources)
-	}
-	var decisionResult, result ChatResult
-	var d Decision
-	if err == nil {
-		decisionCtx, cancel := context.WithTimeout(ctx, time.Minute)
-		decisionResult, err = m.transport(decisionCtx, c.Decider, "", prompt, nil)
-		cancel()
-	}
-	if err == nil {
-		d, err = parseDecision(decisionResult.Text, c, run.Request, sources)
-	}
+	var result ChatResult
+	decisionCtx, cancel := context.WithTimeout(ctx, time.Minute)
+	d, decisionResult, err := jevDecision(decisionCtx, c, task, run.Request, sources)
+	cancel()
+
 	if err == nil && ctx.Err() == nil {
 		route := c.Routes[slices.IndexFunc(c.Routes, func(r Route) bool { return r.ID == d.RouteID })]
 		contextText, ids := executionPrompt(task, run.Request, route, d, sources, c.ContextBytes)
@@ -403,11 +387,7 @@ func (m *Manager) execute(ctx context.Context, c Config, task Task) {
 					}
 					m.mu.Unlock()
 				}
-				if route.Adapter == "workspace" {
-					result, err = m.workspaceAgent(ctx, route, d.Effort, contextText, c.ContextBytes, emit)
-				} else {
-					result, err = m.transport(ctx, route.Model, d.Effort, contextText, emit)
-				}
+				result, err = m.transport(ctx, route.Model, d.Effort, contextText, emit)
 			}
 		}
 	}

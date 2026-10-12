@@ -1,4 +1,4 @@
-// Auto owns task requests and workspace tools. Leaving this page never cancels a run.
+// Auto provides Jev decisions and inference history; dsh executes tools. Leaving this page never cancels a run.
 (() => {
   const page = document.querySelector('#view-auto');
   if (!page) return;
@@ -18,7 +18,7 @@
   }));
   notice.setAttribute('role', 'status');
   const config = make('form', 'auto-config'); config.hidden = true;
-  const configHelp = 'Choose a GLM model and configured agents. Manage credentials in Providers.';
+  const configHelp = 'Choose Jev Free and a Console key file. dsh executes tools and subagents.';
   config.append(make('p', 'auto-muted', t(configHelp)));
   const fields = make('div', 'auto-config-fields'), configInputs = {}, routeEditors = [];
   function field(parent, label, value, type = 'text') {
@@ -26,45 +26,30 @@
     if (type === 'checkbox') input.checked = !!value; else input.value = value ?? '';
     input.autocomplete = 'off'; line.append(make('span', '', t(label)), input); parent.append(line); return input;
   }
-  for (const [key, label, type] of [['enabled','Enable','checkbox'], ['decider','GLM decider','text'], ['maxConcurrent','Requests at once','number'], ['contextBytes','Context bytes','number']]) {
+  for (const [key, label, type] of [['enabled','Enable','checkbox'], ['decider','Jev decider','text'], ['jevKeyFile','Console key file','text'], ['maxConcurrent','Requests at once','number'], ['contextBytes','Context bytes','number']]) {
     const input = configInputs[key] = field(fields, label, '', type);
     if (type === 'number') { input.required = true; input.step = '1'; input.min = key === 'contextBytes' ? '1024' : '1'; input.max = key === 'contextBytes' ? '64000' : '4'; }
   }
   configInputs.enabled.onchange = () => {
     configInputs.decider.required = configInputs.enabled.checked;
-    for (const entry of routeEditors) { entry.inputs.id.required = entry.inputs.model.required = configInputs.enabled.checked; entry.scope(); }
+    configInputs.jevKeyFile.required = configInputs.enabled.checked;
+    for (const entry of routeEditors) entry.inputs.id.required = entry.inputs.model.required = configInputs.enabled.checked;
   };
   const routeFields = make('div', 'auto-routes');
   function addRoute(value = {}) {
-    const row = make('div', 'auto-route'), inputs = {}, entry = {row, inputs, adapter:value.adapter || 'workspace'};
+    const row = make('div', 'auto-route'), inputs = {}, entry = {row, inputs, adapter:'gateway'};
     for (const [key, label] of [['id','Agent'], ['label','Name'], ['model','Model'], ['description','Task role'], ['efforts','Effort']]) {
       inputs[key] = field(row, label, key === 'efforts' ? (value.efforts || ['low','medium','high']).join(', ') : value[key]);
       inputs[key].required = configInputs.enabled.checked && (key === 'id' || key === 'model');
     }
-    const execution = make('div', 'auto-field'), scope = make('p', 'auto-muted auto-route-scope');
-    const picker = button('Gateway', () => openProtoMenu(picker, [{v:'gateway',name:'Gateway'}, {v:'workspace',name:'Workspace agent'}], entry.adapter, adapter => {
-      entry.adapter = adapter; inputs.allowWrites.checked = false; entry.scope();
-    }, 'Execution'));
-    picker.setAttribute('aria-label', t('Execution')); execution.append(make('span', '', t('Execution')), picker); row.append(execution);
-    inputs.workspace = field(row, 'Workspace path', value.workspace);
-    inputs.allowWrites = field(row, 'Allow file writes', value.allowWrites === true, 'checkbox');
-    entry.scope = () => {
-      const native = entry.adapter === 'workspace';
-      inputs.workspace.parentElement.hidden = inputs.allowWrites.parentElement.hidden = !native;
-      inputs.workspace.required = native && configInputs.enabled.checked;
-      inputs.workspace.setCustomValidity(native && inputs.workspace.value && !/^(?:[A-Za-z]:[\\/]|\\\\|\/)/.test(inputs.workspace.value) ? t('Use an absolute workspace path.') : '');
-      picker.textContent = t(native ? 'Workspace agent' : 'Gateway');
-      scope.textContent = t(native ? 'Reads workspace files. Writes require this opt-in. No shell commands or network tools.' : 'Inference only; this route cannot read or write workspace files.');
-    };
-    inputs.workspace.oninput = () => { inputs.allowWrites.checked = false; entry.scope(); };
-    entry.scope(); row.append(scope); routeEditors.push(entry);
+    row.append(make('p', 'auto-muted', t('Inference only; this route cannot read or write workspace files.'))); routeEditors.push(entry);
     row.append(button('Remove', () => { row.remove(); routeEditors.splice(routeEditors.indexOf(entry), 1); })); routeFields.append(row);
   }
   config.append(fields, make('h3', '', t('Configured agents')), routeFields, button('Add', () => addRoute()), button('Save', () => config.requestSubmit(), 'text primary'));
   function fillConfig() {
     const current = data?.config || {enabled:false, decider:'', maxConcurrent:1, contextBytes:16000};
     for (const [key, input] of Object.entries(configInputs)) {
-      if (key === 'enabled') input.checked = !!current.enabled; else input.value = current[key] ?? (key === 'decider' ? '' : key === 'contextBytes' ? 16000 : 1);
+      if (key === 'enabled') input.checked = !!current.enabled; else input.value = current[key] ?? (key === 'decider' ? 'jev-1.13-free' : key === 'jevKeyFile' ? '' : key === 'contextBytes' ? 16000 : 1);
     }
     routeEditors.length = 0; routeFields.replaceChildren();
     for (const value of current.routes || []) addRoute(value);
@@ -74,10 +59,10 @@
   config.onsubmit = event => {
     event.preventDefault(); action(async () => {
       const next = {
-        enabled:configInputs.enabled.checked, decider:configInputs.decider.value.trim(),
+        enabled:configInputs.enabled.checked, decider:configInputs.decider.value.trim(), jevKeyFile:configInputs.jevKeyFile.value.trim(),
         maxConcurrent:Number(configInputs.maxConcurrent.value), contextBytes:Number(configInputs.contextBytes.value)
       };
-      next.routes = routeEditors.filter(({inputs}) => ['id','label','model','description','workspace'].some(key => inputs[key].value.trim())).map(({inputs, adapter}) => {
+      next.routes = routeEditors.filter(({inputs}) => ['id','label','model','description'].some(key => inputs[key].value.trim())).map(({inputs, adapter}) => {
         const route = {adapter};
         for (const [key, input] of Object.entries(inputs)) {
           route[key] = input.type === 'checkbox' ? input.checked : key === 'efforts' ? input.value.split(',').map(value => value.trim()).filter(Boolean) : input.value.trim();
@@ -95,7 +80,7 @@
   const goal = make('h3', '', t('New task')), runInfo = make('p', 'auto-run-info');
   const detailsButton = button('Details', () => showDetails(inspector.hidden));
   taskHead.append(goal, detailsButton);
-  const timeline = make('div', 'auto-timeline'), empty = make('p', 'auto-muted', t('GLM selects a configured agent when you choose Start.'));
+  const timeline = make('div', 'auto-timeline'), empty = make('p', 'auto-muted', t('Jev selects a configured model route when you choose Start.'));
   timeline.setAttribute('role', 'log'); timeline.setAttribute('aria-live', 'polite'); timeline.append(empty);
   const composer = make('form', 'auto-composer'), message = make('textarea', 'auto-message');
   message.rows = 3; message.placeholder = t('Describe a task or continue the conversation'); message.setAttribute('aria-label', message.placeholder);
@@ -213,7 +198,7 @@
       if (decision?.reason) inspection.append(make('p', 'auto-reason', decision.reason));
       if (run?.error) inspection.append(make('p', 'auto-reason', run.error));
       if (run?.requestId) inspection.append(make('p', 'auto-muted', t('Request ID') + ': ' + run.requestId));
-      if (run?.decider) inspection.append(make('p', 'auto-muted', t('GLM decider') + ': ' + run.decider + (run.decisionRequestId ? ' · ' + run.decisionRequestId : '')));
+      if (run?.decider) inspection.append(make('p', 'auto-muted', t('Jev decider') + ': ' + run.decider + (run.decisionRequestId ? ' · ' + run.decisionRequestId : '')));
       const usage = run?.usage;
       if (run?.calls?.length) inspection.append(make('p', 'auto-muted', t('{n} requests', {n:run.calls.length})));
       if (usage) inspection.append(make('h4', '', t('Latest request')));
@@ -233,9 +218,8 @@
       }
       if (task?.artifacts?.length) inspection.append(make('h4', '', t('Artifacts')));
       for (const artifact of task?.artifacts || []) {
-        const link = make('a', 'text auto-artifact', artifact.path);
-        link.href = '/api/auto/tasks/' + encodeURIComponent(artifact.taskId || selected) + '/artifacts/' + encodeURIComponent(artifact.id); link.download = artifact.path.split(/[\\/]/).pop();
-        inspection.append(link, make('p', 'auto-muted', [artifact.runId,artifact.sourceId].filter(Boolean).join(' · ')));
+        const path = make('p', 'text auto-artifact', artifact.path);
+        inspection.append(path, make('p', 'auto-muted', [artifact.runId,artifact.sourceId].filter(Boolean).join(' · ')));
       }
     }
     if (stopping === selected && !active(task?.status)) stopping = ''; updateControls();
