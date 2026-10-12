@@ -122,6 +122,24 @@ func TestUpdateKeepsASkillChangedHere(t *testing.T) {
 	}
 }
 
+// A newer directory timestamp cannot stand in for every file's state.
+// Editing a file in place may leave that maximum timestamp unchanged.
+func TestLibraryHashSeesEditBelowDirectoryTimestamp(t *testing.T) {
+	sandbox(t)
+	dir := skillDir("pdf")
+	path := filepath.Join(dir, "forms.md")
+	write(t, path, "forms one")
+	future := time.Now().Add(time.Hour)
+	if err := os.Chtimes(dir, future, future); err != nil {
+		t.Fatal(err)
+	}
+	before := libraryHash("pdf")
+	write(t, path, "forms edited")
+	if after := libraryHash("pdf"); before == "" || after == "" || before == after {
+		t.Fatal("library hash missed the real file edit")
+	}
+}
+
 // An agent given its skills as copies edits one: until a sync takes the
 // edit in, the library's folder is GitHub's, and the copy is what was
 // changed. An update asks all the same.

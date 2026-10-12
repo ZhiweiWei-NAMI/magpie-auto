@@ -16,7 +16,6 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
-	"sync"
 	"time"
 )
 
@@ -28,37 +27,12 @@ func (e *EditedError) Error() string {
 	return fmt.Sprintf("%s was changed here since it was fetched from GitHub; updating it would replace those changes", e.Name)
 }
 
-// edits remembers, for each skill's library folder, its hash as of when
-// anything in it last changed, so a page read doesn't read every skill's
-// files again.
-var edits = struct {
-	sync.Mutex
-	m map[string]editMemo
-}{m: map[string]editMemo{}}
-
-type editMemo struct {
-	at   time.Time
-	hash string
-}
-
 // libraryHash is the hash of the library's folder of a skill, leaving
 // aside what Finder keeps in it: "" when it can't be read.
 func libraryHash(name string) string {
-	dir := skillDir(name)
-	at := changedAt(dir)
-	edits.Lock()
-	m, ok := edits.m[dir]
-	edits.Unlock()
-	if ok && !at.IsZero() && m.at.Equal(at) {
-		return m.hash
-	}
-	h := hashFiles(dir, true)
-	if h != "" && !at.IsZero() {
-		edits.Lock()
-		edits.m[dir] = editMemo{at: at, hash: h}
-		edits.Unlock()
-	}
-	return h
+	// hashFiles already caches against each file's metadata. The newest
+	// timestamp alone can stay unchanged while another file is edited.
+	return hashFiles(skillDir(name), true)
 }
 
 // editState tells whether a skill from GitHub was changed here since it
