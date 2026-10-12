@@ -43,7 +43,13 @@ func (b *backups) keep(agent, path string) error {
 		return err
 	}
 	if b.dir == "" {
-		b.dir = filepath.Join(BackupDir(), time.Now().Format("2006-01-02_15-04-05.000"))
+		if err := os.MkdirAll(BackupDir(), 0o700); err != nil {
+			return err
+		}
+		b.dir, err = os.MkdirTemp(BackupDir(), time.Now().Format("2006-01-02_15-04-05.000")+"-")
+		if err != nil {
+			return err
+		}
 	}
 	dst := filepath.Join(b.dir, fileName(agent), filepath.Base(path))
 	if _, err := os.Stat(dst); err == nil {
