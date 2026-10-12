@@ -1,0 +1,73 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-7b06f6cc-f838-4ce1-accb-9805c457903f",
+      "tools": {
+        "bash": 19,
+        "read": 7,
+        "glob": 1,
+        "edit": 2,
+        "write": 1
+      },
+      "compactions": [
+        {
+          "type": "compaction/summary",
+          "time": 1791821815406,
+          "startTime": 1791821803592,
+          "compactionId": "2dd0a1a3-b4f8-480c-930c-b4b813b38bd9",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 8,
+            "end": 62
+          },
+          "shadowedSeqs": [
+            8,
+            9,
+            13,
+            15,
+            17,
+            20,
+            22,
+            75,
+            27,
+            29,
+            32,
+            34,
+            36,
+            39,
+            41,
+            43,
+            46,
+            48,
+            50,
+            53,
+            55,
+            58,
+            60,
+            62
+          ],
+          "shadowedTokenCount": 10761,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4417,
+            "outputTokens": 2246,
+            "totalTokens": 14471,
+            "cacheReadTokens": 7808,
+            "reasoningTokens": 886
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791821815407,
+          "startTime": 1791821803592,
+          "compactionId": "2dd0a1a3-b4f8-480c-930c-b4b813b38bd9",
+          "turn": 1
+        }
+      ],
+      "delegationResults": []
+    }
+  ]
+}

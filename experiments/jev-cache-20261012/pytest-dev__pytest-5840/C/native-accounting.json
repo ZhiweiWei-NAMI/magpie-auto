@@ -1,0 +1,422 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-b779165e-2ced-4a6f-b047-9d72a0368358",
+      "tools": {
+        "bash": 46,
+        "read": 21,
+        "grep": 2,
+        "edit": 6,
+        "write": 1,
+        "job_output": 2
+      },
+      "compactions": [
+        {
+          "type": "compaction/summary",
+          "time": 1791826738140,
+          "startTime": 1791826729691,
+          "compactionId": "796b8939-004b-4832-9b98-549a89387567",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 8,
+            "end": 74
+          },
+          "shadowedSeqs": [
+            8,
+            9,
+            13,
+            15,
+            17,
+            20,
+            22,
+            24,
+            27,
+            84,
+            32,
+            34,
+            36,
+            39,
+            41,
+            44,
+            46,
+            48,
+            51,
+            53,
+            55,
+            58,
+            60,
+            63,
+            65,
+            67,
+            70,
+            72,
+            74
+          ],
+          "shadowedTokenCount": 13272,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 7782,
+            "outputTokens": 1500,
+            "totalTokens": 15810,
+            "cacheReadTokens": 6528,
+            "reasoningTokens": 6
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791826738141,
+          "startTime": 1791826729691,
+          "compactionId": "796b8939-004b-4832-9b98-549a89387567",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791826765265,
+          "startTime": 1791826756659,
+          "compactionId": "f220c9b9-2fb2-45c1-8b73-489d4747a0b4",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 95,
+            "end": 81
+          },
+          "shadowedSeqs": [
+            95,
+            77,
+            79,
+            81
+          ],
+          "shadowedTokenCount": 5953,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 2556,
+            "outputTokens": 1728,
+            "totalTokens": 9404,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 77
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791826765266,
+          "startTime": 1791826756659,
+          "compactionId": "f220c9b9-2fb2-45c1-8b73-489d4747a0b4",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791826799425,
+          "startTime": 1791826789438,
+          "compactionId": "3f3de52c-182e-4bf7-b45c-bdadf5f53a59",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 115,
+            "end": 106
+          },
+          "shadowedSeqs": [
+            115,
+            87,
+            89,
+            91,
+            99,
+            102,
+            103,
+            106
+          ],
+          "shadowedTokenCount": 11606,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 7071,
+            "outputTokens": 2163,
+            "totalTokens": 14354,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 154
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791826799426,
+          "startTime": 1791826789438,
+          "compactionId": "3f3de52c-182e-4bf7-b45c-bdadf5f53a59",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791826870969,
+          "startTime": 1791826858414,
+          "compactionId": "a740c57b-c9d7-4e30-a1c5-1c5116e7f4ab",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 134,
+            "end": 163
+          },
+          "shadowedSeqs": [
+            134,
+            107,
+            109,
+            111,
+            119,
+            121,
+            123,
+            126,
+            128,
+            130,
+            138,
+            140,
+            142,
+            145,
+            146,
+            163
+          ],
+          "shadowedTokenCount": 15231,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 8277,
+            "outputTokens": 2831,
+            "totalTokens": 16356,
+            "cacheReadTokens": 5248,
+            "reasoningTokens": 222
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791826870970,
+          "startTime": 1791826858414,
+          "compactionId": "a740c57b-c9d7-4e30-a1c5-1c5116e7f4ab",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791826937224,
+          "startTime": 1791826923148,
+          "compactionId": "7bb3132e-945d-415f-8264-22108db668b5",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 166,
+            "end": 175
+          },
+          "shadowedSeqs": [
+            166,
+            151,
+            153,
+            156,
+            158,
+            160,
+            170,
+            172,
+            175
+          ],
+          "shadowedTokenCount": 13459,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 7495,
+            "outputTokens": 3330,
+            "totalTokens": 15945,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 266
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791826937224,
+          "startTime": 1791826923148,
+          "compactionId": "7bb3132e-945d-415f-8264-22108db668b5",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791827010474,
+          "startTime": 1791826996630,
+          "compactionId": "707ee20c-6fee-4b0b-8ffe-cdf5ce7ecc02",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 191,
+            "end": 215
+          },
+          "shadowedSeqs": [
+            191,
+            176,
+            178,
+            180,
+            183,
+            185,
+            187,
+            195,
+            198,
+            199,
+            202,
+            203,
+            215
+          ],
+          "shadowedTokenCount": 15578,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 8718,
+            "outputTokens": 3604,
+            "totalTokens": 17442,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 7
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791827010475,
+          "startTime": 1791826996630,
+          "compactionId": "707ee20c-6fee-4b0b-8ffe-cdf5ce7ecc02",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791827063230,
+          "startTime": 1791827051565,
+          "compactionId": "ef5b4814-f06f-4b3f-9c14-12a8f9b8e1dc",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 218,
+            "end": 218
+          },
+          "shadowedSeqs": [
+            218
+          ],
+          "shadowedTokenCount": 3143,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4047,
+            "outputTokens": 3642,
+            "totalTokens": 12937,
+            "cacheReadTokens": 5248,
+            "reasoningTokens": 49
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791827063231,
+          "startTime": 1791827051565,
+          "compactionId": "ef5b4814-f06f-4b3f-9c14-12a8f9b8e1dc",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791827078469,
+          "startTime": 1791827066397,
+          "compactionId": "e675b5ec-e6f9-41ed-a730-eff083e3181c",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 266,
+            "end": 241
+          },
+          "shadowedSeqs": [
+            266,
+            208,
+            210,
+            212,
+            222,
+            225,
+            226,
+            229,
+            230,
+            232,
+            234,
+            237,
+            239,
+            241
+          ],
+          "shadowedTokenCount": 14407,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 5837,
+            "outputTokens": 3303,
+            "totalTokens": 14388,
+            "cacheReadTokens": 5248,
+            "reasoningTokens": 7
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791827078469,
+          "startTime": 1791827066397,
+          "compactionId": "e675b5ec-e6f9-41ed-a730-eff083e3181c",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791827145183,
+          "startTime": 1791827133058,
+          "compactionId": "36dcf76a-fe40-4616-a490-adcf69a8b837",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 278,
+            "end": 262
+          },
+          "shadowedSeqs": [
+            278,
+            244,
+            246,
+            248,
+            251,
+            253,
+            255,
+            258,
+            261,
+            262
+          ],
+          "shadowedTokenCount": 8925,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 624,
+            "outputTokens": 3640,
+            "totalTokens": 14760,
+            "cacheReadTokens": 10496,
+            "reasoningTokens": 0
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791827145184,
+          "startTime": 1791827133058,
+          "compactionId": "36dcf76a-fe40-4616-a490-adcf69a8b837",
+          "turn": 1
+        }
+      ],
+      "delegationResults": [
+        {
+          "callId": "call_00_L2bJqWpBTBbN9OdmjbgF5413",
+          "tool": "job_output",
+          "arguments": "{\"job_id\": \"bash-1\"}",
+          "time": 1791827133007,
+          "content": [
+            {
+              "type": "tool-result",
+              "toolCallId": "call_00_L2bJqWpBTBbN9OdmjbgF5413",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "\n==================================== ERRORS ====================================\n__________________ ERROR collecting testing/test_junitxml.py ___________________\nImportError while importing test module '/testbed/testing/test_junitxml.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ntesting/test_junitxml.py:8: in <module>\n    import xmlschema\nE   ModuleNotFoundError: No module named 'xmlschema'\n_________________ ERROR collecting testing/python/metafunc.py __________________\nImportError while importing test module '/testbed/testing/python/metafunc.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ntesting/python/metafunc.py:6: in <module>\n    import hypothesis\nE   ModuleNotFoundError: No module named 'hypothesis'\n=========================== short test summary info ============================\nFAILED testing/test_junitxml.py\nFAILED testing/python/metafunc.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 error in 5.74s\n[status: completed, exit code: 0]"
+                }
+              ],
+              "isError": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

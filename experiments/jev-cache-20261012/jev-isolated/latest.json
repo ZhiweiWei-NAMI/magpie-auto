@@ -1,0 +1,223 @@
+{
+  "requested_model": "jev-1.13-free",
+  "model_check": {
+    "method": "GET",
+    "url": "https://opencode.ai/inference/v1/models",
+    "started_at_utc": "2026-10-12T11:21:25.336809+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Content-Type": "application/json"
+    },
+    "response": {
+      "object": "list",
+      "data": [
+        {
+          "id": "jev-1.13-free",
+          "object": "model",
+          "created": 1791804085,
+          "owned_by": "opencode"
+        }
+      ]
+    },
+    "elapsed_seconds": 0.7971,
+    "note": "Only the requested free model entry is retained; this endpoint provides no pricing fields."
+  },
+  "tests": [
+    {
+      "method": "POST",
+      "url": "https://opencode.ai/inference/v1/systemone",
+      "started_at_utc": "2026-10-12T11:21:26.135096+00:00",
+      "request": {
+        "model": "jev-1.13-free",
+        "state": "Current task: Verify OpenCode Jev's free structured decision API with tiny independent calls, and record actual answers and latency. Candidate api_engineer can write Python HTTP clients, execute API tests, and diagnose authentication and JSON errors. Candidate research_writer can explain research and edit documents but cannot execute API tests. History h1: The user requires keeping magpie-auto's GLM default unchanged; only isolated Jev checks are authorized. History h2: Jev uses /systemone with state and typed questions, rather than a chat completion endpoint. History h3: Yesterday the user asked for an unrelated lunch recommendation.",
+        "questions": {
+          "agent": {
+            "type": "choice",
+            "instructions": "Which candidate's capabilities best fit the current task?",
+            "criteria": {
+              "api_engineer": "Executes API tests and diagnoses HTTP and JSON problems",
+              "research_writer": "Writes research explanations and edits documents"
+            }
+          },
+          "retain_h1": {
+            "type": "noul",
+            "instructions": "Should history h1 be retained as context to perform the current task correctly?"
+          },
+          "retain_h2": {
+            "type": "noul",
+            "instructions": "Should history h2 be retained as context to perform the current task correctly?"
+          },
+          "retain_h3": {
+            "type": "noul",
+            "instructions": "Should history h3 be retained as context to perform the current task correctly?"
+          },
+          "h2_relevance": {
+            "type": "score",
+            "instructions": "How useful is history h2 for the current task?",
+            "criteria": [
+              "Unrelated to performing the current task",
+              "Provides helpful background but is not required",
+              "Provides an essential constraint or fact needed to perform the task correctly"
+            ]
+          }
+        }
+      },
+      "http_status": 200,
+      "response_headers": {
+        "Content-Type": "application/json"
+      },
+      "response": {
+        "model": "jev-1.13-free",
+        "answers": {
+          "agent": {
+            "type": "choice",
+            "choice": "api_engineer",
+            "confidence": 1,
+            "probabilities": {
+              "api_engineer": 1,
+              "research_writer": 0
+            }
+          },
+          "retain_h1": {
+            "type": "noul",
+            "noul": 0.87
+          },
+          "retain_h2": {
+            "type": "noul",
+            "noul": 0.92
+          },
+          "retain_h3": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "h2_relevance": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 0.98,
+            "legend": {
+              "0": "Unrelated to performing the current task",
+              "1": "Provides helpful background but is not required",
+              "2": "Provides an essential constraint or fact needed to perform the task correctly"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.99
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 587,
+          "output_tokens": 110
+        }
+      },
+      "elapsed_seconds": 0.9471,
+      "test_name": "api_verification",
+      "success": true,
+      "response_model_note": "jev-1.13-free",
+      "usage_note": {
+        "input_tokens": 587,
+        "output_tokens": 110
+      },
+      "billing_note": "未提供；不据此推断实际扣费为零"
+    },
+    {
+      "method": "POST",
+      "url": "https://opencode.ai/inference/v1/systemone",
+      "started_at_utc": "2026-10-12T11:21:27.084254+00:00",
+      "request": {
+        "model": "jev-1.13-free",
+        "state": "Current task: Write a brief lab meeting summary from the provided experiment notes. No API calls or software changes are needed. Candidate api_engineer can write Python HTTP clients, execute API tests, and diagnose authentication and JSON errors. Candidate research_writer can explain research and edit documents but cannot execute API tests. History h1: The user requests three plain-language sentences. History h2: Run A lost its input samples, so no measurement exists; a missing measurement must never be reported as zero. History h3: A previous unrelated API experiment used the /systemone endpoint.",
+        "questions": {
+          "agent": {
+            "type": "choice",
+            "instructions": "Which candidate's capabilities best fit the current task?",
+            "criteria": {
+              "api_engineer": "Executes API tests and diagnoses HTTP and JSON problems",
+              "research_writer": "Writes research explanations and edits documents"
+            }
+          },
+          "retain_h1": {
+            "type": "noul",
+            "instructions": "Should history h1 be retained as context to perform the current task correctly?"
+          },
+          "retain_h2": {
+            "type": "noul",
+            "instructions": "Should history h2 be retained as context to perform the current task correctly?"
+          },
+          "retain_h3": {
+            "type": "noul",
+            "instructions": "Should history h3 be retained as context to perform the current task correctly?"
+          },
+          "h2_relevance": {
+            "type": "score",
+            "instructions": "How useful is history h2 for the current task?",
+            "criteria": [
+              "Unrelated to performing the current task",
+              "Provides helpful background but is not required",
+              "Provides an essential constraint or fact needed to perform the task correctly"
+            ]
+          }
+        }
+      },
+      "http_status": 200,
+      "response_headers": {
+        "Content-Type": "application/json"
+      },
+      "response": {
+        "model": "jev-1.13-free",
+        "answers": {
+          "agent": {
+            "type": "choice",
+            "choice": "research_writer",
+            "confidence": 1,
+            "probabilities": {
+              "api_engineer": 0,
+              "research_writer": 1
+            }
+          },
+          "retain_h1": {
+            "type": "noul",
+            "noul": 0.64
+          },
+          "retain_h2": {
+            "type": "noul",
+            "noul": 0.71
+          },
+          "retain_h3": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "h2_relevance": {
+            "type": "score",
+            "score": 1.79,
+            "confidence": 0.7,
+            "legend": {
+              "0": "Unrelated to performing the current task",
+              "1": "Provides helpful background but is not required",
+              "2": "Provides an essential constraint or fact needed to perform the task correctly"
+            },
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.1,
+              "2": 0.85
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 577,
+          "output_tokens": 108
+        }
+      },
+      "elapsed_seconds": 1.0495,
+      "test_name": "research_summary",
+      "success": true,
+      "response_model_note": "jev-1.13-free",
+      "usage_note": {
+        "input_tokens": 577,
+        "output_tokens": 108
+      },
+      "billing_note": "未提供；不据此推断实际扣费为零"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py
+index d238061..3bdf797 100644
+--- a/src/_pytest/compat.py
++++ b/src/_pytest/compat.py
+@@ -64,13 +64,20 @@ def num_mock_patch_args(function):
+     patchings = getattr(function, "patchings", None)
+     if not patchings:
+         return 0
+-    mock_modules = [sys.modules.get("mock"), sys.modules.get("unittest.mock")]
+-    if any(mock_modules):
+-        sentinels = [m.DEFAULT for m in mock_modules if m is not None]
+-        return len(
+-            [p for p in patchings if not p.attribute_name and p.new in sentinels]
+-        )
+-    return len(patchings)
++
++    mock_sentinel = getattr(sys.modules.get("mock", None), "DEFAULT", object())
++    unittest_sentinel = getattr(
++        sys.modules.get("unittest.mock", None), "DEFAULT", object()
++    )
++
++    return len(
++        [
++            p
++            for p in patchings
++            if not p.attribute_name
++            and (p.new is mock_sentinel or p.new is unittest_sentinel)
++        ]
++    )
+ 
+ 
+ def getfuncargnames(function, is_method=False, cls=None):
+diff --git a/testing/test_compat.py b/testing/test_compat.py
+index 9e7d05c..fe510c8 100644
+--- a/testing/test_compat.py
++++ b/testing/test_compat.py
+@@ -10,6 +10,52 @@ from _pytest.compat import safe_isclass
+ from _pytest.outcomes import OutcomeException
+ 
+ 
++class _Patching:
++    """A stub of :class:`unittest.mock._patch` used to test ``num_mock_patch_args``."""
++
++    def __init__(self, attribute_name, new):
++        self.attribute_name = attribute_name
++        self.new = new
++
++
++class _Array:
++    """An object whose ``__eq__`` returns an array of booleans, like numpy's ndarray."""
++
++    class _Ambiguous:
++        def __bool__(self):
++            raise ValueError("The truth value of an array is ambiguous")
++
++        __nonzero__ = __bool__
++
++    def __eq__(self, other):
++        return self._Ambiguous()
++
++
++def test_num_mock_patch_args_with_array_new():
++    """``num_mock_patch_args`` must not evaluate ``p.new in sentinels`` using
++    ``==`` as the patched value may be an array (see issue #3821)."""
++    from unittest.mock import DEFAULT
++
++    from _pytest.compat import num_mock_patch_args
++
++    def func():
++        pass
++
++    func.__wrapped__ = lambda: None
++    # A patch where ``new`` is an explicit array-like value: it must not be
++    # counted as a mock argument.
++    func.patchings = [_Patching(None, _Array())]
++    assert num_mock_patch_args(func) == 0
++
++    # A regular patch (``new`` defaults to the sentinel) still counts.
++    func.patchings = [_Patching(None, DEFAULT)]
++    assert num_mock_patch_args(func) == 1
++
++    # A patch with an ``attribute_name`` is not counted.
++    func.patchings = [_Patching("attribute", DEFAULT)]
++    assert num_mock_patch_args(func) == 0
++
++
+ def test_is_generator():
+     def zap():
+         yield  # pragma: no cover

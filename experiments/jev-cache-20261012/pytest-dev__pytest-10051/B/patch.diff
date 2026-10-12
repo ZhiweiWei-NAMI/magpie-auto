@@ -1,0 +1,58 @@
+diff --git a/changelog/10070.bugfix.rst b/changelog/10070.bugfix.rst
+new file mode 100644
+index 0000000..c9c2589
+--- /dev/null
++++ b/changelog/10070.bugfix.rst
+@@ -0,0 +1 @@
++Fixed ``caplog.get_records(when)`` becoming decoupled from ``caplog.records`` after :meth:`caplog.clear() <pytest.LogCaptureFixture.clear>` was called: clearing now empties the list in place, so the records for the current test phase stay in sync.
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index a4f4214..1c5b64b 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -345,6 +345,10 @@ class LogCaptureHandler(logging_StreamHandler):
+         self.records = []
+         self.stream = StringIO()
+ 
++    def clear(self) -> None:
++        self.records.clear()
++        self.stream = StringIO()
++
+     def handleError(self, record: logging.LogRecord) -> None:
+         if logging.raiseExceptions:
+             # Fail the test if the log message is bad (emit failed).
+@@ -440,7 +444,7 @@ class LogCaptureFixture:
+ 
+     def clear(self) -> None:
+         """Reset the list of log records and the captured log text."""
+-        self.handler.reset()
++        self.handler.clear()
+ 
+     def set_level(self, level: Union[int, str], logger: Optional[str] = None) -> None:
+         """Set the level of a logger for the duration of a test.
+diff --git a/testing/logging/test_fixture.py b/testing/logging/test_fixture.py
+index bcb20de..50d66e3 100644
+--- a/testing/logging/test_fixture.py
++++ b/testing/logging/test_fixture.py
+@@ -151,6 +151,22 @@ def test_clear(caplog):
+     assert not caplog.text
+ 
+ 
++def test_clear_for_call_stage(caplog):
++    """Test that ``caplog.clear()`` clears the records returned by
++    ``caplog.get_records()`` for the current stage as well.
++
++    Regression test for #10070.
++    """
++    caplog.set_level(logging.INFO)
++    logger.info("bū")
++    assert caplog.get_records("call") == caplog.records
++    caplog.clear()
++    assert caplog.get_records("call") == caplog.records == []
++    logger.info("bū")
++    assert caplog.get_records("call") == caplog.records
++    assert len(caplog.records) == 1
++
++
+ @pytest.fixture
+ def logging_during_setup_and_teardown(caplog):
+     caplog.set_level("INFO")

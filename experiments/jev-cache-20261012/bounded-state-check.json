@@ -1,0 +1,31 @@
+{
+  "fixture": "Explicit transport-limit check, separate from programming benchmark",
+  "sourceBytes": 195000,
+  "resultAction": "keep",
+  "calls": [
+    {
+      "stateBytes": 564,
+      "httpStatus": 200,
+      "wallMs": 1065.5030049999998,
+      "model": "jev-1.13-free",
+      "action": "keep",
+      "selectedIds": [],
+      "answers": {
+        "route": {
+          "type": "choice",
+          "choice": "keep",
+          "confidence": 0.94,
+          "probabilities": {
+            "keep": 0.97,
+            "select": 0.03
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 523,
+        "output_tokens": 31
+      },
+      "elapsedMs": 1006.024
+    }
+  ]
+}

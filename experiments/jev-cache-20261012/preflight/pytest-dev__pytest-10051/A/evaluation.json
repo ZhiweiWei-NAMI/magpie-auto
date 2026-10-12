@@ -1,0 +1,9 @@
+{
+  "harnessVersion": "v4.1.0",
+  "runId": "magpie-jev-preflight-A",
+  "exitCode": null,
+  "evaluationSeconds": null,
+  "resolved": true,
+  "status": "official_report",
+  "note": "Original official report retained; process exit and evaluation wall time were not separately recorded."
+}

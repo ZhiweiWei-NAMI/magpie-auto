@@ -1,0 +1,61 @@
+diff --git a/changelog/5572.bugfix.rst b/changelog/5572.bugfix.rst
+new file mode 100644
+index 000000000..87cf980a9
+--- /dev/null
++++ b/changelog/5572.bugfix.rst
+@@ -0,0 +1,3 @@
++Fix a regression where collecting tests which use ``unittest.mock.patch`` with an
++array (or any object with a non-scalar truth value) as the ``new`` argument would
++fail with a ``ValueError``.
+diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py
+index d238061b4..61c897f06 100644
+--- a/src/_pytest/compat.py
++++ b/src/_pytest/compat.py
+@@ -68,7 +68,12 @@ def num_mock_patch_args(function):
+     if any(mock_modules):
+         sentinels = [m.DEFAULT for m in mock_modules if m is not None]
+         return len(
+-            [p for p in patchings if not p.attribute_name and p.new in sentinels]
++            [
++                p
++                for p in patchings
++                if not p.attribute_name
++                and any(p.new is sentinel for sentinel in sentinels)
++            ]
+         )
+     return len(patchings)
+ 
+diff --git a/testing/python/integration.py b/testing/python/integration.py
+index a6b8dddf3..1aa44dc7e 100644
+--- a/testing/python/integration.py
++++ b/testing/python/integration.py
+@@ -119,6 +119,29 @@ class TestMockDecoration:
+         values = getfuncargnames(f)
+         assert values == ("y", "z")
+ 
++    def test_getfuncargnames_patching_with_ambiguous_new(self):
++        from _pytest.compat import getfuncargnames
++        from unittest.mock import patch
++
++        class ArrayLike:
++            """Object whose equality comparison does not return a single bool."""
++
++            def __eq__(self, other):
++                return [True, False]
++
++            __hash__ = None
++
++        class T:
++            def original(self):
++                pass
++
++        @patch.object(T, "original", new=ArrayLike())
++        def f(x):
++            pass
++
++        values = getfuncargnames(f)
++        assert values == ("x",)
++
+     def test_unittest_mock(self, testdir):
+         testdir.makepyfile(
+             """

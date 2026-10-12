@@ -1,0 +1,48 @@
+diff --git a/changelog/6211.bugfix.rst b/changelog/6211.bugfix.rst
+new file mode 100644
+index 0000000..4614204
+--- /dev/null
++++ b/changelog/6211.bugfix.rst
+@@ -0,0 +1 @@
++Fix regression in 5.2.3 where pytest would try to collect and import any ``__init__.py`` file found while scanning directories, even when it did not match the configured ``python_files`` patterns.
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index 306e5f2..68a2a50 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -177,9 +177,7 @@ def pytest_collect_file(path, parent):
+     ext = path.ext
+     if ext == ".py":
+         if not parent.session.isinitpath(path):
+-            if not path_matches_patterns(
+-                path, parent.config.getini("python_files") + ["__init__.py"]
+-            ):
++            if not path_matches_patterns(path, parent.config.getini("python_files")):
+                 return
+         ihook = parent.session.gethookproxy(path)
+         return ihook.pytest_pycollect_makemodule(path=path, parent=parent)
+diff --git a/testing/python/collect.py b/testing/python/collect.py
+index f0c12df..1028cec 100644
+--- a/testing/python/collect.py
++++ b/testing/python/collect.py
+@@ -1336,3 +1336,21 @@ def test_package_ordering(testdir):
+     # Execute from .
+     result = testdir.runpytest("-v", "-s")
+     result.assert_outcomes(passed=3)
++
++
++def test_does_not_collect_random_init_py(testdir):
++    """``__init__.py`` files which are not part of the test scope must not be
++    imported during collection (#6211).
++    """
++    pkg = testdir.mkpydir("foobar")
++    pkg.join("__init__.py").write("assert False")
++
++    testdir.makepyfile(
++        test_foo="""
++        def test_foo():
++            pass
++        """
++    )
++
++    result = testdir.runpytest()
++    result.assert_outcomes(passed=1)

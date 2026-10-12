@@ -1,0 +1,70 @@
+diff --git a/changelog/10074.bugfix.rst b/changelog/10074.bugfix.rst
+new file mode 100644
+index 0000000..18315c9
+--- /dev/null
++++ b/changelog/10074.bugfix.rst
+@@ -0,0 +1,5 @@
++Fixed :meth:`caplog.clear <pytest.LogCaptureFixture.clear>` so that it stays
++consistent with :meth:`caplog.get_records <pytest.LogCaptureFixture.get_records>`:
++the records list is now cleared in place instead of being replaced, so
++``caplog.records`` and ``caplog.get_records("call")`` keep referring to the same
++list after clearing.
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index a4f4214..1d27540 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -342,9 +342,19 @@ class LogCaptureHandler(logging_StreamHandler):
+         super().emit(record)
+ 
+     def reset(self) -> None:
++        # Rebind the records list instead of clearing it in place so that the
++        # records captured for the previous test phase (which are still
++        # referenced by ``caplog.get_records``) are preserved.
+         self.records = []
+         self.stream = StringIO()
+ 
++    def clear(self) -> None:
++        # Clear the records list in place so that ``caplog.records`` and
++        # ``caplog.get_records`` keep referring to the same list and stay
++        # consistent after ``caplog.clear()``.
++        self.records.clear()
++        self.stream = StringIO()
++
+     def handleError(self, record: logging.LogRecord) -> None:
+         if logging.raiseExceptions:
+             # Fail the test if the log message is bad (emit failed).
+@@ -440,7 +450,7 @@ class LogCaptureFixture:
+ 
+     def clear(self) -> None:
+         """Reset the list of log records and the captured log text."""
+-        self.handler.reset()
++        self.handler.clear()
+ 
+     def set_level(self, level: Union[int, str], logger: Optional[str] = None) -> None:
+         """Set the level of a logger for the duration of a test.
+diff --git a/testing/logging/test_fixture.py b/testing/logging/test_fixture.py
+index bcb20de..1fa9c45 100644
+--- a/testing/logging/test_fixture.py
++++ b/testing/logging/test_fixture.py
+@@ -151,6 +151,21 @@ def test_clear(caplog):
+     assert not caplog.text
+ 
+ 
++def test_clear_stays_consistent_with_get_records(caplog):
++    caplog.set_level(logging.INFO)
++
++    def verify_consistency():
++        assert caplog.get_records("call") == caplog.records
++
++    verify_consistency()
++    logger.info("test")
++    verify_consistency()
++    caplog.clear()
++    verify_consistency()
++    logger.info("test")
++    verify_consistency()
++
++
+ @pytest.fixture
+ def logging_during_setup_and_teardown(caplog):
+     caplog.set_level("INFO")

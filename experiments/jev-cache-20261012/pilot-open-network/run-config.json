@@ -1,0 +1,70 @@
+{
+  "dataset": "princeton-nlp/SWE-bench_Verified",
+  "selection_file": "tasks.json",
+  "execution_model": "deepseek-v4.1-flash",
+  "decider": "jev-1.13-free",
+  "plugin_repository": "https://github.com/ZhiweiWei-NAMI/dsh-auto",
+  "plugin_version": "v0.2.0 → v0.2.1",
+  "dsh_version": "0.1.5-rc.1",
+  "swebench_harness_version": "v4.1.0",
+  "model_path": "dsh → Magpie :3435 → observer :3437 → existing dsh-workbuddy :8788",
+  "jev_path": "dsh → observer :3437/auto/decide → Magpie /v1/auto/decide → OpenCode /inference/v1/systemone",
+  "max_children": 2,
+  "max_concurrent_children": 2,
+  "max_model_requests_including_jev": 64,
+  "task_timeout_seconds": 600,
+  "max_output_tokens_per_request": 16384,
+  "pressure_estimated_tokens": 24000,
+  "retained_recent_estimated_tokens": 8000,
+  "docker_cpus": 4,
+  "docker_memory": "8g",
+  "docker_runtime": "runc",
+  "gpu_devices": [],
+  "execution_order": "Rotate ABC/BCA/CAB by fixed task index",
+  "remote_cache_reset": false,
+  "prices": "No verified billing basis; dollar costs not computed",
+  "cache_write": "Not independently observable; compatibility zero aliases are retained raw and not treated as native write measurements",
+  "preflight_note": "Initial two image downloads were outside the instrumented solve; their download duration was not separately recorded. All solve groups use ready images. Later image preparation is timed separately.",
+  "jev_state_byte_budget": 24000,
+  "jev_context_control": "Small pressure routing call; only select triggers bounded full-source scoring batches",
+  "request_limit_enforcement": "Observer admits at most 64 upstream model calls total, including every Jev batch and every native main/child/compaction DeepSeek call",
+  "thinking_note": "Native dsh disabled/off settings are identical in every group. The preserved Magpie connection extraBody sets reasoning_effort=low on actual requests; upstream still returns reasoning tokens. Both actual parameters and returned usage are retained per request.",
+  "plugin_version_transition": {
+    "before": "v0.2.0",
+    "after": "v0.2.1",
+    "first_affected_auto_task": "pytest-dev__pytest-10356",
+    "change": "Preserve complete delegated task for child pressure decisions and append later explicit user requirements. First two tasks had no children in any arm and no continued user turns; their exercised behavior is unchanged.",
+    "order_at_change": [
+      {
+        "instance_id": "pytest-dev__pytest-10051",
+        "arm": "A"
+      },
+      {
+        "instance_id": "pytest-dev__pytest-10051",
+        "arm": "B"
+      },
+      {
+        "instance_id": "pytest-dev__pytest-10051",
+        "arm": "C"
+      },
+      {
+        "instance_id": "pytest-dev__pytest-10081",
+        "arm": "B"
+      },
+      {
+        "instance_id": "pytest-dev__pytest-10081",
+        "arm": "C"
+      },
+      {
+        "instance_id": "pytest-dev__pytest-10081",
+        "arm": "A"
+      },
+      {
+        "instance_id": "pytest-dev__pytest-10356",
+        "arm": "C"
+      }
+    ]
+  },
+  "workbuddy_runtime_policy": "least_inflight",
+  "workbuddy_session_binding_observation": "Native session header was sent; returned x-wb-account labels still change on successive requests. Running service differs from newer on-disk binding implementation; shared service was not restarted."
+}

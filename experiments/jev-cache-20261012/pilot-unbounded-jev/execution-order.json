@@ -1,0 +1,38 @@
+[
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "B"
+  }
+]

@@ -1,0 +1,88 @@
+diff --git a/changelog/7169.bugfix.rst b/changelog/7169.bugfix.rst
+new file mode 100644
+index 0000000..42e4b4a
+--- /dev/null
++++ b/changelog/7169.bugfix.rst
+@@ -0,0 +1 @@
++Fix ``BytesWarning`` when using ``--setup-show`` with a ``bytes`` fixture parameter by formatting the parameter with ``saferepr`` instead of an implicit ``str()`` call.
+diff --git a/src/_pytest/setuponly.py b/src/_pytest/setuponly.py
+index c9cc589..3170eef 100644
+--- a/src/_pytest/setuponly.py
++++ b/src/_pytest/setuponly.py
+@@ -1,5 +1,7 @@
+ import pytest
+ 
++from _pytest._io.saferepr import saferepr
++
+ 
+ def pytest_addoption(parser):
+     group = parser.getgroup("debugconfig")
+@@ -30,7 +32,7 @@ def pytest_fixture_setup(fixturedef, request):
+                 else:
+                     fixturedef.cached_param = fixturedef.ids[request.param_index]
+             else:
+-                fixturedef.cached_param = request.param
++                fixturedef.cached_param = _interpret_param(request.param)
+         _show_fixture_action(fixturedef, "SETUP")
+ 
+ 
+@@ -43,6 +45,18 @@ def pytest_fixture_post_finalizer(fixturedef) -> None:
+                 del fixturedef.cached_param
+ 
+ 
++def _interpret_param(param):
++    """Return a printable representation for a fixture parameter.
++
++    ``str`` parameters are returned unchanged so that existing output stays the
++    same, while every other type (notably ``bytes``) goes through ``saferepr``
++    to avoid an implicit and possibly warning-triggering ``str()`` call.
++    """
++    if isinstance(param, str):
++        return param
++    return saferepr(param)
++
++
+ def _show_fixture_action(fixturedef, msg):
+     config = fixturedef._fixturemanager.config
+     capman = config.pluginmanager.getplugin("capturemanager")
+diff --git a/testing/test_setuponly.py b/testing/test_setuponly.py
+index e26a33d..6b70322 100644
+--- a/testing/test_setuponly.py
++++ b/testing/test_setuponly.py
+@@ -1,3 +1,5 @@
++import sys
++
+ import pytest
+ from _pytest.config import ExitCode
+ 
+@@ -154,6 +156,30 @@ def test_show_fixtures_with_parameters(testdir, mode):
+     )
+ 
+ 
++def test_show_fixtures_with_bytes_parameters(testdir, mode):
++    """Bytes parameters should be shown safely without triggering BytesWarning."""
++    testdir.makepyfile(
++        """
++        import pytest
++        @pytest.fixture(params=[b'Hello World'])
++        def arg_same(request):
++            return request.param
++        def test_arg1(arg_same):
++            pass
++    """
++    )
++
++    # ``-bb`` makes Python raise ``BytesWarning`` on an implicit ``str()``
++    # call on bytes, which is what used to happen while displaying the
++    # fixture parameter.
++    result = testdir.run(
++        sys.executable, "-bb", "-m", "pytest", mode, "-p", "no:cacheprovider"
++    )
++    assert result.ret == 0
++
++    result.stdout.fnmatch_lines(["*SETUP    F arg_same?b'Hello World'?*"])
++
++
+ def test_show_fixtures_with_parameter_ids(testdir, mode):
+     testdir.makeconftest(
+         '''

@@ -1,0 +1,42 @@
+diff --git a/changelog/5273.bugfix.rst b/changelog/5273.bugfix.rst
+new file mode 100644
+index 00000000..5fb4ec44
+--- /dev/null
++++ b/changelog/5273.bugfix.rst
+@@ -0,0 +1 @@
++``_pytest.capture.EncodedFile`` no longer advertises a binary mode (``b``) in its ``mode`` attribute, matching the fact that it accepts text and encodes it internally.
+diff --git a/src/_pytest/capture.py b/src/_pytest/capture.py
+index 25eab7fd..56017113 100644
+--- a/src/_pytest/capture.py
++++ b/src/_pytest/capture.py
+@@ -447,6 +447,10 @@ class EncodedFile(object):
+         """Ensure that file.name is a string."""
+         return repr(self.buffer)
+ 
++    @property
++    def mode(self):
++        return self.buffer.mode.replace("b", "")
++
+     def __getattr__(self, name):
+         return getattr(object.__getattribute__(self, "buffer"), name)
+ 
+diff --git a/testing/test_capture.py b/testing/test_capture.py
+index 5d80eb63..7aa94ec0 100644
+--- a/testing/test_capture.py
++++ b/testing/test_capture.py
+@@ -944,6 +944,15 @@ def test_dupfile_on_bytesio():
+     assert "BytesIO object" in f.name
+ 
+ 
++def test_dupfile_mode_no_binary_flag(tmpfile):
++    # ``EncodedFile`` writes text, so its ``mode`` must not advertise
++    # binary access, otherwise consumers (e.g. youtube-dl) may attempt to
++    # write bytes to it.  See issue #5283.
++    f = capture.safe_text_dupfile(tmpfile, "wb+")
++    assert "b" not in f.mode
++    f.close()
++
++
+ def test_dupfile_on_textio():
+     tio = py.io.TextIO()
+     f = capture.safe_text_dupfile(tio, "wb")

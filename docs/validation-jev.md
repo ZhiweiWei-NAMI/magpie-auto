@@ -1,0 +1,9 @@
+# Jev / dsh validation record
+
+The focused Go regressions passed: complete-history replay, typed Jev answers and malformed/unauthorized responses, workspace-executor rejection, and native dsh session forwarding. Restoring the 1200-byte source cut caused the full-history test to fail with a 1200-byte source. Restoring the removed UI scope callback caused the new Auto browser test to fail.
+
+The Auto configuration browser check passed in Chromium and WebKit across English, Simplified Chinese, Traditional Chinese, Japanese and German. The changed gateway-mode test passed. The six dsh-auto unit checks passed. Real native dsh runs exercised tools, file changes, tests, two concurrent children and collection; official SWE-bench evidence is retained separately.
+
+Linux server build (`nogui`), Linux `nogui` vet, Windows build and Windows `nogui` vet passed. Native Linux GUI build/vet could not complete because this Ubuntu 20.04 host lacks gtk4 and webkitgtk-6.0 development packages. Windows execution was not tested.
+
+Broader development checks were stopped at the user's request to prioritize the evaluator loop. The first Go suite hit the default 600-second package deadline in agent/gateway; a tmpfs recheck passed gateway and plugin but exposed unrelated agent shell-parse and backup-fixture failures. The skill edit-detection cache defect was fixed in a separate commit with a failing regression. Full browser checks were stopped before completion; they are not reported as a passing suite. After the implementation stabilized, one final full Go acceptance run passed (temporary HOME, tmpfs, pinned caches, Git 2.51.2). The shell syntax check now reads stdin without executing its command, and backup folders are unique per change. Native Linux GUI acceptance remains unavailable on this host; the incomplete full browser run is not called green.

@@ -1,0 +1,64 @@
+diff --git a/changelog/3552.bugfix.rst b/changelog/3552.bugfix.rst
+new file mode 100644
+index 000000000..155533b23
+--- /dev/null
++++ b/changelog/3552.bugfix.rst
+@@ -0,0 +1,2 @@
++Fix ``ValueError`` when collecting a test decorated with ``unittest.mock.patch`` whose
++``new`` argument is an array-like object whose truth value is ambiguous.
+diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py
+index d238061b4..61c897f06 100644
+--- a/src/_pytest/compat.py
++++ b/src/_pytest/compat.py
+@@ -68,7 +68,12 @@ def num_mock_patch_args(function):
+     if any(mock_modules):
+         sentinels = [m.DEFAULT for m in mock_modules if m is not None]
+         return len(
+-            [p for p in patchings if not p.attribute_name and p.new in sentinels]
++            [
++                p
++                for p in patchings
++                if not p.attribute_name
++                and any(p.new is sentinel for sentinel in sentinels)
++            ]
+         )
+     return len(patchings)
+ 
+diff --git a/testing/python/integration.py b/testing/python/integration.py
+index a6b8dddf3..2ae9fafc3 100644
+--- a/testing/python/integration.py
++++ b/testing/python/integration.py
+@@ -119,6 +119,33 @@ class TestMockDecoration:
+         values = getfuncargnames(f)
+         assert values == ("y", "z")
+ 
++    def test_getfuncargnames_patching_no_args_new(self):
++        # See #3552: a non-boolean-comparable `new` value (e.g. a numpy
++        # array) must not raise during collection.
++        from _pytest.compat import getfuncargnames
++        from unittest.mock import patch
++
++        @patch("os.path.abspath", new=[-5.5, 3.0])
++        def f(x, y, z):
++            pass
++
++        values = getfuncargnames(f)
++        assert values == ("x", "y", "z")
++
++    def test_unittest_mock_patching_array(self, testdir):
++        testdir.makepyfile(
++            """
++            import unittest.mock
++
++            class TestT:
++                @unittest.mock.patch("os.path.abspath", new=[-5.5, 3.0])
++                def test_hello(self):
++                    pass
++        """
++        )
++        reprec = testdir.inline_run()
++        reprec.assertoutcome(passed=1)
++
+     def test_unittest_mock(self, testdir):
+         testdir.makepyfile(
+             """

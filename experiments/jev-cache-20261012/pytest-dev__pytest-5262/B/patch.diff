@@ -1,0 +1,43 @@
+diff --git a/changelog/5269.bugfix.rst b/changelog/5269.bugfix.rst
+new file mode 100644
+index 0000000..ce3c214
+--- /dev/null
++++ b/changelog/5269.bugfix.rst
+@@ -0,0 +1 @@
++Fix ``_pytest.capture.EncodedFile`` to not report a binary mode (``b``) although it wraps a binary buffer, so that libraries inspecting ``sys.stdout.mode`` write text as expected.
+diff --git a/src/_pytest/capture.py b/src/_pytest/capture.py
+index 25eab7f..5601711 100644
+--- a/src/_pytest/capture.py
++++ b/src/_pytest/capture.py
+@@ -447,6 +447,10 @@ class EncodedFile(object):
+         """Ensure that file.name is a string."""
+         return repr(self.buffer)
+ 
++    @property
++    def mode(self):
++        return self.buffer.mode.replace("b", "")
++
+     def __getattr__(self, name):
+         return getattr(object.__getattribute__(self, "buffer"), name)
+ 
+diff --git a/testing/test_capture.py b/testing/test_capture.py
+index 5d80eb6..c19ff85 100644
+--- a/testing/test_capture.py
++++ b/testing/test_capture.py
+@@ -952,6 +952,16 @@ def test_dupfile_on_textio():
+     assert not hasattr(f, "name")
+ 
+ 
++@needsosdup
++def test_dupfile_mode_is_text(tmpfile):
++    # Handle a text file (e.g. ``sys.stdout``) which exposes a binary
++    # underlying buffer: ``EncodedFile`` should not report a binary mode,
++    # as users inspect ``out.mode`` to decide whether to write bytes or str.
++    f = capture.safe_text_dupfile(tmpfile, "wb+")
++    assert "b" not in f.mode
++    f.close()
++
++
+ @contextlib.contextmanager
+ def lsof_check():
+     pid = os.getpid()

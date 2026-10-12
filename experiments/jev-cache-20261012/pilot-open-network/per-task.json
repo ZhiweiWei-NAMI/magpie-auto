@@ -1,0 +1,6341 @@
+[
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051:latest",
+    "sharedImagePreparationSeconds": 0.2574,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 267.2416,
+    "patchBytes": 2519,
+    "solveAndExportSeconds": 267.9843,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 37,
+    "jevRequests": 3,
+    "deepseekUsage": {
+      "input": {
+        "observed": 568322,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 27062,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 444544,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 123778,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 37,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 9784,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 100,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 3,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 578106,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 27162,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 188.48140000000004,
+    "jevRequestSeconds": 2.1580329999999996,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 2.1663,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 2,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-10051",
+      "exitCode": 0,
+      "evaluationSeconds": 44.8352,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 37,
+        "input": {
+          "observed": 568322,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 27062,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 444544,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 123778,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 3,
+        "input": {
+          "observed": 9784,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 100,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 3,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 37,
+        "input": {
+          "observed": 568322,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 27062,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 444544,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 123778,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 3,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 3.4299999999999984,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 36
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051:latest",
+    "sharedImagePreparationSeconds": 0.2574,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 227.1942,
+    "patchBytes": 3038,
+    "solveAndExportSeconds": 227.9221,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 34,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 390577,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 23214,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 206336,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 184241,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 34,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 390577,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 23214,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 165.6236,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-10051",
+      "exitCode": 0,
+      "evaluationSeconds": 43.6562,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 34,
+        "input": {
+          "observed": 390577,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 23214,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 206336,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 184241,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 32,
+        "input": {
+          "observed": 369677,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 20501,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 192256,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 177421,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 2,
+        "input": {
+          "observed": 20900,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 2713,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 14080,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 6820,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 2,
+    "serviceCredits": {
+      "observed": 4.020000000000001,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 33
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051:latest",
+    "sharedImagePreparationSeconds": 0.2574,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 198.7229,
+    "patchBytes": 2536,
+    "solveAndExportSeconds": 199.4457,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 30,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 388837,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 13972,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 274560,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 114277,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 30,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 388837,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 13972,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 113.52749999999997,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-10051",
+      "exitCode": 0,
+      "evaluationSeconds": 39.7383,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 30,
+        "input": {
+          "observed": 388837,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 13972,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 274560,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 114277,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 29,
+        "input": {
+          "observed": 376639,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 12736,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 262912,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 113727,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 1,
+        "input": {
+          "observed": 12198,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1236,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 11648,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 550,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 1,
+    "serviceCredits": {
+      "observed": 2.5400000000000005,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 29
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10081:latest",
+    "sharedImagePreparationSeconds": 0.253,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 302.0205,
+    "patchBytes": 2753,
+    "solveAndExportSeconds": 302.7916,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 38,
+    "jevRequests": 5,
+    "deepseekUsage": {
+      "input": {
+        "observed": 665287,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 40293,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 500223,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 165064,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 38,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 23481,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 162,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 5,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 5,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 5,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 688768,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 40455,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 261.3099000000001,
+    "jevRequestSeconds": 4.187906000000001,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 4.199,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 4,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-10081",
+      "exitCode": 0,
+      "evaluationSeconds": 37.7101,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 38,
+        "input": {
+          "observed": 665287,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 40293,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 500223,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 165064,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 5,
+        "input": {
+          "observed": 23481,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 162,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 5,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 5,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 38,
+        "input": {
+          "observed": 665287,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 40293,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 500223,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 165064,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 5,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 4.809999999999998,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 37
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10081:latest",
+    "sharedImagePreparationSeconds": 0.253,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 254.9195,
+    "patchBytes": 2727,
+    "solveAndExportSeconds": 255.597,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 39,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 493538,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 34186,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 261503,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 232035,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 39,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 493538,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 34186,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 230.33859999999996,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-10081",
+      "exitCode": 0,
+      "evaluationSeconds": 41.388,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 39,
+        "input": {
+          "observed": 493538,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 34186,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 261503,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 232035,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 36,
+        "input": {
+          "observed": 459584,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 28182,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 237823,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 221761,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 3,
+        "input": {
+          "observed": 33954,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 6004,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 23680,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 10274,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 3,
+    "serviceCredits": {
+      "observed": 5.370000000000003,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 38
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10081:latest",
+    "sharedImagePreparationSeconds": 0.253,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 293.7519,
+    "patchBytes": 2499,
+    "solveAndExportSeconds": 294.5128,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 48,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 602946,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 37314,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 312448,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 290498,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 48,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 602946,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 37314,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 264.6528,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-10081",
+      "exitCode": 0,
+      "evaluationSeconds": 46.0331,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 48,
+        "input": {
+          "observed": 602946,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 37314,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 312448,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 290498,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 45,
+        "input": {
+          "observed": 564752,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 31770,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 288768,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 275984,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 3,
+        "input": {
+          "observed": 38194,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 5544,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 23680,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 14514,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 3,
+    "serviceCredits": {
+      "observed": 6.370000000000001,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 47
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10356:latest",
+    "sharedImagePreparationSeconds": 0.2472,
+    "agentExitCode": 1,
+    "executionStatus": "agent_error",
+    "executionSeconds": 223.315,
+    "patchBytes": 0,
+    "solveAndExportSeconds": 224.0551,
+    "childrenStarted": 2,
+    "childrenCollected": 1,
+    "maxChildConcurrency": 2,
+    "deepseekRequests": 58,
+    "jevRequests": 6,
+    "deepseekUsage": {
+      "input": {
+        "observed": 1064028,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 49087,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 753408,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 310620,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 58,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 32558,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 193,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 6,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 6,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 6,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 1096586,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 49280,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 332.03729999999996,
+    "jevRequestSeconds": 4.384541,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 4.3984,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 5,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-10356",
+      "exitCode": 0,
+      "evaluationSeconds": 7.8623,
+      "resolved": false,
+      "status": "official_empty_patch"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 58,
+        "input": {
+          "observed": 1064028,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 49087,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 753408,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 310620,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 6,
+        "input": {
+          "observed": 32558,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 193,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 6,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 6,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 58,
+        "input": {
+          "observed": 1064028,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 49087,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 753408,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 310620,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 6,
+    "childStopReasons": [
+      {
+        "id": "f4d00779-d3c9-460d-8206-ef1b6306aa9f",
+        "reason": "error"
+      },
+      {
+        "id": "71b6b2aa-049a-4141-85b1-6104202d0dbd",
+        "reason": "error"
+      }
+    ],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 7.460000000000002,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 56
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10356:latest",
+    "sharedImagePreparationSeconds": 0.2472,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 306.7128,
+    "patchBytes": 3805,
+    "solveAndExportSeconds": 307.7368,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 49,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 717358,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 25743,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 394624,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 322734,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 49,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 717358,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 25743,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 188.72000000000006,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-10356",
+      "exitCode": 0,
+      "evaluationSeconds": 37.4374,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 49,
+        "input": {
+          "observed": 717358,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 25743,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 394624,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 322734,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 47,
+        "input": {
+          "observed": 694215,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 22169,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 376576,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 317639,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 2,
+        "input": {
+          "observed": 23143,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 3574,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 18048,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 5095,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 2,
+    "serviceCredits": {
+      "observed": 6.23,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 48
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10356:latest",
+    "sharedImagePreparationSeconds": 0.2472,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 327.813,
+    "patchBytes": 3805,
+    "solveAndExportSeconds": 328.9136,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 50,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 747231,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 26823,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 430848,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 316383,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 50,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 747231,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 26823,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 197.6336,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-10356",
+      "exitCode": 0,
+      "evaluationSeconds": 46.3705,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 50,
+        "input": {
+          "observed": 747231,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 26823,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 430848,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 316383,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 48,
+        "input": {
+          "observed": 724427,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 23185,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 410240,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 314187,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 2,
+        "input": {
+          "observed": 22804,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 3638,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 20608,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 2196,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 2,
+    "serviceCredits": {
+      "observed": 6.170000000000002,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 49
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5262",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5262:latest",
+    "sharedImagePreparationSeconds": 93.9683,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 100.0592,
+    "patchBytes": 1257,
+    "solveAndExportSeconds": 100.738,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 22,
+    "jevRequests": 1,
+    "deepseekUsage": {
+      "input": {
+        "observed": 239286,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 9727,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 161152,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 78134,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 22,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 2196,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 38,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 241482,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 9765,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 77.8474,
+    "jevRequestSeconds": 0.992716,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0.9947,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-5262",
+      "exitCode": 0,
+      "evaluationSeconds": 44.1302,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 22,
+        "input": {
+          "observed": 239286,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 9727,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 161152,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 78134,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 1,
+        "input": {
+          "observed": 2196,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 38,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 22,
+        "input": {
+          "observed": 239286,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 9727,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 161152,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 78134,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 1,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 1.7200000000000002,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 21
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5262",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5262:latest",
+    "sharedImagePreparationSeconds": 93.9683,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 56.2419,
+    "patchBytes": 1594,
+    "solveAndExportSeconds": 56.9158,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 13,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 127139,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 4928,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 73600,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 53539,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 13,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 127139,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 4928,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 39.1242,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-5262",
+      "exitCode": 0,
+      "evaluationSeconds": 45.2244,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 13,
+        "input": {
+          "observed": 127139,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 4928,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 73600,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 53539,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 13,
+        "input": {
+          "observed": 127139,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 4928,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 73600,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 53539,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 1.08,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 12
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5262",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5262:latest",
+    "sharedImagePreparationSeconds": 93.9683,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 141.3487,
+    "patchBytes": 1513,
+    "solveAndExportSeconds": 142.0556,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 24,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 283380,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 13475,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 193152,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 90228,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 24,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 283380,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 13475,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 100.71420000000002,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-5262",
+      "exitCode": 0,
+      "evaluationSeconds": 45.2786,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 24,
+        "input": {
+          "observed": 283380,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 13475,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 193152,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 90228,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 24,
+        "input": {
+          "observed": 283380,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 13475,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 193152,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 90228,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 2.1200000000000006,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 23
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5631",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5631:latest",
+    "sharedImagePreparationSeconds": 125.7765,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 86.7663,
+    "patchBytes": 2242,
+    "solveAndExportSeconds": 87.4571,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 23,
+    "jevRequests": 1,
+    "deepseekUsage": {
+      "input": {
+        "observed": 278497,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 7573,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 183552,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 94945,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 23,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 1417,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 38,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 279914,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 7611,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 61.861200000000004,
+    "jevRequestSeconds": 0.955124,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0.9575,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-5631",
+      "exitCode": 0,
+      "evaluationSeconds": 39.9253,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 23,
+        "input": {
+          "observed": 278497,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 7573,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 183552,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 94945,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 1,
+        "input": {
+          "observed": 1417,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 38,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 23,
+        "input": {
+          "observed": 278497,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 7573,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 183552,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 94945,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 1,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 1.8500000000000008,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 22
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5631",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5631:latest",
+    "sharedImagePreparationSeconds": 125.7765,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 162.4222,
+    "patchBytes": 2029,
+    "solveAndExportSeconds": 163.1529,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 40,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 481275,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 9930,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 362112,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 119163,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 40,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 481275,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "workloadOutput": {
+      "observed": 9930,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "modelRequestSeconds": 118.93070000000002,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-5631",
+      "exitCode": 0,
+      "evaluationSeconds": 39.9227,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 40,
+        "input": {
+          "observed": 481275,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 9930,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 362112,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 119163,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 40,
+        "input": {
+          "observed": 481275,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 9930,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 362112,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 119163,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 2.3500000000000005,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 39
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5631",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5631:latest",
+    "sharedImagePreparationSeconds": 125.7765,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 103.8974,
+    "patchBytes": 2115,
+    "solveAndExportSeconds": 104.5919,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 26,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 288909,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 9859,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 204544,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 84365,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 26,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 288909,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 9859,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 78.13949999999997,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-5631",
+      "exitCode": 0,
+      "evaluationSeconds": 39.7757,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 26,
+        "input": {
+          "observed": 288909,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 9859,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 204544,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 84365,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 26,
+        "input": {
+          "observed": 288909,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 9859,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 204544,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 84365,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 1.8300000000000007,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 25
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5787",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5787:latest",
+    "sharedImagePreparationSeconds": 76.838,
+    "agentExitCode": 1,
+    "executionStatus": "agent_error",
+    "executionSeconds": 400.5507,
+    "patchBytes": 0,
+    "solveAndExportSeconds": 401.2985,
+    "childrenStarted": 1,
+    "childrenCollected": 1,
+    "maxChildConcurrency": 1,
+    "deepseekRequests": 58,
+    "jevRequests": 6,
+    "deepseekUsage": {
+      "input": {
+        "observed": 1639395,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 30410,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 1250688,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 388707,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 58,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 26862,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 193,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 6,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 6,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 6,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 1666257,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 30603,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 241.45060000000004,
+    "jevRequestSeconds": 4.055295999999999,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 4.0694,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 5,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-5787",
+      "exitCode": 0,
+      "evaluationSeconds": 7.8862,
+      "resolved": false,
+      "status": "official_empty_patch"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 2,
+        "input": {
+          "observed": 20089,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 328,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 12288,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 7801,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 56,
+        "input": {
+          "observed": 1619306,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 30082,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 1238400,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 380906,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 6,
+        "input": {
+          "observed": 26862,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 193,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 6,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 6,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 58,
+        "input": {
+          "observed": 1639395,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 30410,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 1250688,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 388707,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 6,
+    "childStopReasons": [
+      {
+        "id": "29593747-41c5-43de-827e-3f8b11903a32",
+        "reason": "completed"
+      }
+    ],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 7.62,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 56
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5787",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5787:latest",
+    "sharedImagePreparationSeconds": 76.838,
+    "agentExitCode": 1,
+    "executionStatus": "agent_error",
+    "executionSeconds": 468.7838,
+    "patchBytes": 5987,
+    "solveAndExportSeconds": 469.559,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 64,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 1052422,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 31721,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 504064,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 548358,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 64,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 1052422,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 31721,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 254.52670000000003,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-5787",
+      "exitCode": 0,
+      "evaluationSeconds": 37.8397,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 64,
+        "input": {
+          "observed": 1052422,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 31721,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 504064,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 548358,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 60,
+        "input": {
+          "observed": 997076,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 21819,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 462848,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 534228,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 4,
+        "input": {
+          "observed": 55346,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 9902,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 41216,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 14130,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 4,
+    "serviceCredits": {
+      "observed": 9.800000000000002,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 63
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5787",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5787:latest",
+    "sharedImagePreparationSeconds": 76.838,
+    "agentExitCode": 1,
+    "executionStatus": "agent_error",
+    "executionSeconds": 471.6826,
+    "patchBytes": 6980,
+    "solveAndExportSeconds": 472.4617,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 64,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 936049,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 71751,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 350848,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 585201,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 64,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 936049,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 71751,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 384.445,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-5787",
+      "exitCode": 0,
+      "evaluationSeconds": 42.9466,
+      "resolved": false,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 64,
+        "input": {
+          "observed": 936049,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 71751,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 350848,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 585201,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 55,
+        "input": {
+          "observed": 816638,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 49402,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 298368,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 518270,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 9,
+        "input": {
+          "observed": 119411,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 22349,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 52480,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 66931,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 9,
+    "serviceCredits": {
+      "observed": 12.590000000000003,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 63
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5809",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5809:latest",
+    "sharedImagePreparationSeconds": 78.6606,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 49.0727,
+    "patchBytes": 1683,
+    "solveAndExportSeconds": 49.7268,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 10,
+    "jevRequests": 1,
+    "deepseekUsage": {
+      "input": {
+        "observed": 90857,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 3149,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 51200,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 39657,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 10,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 975,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 38,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 91832,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 3187,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 34.1091,
+    "jevRequestSeconds": 1.319847,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 1.3218,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-5809",
+      "exitCode": 0,
+      "evaluationSeconds": 46.3569,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 10,
+        "input": {
+          "observed": 90857,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 3149,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 51200,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 39657,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 1,
+        "input": {
+          "observed": 975,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 38,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 10,
+        "input": {
+          "observed": 90857,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 3149,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 51200,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 39657,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 1,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 0.78,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 9
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5809",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5809:latest",
+    "sharedImagePreparationSeconds": 78.6606,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 38.7062,
+    "patchBytes": 1481,
+    "solveAndExportSeconds": 39.3307,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 9,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 75771,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 2061,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 46080,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 29691,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 9,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 75771,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 2061,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 26.8068,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-5809",
+      "exitCode": 0,
+      "evaluationSeconds": 37.191,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 9,
+        "input": {
+          "observed": 75771,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 2061,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 46080,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 29691,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 9,
+        "input": {
+          "observed": 75771,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 2061,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 46080,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 29691,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 0.56,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 8
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5809",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5809:latest",
+    "sharedImagePreparationSeconds": 78.6606,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 33.5443,
+    "patchBytes": 1525,
+    "solveAndExportSeconds": 34.1516,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 10,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 85360,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 1595,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 51200,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 34160,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 10,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 85360,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 1595,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 25.8685,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-5809",
+      "exitCode": 0,
+      "evaluationSeconds": 36.4961,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 10,
+        "input": {
+          "observed": 85360,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1595,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 51200,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 34160,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 10,
+        "input": {
+          "observed": 85360,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1595,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 51200,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 34160,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 0.6,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 9
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5840",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5840:latest",
+    "sharedImagePreparationSeconds": 20.6535,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 376.1525,
+    "patchBytes": 7264,
+    "solveAndExportSeconds": 376.8971,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 57,
+    "jevRequests": 4,
+    "deepseekUsage": {
+      "input": {
+        "observed": 1247361,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 25370,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 979456,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 267905,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 57,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 8659,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 131,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 4,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 4,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 4,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 1256020,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 25501,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 242.05679999999998,
+    "jevRequestSeconds": 3.584664,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 3.5935,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 3,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-A-5840",
+      "exitCode": 0,
+      "evaluationSeconds": 38.2168,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 57,
+        "input": {
+          "observed": 1247361,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 25370,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 979456,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 267905,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 4,
+        "input": {
+          "observed": 8659,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 131,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 4,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 4,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 57,
+        "input": {
+          "observed": 1247361,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 25370,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 979456,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 267905,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 4,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 5.579999999999997,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 56
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5840",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5840:latest",
+    "sharedImagePreparationSeconds": 20.6535,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 503.2796,
+    "patchBytes": 7264,
+    "solveAndExportSeconds": 504.0865,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 54,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 761931,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 61014,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 317952,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 443979,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 54,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 761931,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 61014,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 399.1628,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-B-5840",
+      "exitCode": 0,
+      "evaluationSeconds": 46.258,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 54,
+        "input": {
+          "observed": 761931,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 61014,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 317952,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 443979,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 49,
+        "input": {
+          "observed": 694624,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 50661,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 278912,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 415712,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 5,
+        "input": {
+          "observed": 67307,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 10353,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 39040,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 28267,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 5,
+    "serviceCredits": {
+      "observed": 9.930000000000001,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 53
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5840",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-5840:latest",
+    "sharedImagePreparationSeconds": 20.6535,
+    "agentExitCode": 1,
+    "executionStatus": "agent_error",
+    "executionSeconds": 487.6199,
+    "patchBytes": 7264,
+    "solveAndExportSeconds": 488.313,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 64,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 978237,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 50671,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 493824,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 484413,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 64,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 978237,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 50671,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 376.16759999999994,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-v02-C-5840",
+      "exitCode": 0,
+      "evaluationSeconds": 37.2693,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 64,
+        "input": {
+          "observed": 978237,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 50671,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 493824,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 484413,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 58,
+        "input": {
+          "observed": 903756,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 39241,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 452608,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 451148,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 6,
+        "input": {
+          "observed": 74481,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 11430,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 41216,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 33265,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 6,
+    "serviceCredits": {
+      "observed": 9.950000000000003,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 63
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6197",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-6197:latest",
+    "sharedImagePreparationSeconds": 17.8262,
+    "solveAndExportSeconds": 284.3934,
+    "childrenStarted": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "executionStatus": "interrupted_for_isolation_repair",
+    "executionSeconds": null,
+    "patchBytes": 0,
+    "note": "Actual working-tree snapshot preserved before interruption. The open-network run is a pilot, not controlled comparison evidence.",
+    "deepseekRequests": 42,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 612148,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 38040,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 279168,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 332980,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 42,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 612148,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "workloadOutput": {
+      "observed": 38040,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "modelRequestSeconds": 270.36899999999997,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-pilotopen-C-6197",
+      "exitCode": 0,
+      "evaluationSeconds": 7.9731,
+      "resolved": false,
+      "status": "official_empty_patch"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 42,
+        "input": {
+          "observed": 612148,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 38040,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 279168,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 332980,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 40,
+        "input": {
+          "observed": 580349,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 34962,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 257280,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 323069,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "compaction": {
+        "requests": 2,
+        "input": {
+          "observed": 31799,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 3078,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 21888,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 9911,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "collectionObservation": "The original per-item collection log can stop after the first failed outcome. Native end events and the Promise.all boundary retain evidence that every outcome returned; do not interpret a smaller log count as a successful child result.",
+    "nativeCompactions": 2,
+    "serviceCredits": {
+      "observed": 7.0,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 41
+  }
+]

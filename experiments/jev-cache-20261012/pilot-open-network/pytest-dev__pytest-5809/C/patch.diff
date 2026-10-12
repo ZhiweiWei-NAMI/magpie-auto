@@ -1,0 +1,34 @@
+diff --git a/changelog/5764.bugfix.rst b/changelog/5764.bugfix.rst
+new file mode 100644
+index 000000000..796dedb82
+--- /dev/null
++++ b/changelog/5764.bugfix.rst
+@@ -0,0 +1 @@
++The ``--pastebin`` option now uses the ``text`` lexer instead of ``python3``/``python`` when uploading the test run output to ``bpaste.net``. The console output of a test run is arbitrary text, not Python code, and the previous lexer caused ``HTTP Error 400: Bad Request`` for some contents.
+diff --git a/src/_pytest/pastebin.py b/src/_pytest/pastebin.py
+index 41576a615..79b0d9d40 100644
+--- a/src/_pytest/pastebin.py
++++ b/src/_pytest/pastebin.py
+@@ -79,7 +79,7 @@ def create_new_paste(contents):
+ 
+     params = {
+         "code": contents,
+-        "lexer": "python3" if sys.version_info[0] >= 3 else "python",
++        "lexer": "text",
+         "expiry": "1week",
+     }
+     url = "https://bpaste.net"
+diff --git a/testing/test_pastebin.py b/testing/test_pastebin.py
+index bac8f9802..aac0b651e 100644
+--- a/testing/test_pastebin.py
++++ b/testing/test_pastebin.py
+@@ -126,8 +126,7 @@ class TestPaste(object):
+         assert len(mocked_urlopen) == 1
+         url, data = mocked_urlopen[0]
+         assert type(data) is bytes
+-        lexer = "python3" if sys.version_info[0] >= 3 else "python"
+         assert url == "https://bpaste.net"
+-        assert "lexer=%s" % lexer in data.decode()
++        assert "lexer=text" in data.decode()
+         assert "code=full-paste-contents" in data.decode()
+         assert "expiry=1week" in data.decode()

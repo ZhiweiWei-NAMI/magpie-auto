@@ -1,0 +1,1 @@
+Stopped after solver access to later release source/tests and target PR metadata was discovered. Official grades and actual usage remain, but these records are not an independent-solve comparison. The fixed twelve tasks are rerun in the root directory with internal-network/base-commit isolation. Interrupted work remains.

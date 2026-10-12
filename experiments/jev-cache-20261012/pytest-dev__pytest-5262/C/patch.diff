@@ -1,0 +1,43 @@
+diff --git a/changelog/5258.bugfix.rst b/changelog/5258.bugfix.rst
+new file mode 100644
+index 0000000..10348a1
+--- /dev/null
++++ b/changelog/5258.bugfix.rst
+@@ -0,0 +1 @@
++Fix ``_pytest.capture.EncodedFile`` to report a text mode (without ``b``) via its ``mode`` attribute, so that libraries relying on it to decide between writing ``str`` and ``bytes`` write text as expected.
+diff --git a/src/_pytest/capture.py b/src/_pytest/capture.py
+index 25eab7f..5601711 100644
+--- a/src/_pytest/capture.py
++++ b/src/_pytest/capture.py
+@@ -447,6 +447,10 @@ class EncodedFile(object):
+         """Ensure that file.name is a string."""
+         return repr(self.buffer)
+ 
++    @property
++    def mode(self):
++        return self.buffer.mode.replace("b", "")
++
+     def __getattr__(self, name):
+         return getattr(object.__getattribute__(self, "buffer"), name)
+ 
+diff --git a/testing/test_capture.py b/testing/test_capture.py
+index 5d80eb6..403b018 100644
+--- a/testing/test_capture.py
++++ b/testing/test_capture.py
+@@ -922,6 +922,8 @@ def test_dupfile(tmpfile):
+ 
+     fname_open = flist[0].name
+     assert fname_open == repr(flist[0].buffer)
++    assert "b" not in flist[0].mode
++    assert "b" not in flist[3].mode
+ 
+     for i in range(5):
+         f = flist[i]
+@@ -942,6 +944,7 @@ def test_dupfile_on_bytesio():
+     f.write("hello")
+     assert bio.getvalue() == b"hello"
+     assert "BytesIO object" in f.name
++    assert not hasattr(f, "mode")
+ 
+ 
+ def test_dupfile_on_textio():

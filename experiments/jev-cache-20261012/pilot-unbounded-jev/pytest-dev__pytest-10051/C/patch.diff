@@ -1,0 +1,59 @@
+diff --git a/changelog/9877.bugfix.rst b/changelog/9877.bugfix.rst
+new file mode 100644
+index 000000000..fd0fe02de
+--- /dev/null
++++ b/changelog/9877.bugfix.rst
+@@ -0,0 +1,4 @@
++Fixed a conflict between :meth:`caplog.get_records <pytest.LogCaptureFixture.get_records>`
++and :meth:`caplog.clear <pytest.LogCaptureFixture.clear>`, where calling ``caplog.clear()``
++left ``caplog.get_records()`` returning records captured before the call and prevented it
++from seeing any subsequently emitted records.
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index a4f4214b1..1c5b64b7b 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -345,6 +345,10 @@ class LogCaptureHandler(logging_StreamHandler):
+         self.records = []
+         self.stream = StringIO()
+ 
++    def clear(self) -> None:
++        self.records.clear()
++        self.stream = StringIO()
++
+     def handleError(self, record: logging.LogRecord) -> None:
+         if logging.raiseExceptions:
+             # Fail the test if the log message is bad (emit failed).
+@@ -440,7 +444,7 @@ class LogCaptureFixture:
+ 
+     def clear(self) -> None:
+         """Reset the list of log records and the captured log text."""
+-        self.handler.reset()
++        self.handler.clear()
+ 
+     def set_level(self, level: Union[int, str], logger: Optional[str] = None) -> None:
+         """Set the level of a logger for the duration of a test.
+diff --git a/testing/logging/test_fixture.py b/testing/logging/test_fixture.py
+index bcb20de58..4ee2e6bfe 100644
+--- a/testing/logging/test_fixture.py
++++ b/testing/logging/test_fixture.py
+@@ -149,6 +149,20 @@ def test_clear(caplog):
+     caplog.clear()
+     assert not len(caplog.records)
+     assert not caplog.text
++    logger.info("nu")
++    assert len(caplog.records) == 1
++    assert [x.message for x in caplog.get_records("call")] == ["nu"]
++
++
++def test_clear_for_call_stage(caplog):
++    """Clear prior to the call stage; get_records("call") should reflect it."""
++    caplog.clear()
++    assert not caplog.get_records("call")
++    logger.warning("hello")
++    assert [x.message for x in caplog.get_records("call")] == ["hello"]
++    caplog.clear()
++    assert not caplog.get_records("call")
++    assert not caplog.records
+ 
+ 
+ @pytest.fixture

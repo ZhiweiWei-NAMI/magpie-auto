@@ -1,0 +1,16 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+      "tools": {
+        "read": 7,
+        "bash": 39,
+        "grep": 1,
+        "edit": 13
+      },
+      "compactions": [],
+      "delegationResults": []
+    }
+  ]
+}

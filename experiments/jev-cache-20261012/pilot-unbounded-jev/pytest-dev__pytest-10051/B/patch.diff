@@ -1,0 +1,55 @@
+diff --git a/changelog/9877.bugfix.rst b/changelog/9877.bugfix.rst
+new file mode 100644
+index 000000000..da3d30ae4
+--- /dev/null
++++ b/changelog/9877.bugfix.rst
+@@ -0,0 +1 @@
++Fixed ``caplog.get_records(when)`` returning stale records after :meth:`caplog.clear` was called.
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index a4f4214b1..1c5b64b7b 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -345,6 +345,10 @@ class LogCaptureHandler(logging_StreamHandler):
+         self.records = []
+         self.stream = StringIO()
+ 
++    def clear(self) -> None:
++        self.records.clear()
++        self.stream = StringIO()
++
+     def handleError(self, record: logging.LogRecord) -> None:
+         if logging.raiseExceptions:
+             # Fail the test if the log message is bad (emit failed).
+@@ -440,7 +444,7 @@ class LogCaptureFixture:
+ 
+     def clear(self) -> None:
+         """Reset the list of log records and the captured log text."""
+-        self.handler.reset()
++        self.handler.clear()
+ 
+     def set_level(self, level: Union[int, str], logger: Optional[str] = None) -> None:
+         """Set the level of a logger for the duration of a test.
+diff --git a/testing/logging/test_fixture.py b/testing/logging/test_fixture.py
+index bcb20de58..e3728f1e9 100644
+--- a/testing/logging/test_fixture.py
++++ b/testing/logging/test_fixture.py
+@@ -151,6 +151,19 @@ def test_clear(caplog):
+     assert not caplog.text
+ 
+ 
++def test_clear_for_call(caplog):
++    """Clearing records also updates the list returned by get_records (#9877)."""
++
++    def verify_consistency() -> None:
++        assert caplog.get_records("call") == caplog.records
++
++    verify_consistency()
++    logger.warning("test")
++    verify_consistency()
++    caplog.clear()
++    verify_consistency()
++
++
+ @pytest.fixture
+ def logging_during_setup_and_teardown(caplog):
+     caplog.set_level("INFO")

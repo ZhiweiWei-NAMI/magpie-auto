@@ -1,0 +1,19 @@
+{
+  "executionStatus": "agent_error",
+  "admittedModelRequests": 64,
+  "jevHTTP": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "errors": [
+    "dsh: UNKNOWN: Native child failed: \"error\""
+  ],
+  "modelUsageUnobserved": 0,
+  "note": "600-second timeouts and the 64-request task cap are local experiment limits, not OpenCode authentication, balance or rate-limit errors."
+}

@@ -1,0 +1,64 @@
+diff --git a/changelog/5516.bugfix.rst b/changelog/5516.bugfix.rst
+new file mode 100644
+index 0000000..e82a90a
+--- /dev/null
++++ b/changelog/5516.bugfix.rst
+@@ -0,0 +1,2 @@
++Fix ``ValueError`` when collecting tests which use ``unittest.mock.patch`` with a
++``new`` object whose truth value is ambiguous, such as a NumPy array.
+diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py
+index d238061..61c897f 100644
+--- a/src/_pytest/compat.py
++++ b/src/_pytest/compat.py
+@@ -68,7 +68,12 @@ def num_mock_patch_args(function):
+     if any(mock_modules):
+         sentinels = [m.DEFAULT for m in mock_modules if m is not None]
+         return len(
+-            [p for p in patchings if not p.attribute_name and p.new in sentinels]
++            [
++                p
++                for p in patchings
++                if not p.attribute_name
++                and any(p.new is sentinel for sentinel in sentinels)
++            ]
+         )
+     return len(patchings)
+ 
+diff --git a/testing/python/integration.py b/testing/python/integration.py
+index a6b8ddd..1f4e9b1 100644
+--- a/testing/python/integration.py
++++ b/testing/python/integration.py
+@@ -119,6 +119,33 @@ class TestMockDecoration:
+         values = getfuncargnames(f)
+         assert values == ("y", "z")
+ 
++    def test_getfuncargnames_patching_new_object(self):
++        # Regression test for #5516: patching with a "new" object whose
++        # truth value is ambiguous (e.g. a numpy array) should not raise
++        # a ValueError while collecting the test.
++        from _pytest.compat import getfuncargnames
++        from unittest.mock import patch
++
++        class AmbiguousTruth:
++            def __eq__(self, other):
++                raise ValueError("The truth value of an array is ambiguous")
++
++            def __bool__(self):
++                raise ValueError("The truth value of an array is ambiguous")
++
++            __nonzero__ = __bool__
++
++        class T:
++            def original(self, x, y, z):
++                pass
++
++        @patch.object(T, "original", AmbiguousTruth())
++        def f(x, y, z):
++            pass
++
++        values = getfuncargnames(f)
++        assert values == ("x", "y", "z")
++
+     def test_unittest_mock(self, testdir):
+         testdir.makepyfile(
+             """

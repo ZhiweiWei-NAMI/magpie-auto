@@ -1,0 +1,11 @@
+{
+  "purpose": "Independent plugin source-package validation, separate from the fixed programming benchmark",
+  "configured_execution_model": "dsh-workbuddy/deepseek-v4.1-flash",
+  "actual_model_in_native_usage": null,
+  "nativeAssistantResponses": 26,
+  "childrenStarted": 2,
+  "childrenCollected": 2,
+  "maxChildConcurrency": 2,
+  "testExitCode": 0,
+  "note": "Native journal usage is retained without treating inputTokens (uncached) as total input. Raw API accounting is used for the formal comparison."
+}

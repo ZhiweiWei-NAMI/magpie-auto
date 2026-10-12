@@ -1,0 +1,66 @@
+diff --git a/changelog/10094.bugfix.rst b/changelog/10094.bugfix.rst
+new file mode 100644
+index 000000000..6bd074ce6
+--- /dev/null
++++ b/changelog/10094.bugfix.rst
+@@ -0,0 +1 @@
++Fixed regression where running with ``--pdb`` would call :meth:`unittest.TestCase.tearDown` for tests skipped at the class level with :func:`unittest.skip`.
+diff --git a/src/_pytest/unittest.py b/src/_pytest/unittest.py
+index 851e4943b..3eeaa6cb6 100644
+--- a/src/_pytest/unittest.py
++++ b/src/_pytest/unittest.py
+@@ -316,7 +316,9 @@ class TestCaseFunction(Function):
+             # Arguably we could always postpone tearDown(), but this changes the moment where the
+             # TestCase instance interacts with the results object, so better to only do it
+             # when absolutely needed.
+-            if self.config.getoption("usepdb") and not _is_skipped(self.obj):
++            if self.config.getoption("usepdb") and not (
++                _is_skipped(self._testcase) or _is_skipped(self.obj)
++            ):
+                 self._explicit_tearDown = self._testcase.tearDown
+                 setattr(self._testcase, "tearDown", lambda *args: None)
+ 
+diff --git a/testing/test_unittest.py b/testing/test_unittest.py
+index fb3128145..2a6b15d42 100644
+--- a/testing/test_unittest.py
++++ b/testing/test_unittest.py
+@@ -1241,18 +1241,23 @@ def test_pdb_teardown_called(pytester: Pytester, monkeypatch: MonkeyPatch) -> No
+ 
+ 
+ @pytest.mark.parametrize("mark", ["@unittest.skip", "@pytest.mark.skip"])
++@pytest.mark.parametrize("class_level", [True, False], ids=["class", "function"])
+ def test_pdb_teardown_skipped(
+-    pytester: Pytester, monkeypatch: MonkeyPatch, mark: str
++    pytester: Pytester, monkeypatch: MonkeyPatch, mark: str, class_level: bool
+ ) -> None:
+     """With --pdb, setUp and tearDown should not be called for skipped tests."""
+     tracked: List[str] = []
+     monkeypatch.setattr(pytest, "test_pdb_teardown_skipped", tracked, raising=False)
+ 
++    klass_decorator = mark + '("skipped for reasons")' if class_level else ""
++    method_decorator = "" if class_level else mark + '("skipped for reasons")'
++
+     pytester.makepyfile(
+         """
+         import unittest
+         import pytest
+ 
++        {klass_decorator}
+         class MyTestCase(unittest.TestCase):
+ 
+             def setUp(self):
+@@ -1261,12 +1266,12 @@ def test_pdb_teardown_skipped(
+             def tearDown(self):
+                 pytest.test_pdb_teardown_skipped.append("tearDown:" + self.id())
+ 
+-            {mark}("skipped for reasons")
++            {method_decorator}
+             def test_1(self):
+                 pass
+ 
+     """.format(
+-            mark=mark
++            klass_decorator=klass_decorator, method_decorator=method_decorator
+         )
+     )
+     result = pytester.runpytest_inprocess("--pdb")

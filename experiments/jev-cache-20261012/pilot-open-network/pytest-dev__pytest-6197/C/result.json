@@ -1,0 +1,14 @@
+{
+  "instance_id": "pytest-dev__pytest-6197",
+  "arm": "C",
+  "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-6197:latest",
+  "sharedImagePreparationSeconds": 17.8262,
+  "solveAndExportSeconds": 284.3934,
+  "childrenStarted": 0,
+  "childrenCollected": 0,
+  "maxChildConcurrency": 0,
+  "executionStatus": "interrupted_for_isolation_repair",
+  "executionSeconds": null,
+  "patchBytes": 0,
+  "note": "Actual working-tree snapshot preserved before interruption. The open-network run is a pilot, not controlled comparison evidence."
+}

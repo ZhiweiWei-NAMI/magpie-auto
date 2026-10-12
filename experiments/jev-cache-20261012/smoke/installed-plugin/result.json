@@ -1,0 +1,13 @@
+{
+  "pluginVersion": "v0.2.2",
+  "installation": "Native dsh plugin add github:ZhiweiWei-NAMI/dsh-auto#v0.2.2; manual cordis.patch activation",
+  "agentExitCode": 0,
+  "testExitCode": 0,
+  "configuredExecutionModel": "dsh-workbuddy/deepseek-v4.1-flash",
+  "actualModelInNativeUsage": null,
+  "jevRequests": 1,
+  "childrenStarted": 0,
+  "childrenCollected": 0,
+  "nativeAssistantResponses": 5,
+  "note": "Installation/task validation, separate from the fixed SWE-bench comparison. API request wall time and complete per-HTTP accounting were not captured here; no missing fields are treated as zero."
+}

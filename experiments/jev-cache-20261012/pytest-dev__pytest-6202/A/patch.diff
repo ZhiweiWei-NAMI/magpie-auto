@@ -1,0 +1,8 @@
+diff --git a/changelog/6208.bugfix.rst b/changelog/6208.bugfix.rst
+new file mode 100644
+index 0000000..9a6be4c
+--- /dev/null
++++ b/changelog/6208.bugfix.rst
+@@ -0,0 +1,2 @@
++Fix the test headline and node id being mangled for parametrized tests whose
++id contains a ``.`` immediately followed by a ``[`` (for example ``.[``).

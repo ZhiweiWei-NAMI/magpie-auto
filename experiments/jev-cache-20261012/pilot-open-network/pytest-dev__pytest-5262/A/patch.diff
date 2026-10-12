@@ -1,0 +1,34 @@
+diff --git a/changelog/5265.bugfix.rst b/changelog/5265.bugfix.rst
+new file mode 100644
+index 00000000..1d6f9960
+--- /dev/null
++++ b/changelog/5265.bugfix.rst
+@@ -0,0 +1 @@
++Fix ``_pytest.capture.EncodedFile.mode`` to not report the underlying stream's binary flag (``b``), so that it looks like the text stream it emulates.
+diff --git a/src/_pytest/capture.py b/src/_pytest/capture.py
+index 25eab7fd..56017113 100644
+--- a/src/_pytest/capture.py
++++ b/src/_pytest/capture.py
+@@ -447,6 +447,10 @@ class EncodedFile(object):
+         """Ensure that file.name is a string."""
+         return repr(self.buffer)
+ 
++    @property
++    def mode(self):
++        return self.buffer.mode.replace("b", "")
++
+     def __getattr__(self, name):
+         return getattr(object.__getattribute__(self, "buffer"), name)
+ 
+diff --git a/testing/test_capture.py b/testing/test_capture.py
+index 5d80eb63..bd2b20d5 100644
+--- a/testing/test_capture.py
++++ b/testing/test_capture.py
+@@ -917,6 +917,7 @@ def test_dupfile(tmpfile):
+         assert nf != tmpfile
+         assert nf.fileno() != tmpfile.fileno()
+         assert nf not in flist
++        assert nf.mode == "w"  # buffering must not be advertised as binary
+         print(i, end="", file=nf)
+         flist.append(nf)
+ 

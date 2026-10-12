@@ -38,19 +38,31 @@ MAGPIE_ADDR=127.0.0.1:3435 ./magpie-auto web --addr 127.0.0.1:3436 --no-open
 
 安装并配置 [dsh-auto](https://github.com/ZhiweiWei-NAMI/dsh-auto#启用)。dsh 的独立 profile 用现有 Magpie 网关连接，主代理及 `subagent`、`subagent_fork` 都指定 `dsh-workbuddy/deepseek-v4.1-flash`。关闭插件并重新启用原生 `compaction-basic` 即恢复普通 dsh；无需改变模型服务连接。
 
+服务器已配置独立入口，进入你的任务目录后运行：
+
+```bash
+/mnt/data2/weizhiwei/magpie-auto/run-auto '你的编程任务'
+```
+
+此入口使用部署目录的 `dsh-auto-home/settings.yaml` 和 `dsh-auto-home/cordis.patch.yml`，全局 dsh 配置保持原样。最小独立 Jev 验证及实际结构化返回见 [两个小请求](experiments/jev-cache-20261012/jev-isolated/)。
+
 ## 上下文与缓存
 
 原始记录保留完整正文，修复了历史回答只保留前 1200 字节的问题。正常轮次保持系统提示、工具定义和历史顺序，新内容追加。调查子代理的完整结果经 dsh 原生会话记录追加给主代理。
 
 达到上下文压力阈值后，先用较小的 Jev 状态判断是否需要筛选。保留决定维持已有前缀；筛选决定才分批判断历史。较大的单条来源会完整分片判断，任一片段有用就保留整条来源。原始任务要求、最近的工具配对和原始日志保留。替换通过 dsh 原生压缩事务执行。
 
-网关把 dsh 原生会话标识传给现有 WorkBuddy 服务，以维持执行会话的账号绑定。Jev 决策与执行会话分别维护。输入变短不等于费用降低：实验分别记录实际缓存命中、未命中、输出和延迟。缺失字段标为不可观测。
+网关把 dsh 原生会话标识传给现有 WorkBuddy 服务。当前服务器的 8788 运行版本采用 `least_inflight`，实测仍逐次轮换账号，这个字段尚未产生会话绑定。Jev 决策与执行会话分别维护。输入变短不等于费用降低：实验分别记录实际缓存命中、未命中、输出和延迟。缺失字段标为不可观测。
 
 ## 实验
 
 [固定题单、运行配置及逐题记录](experiments/jev-cache-20261012/) 使用 SWE-bench Verified 与官方 Docker 评测，三组使用同一批题目、同一个执行模型和同一模型服务链路：A 开启 Auto/Jev；B 单主代理、关闭 Auto；C 原生可选子代理、关闭 Auto。环境下载、模型求解和官方评测分别记录。
 
-实际结果与局限见 [实验说明](experiments/jev-cache-20261012/README.md)。开发试跑的失败和中断单独保留，未当作正式比较结果。没有可靠的执行服务计费依据时不计算美元费用。Jev 官方目前标为限时免费，接口未提供价格或计费字段。
+固定十二题的 36 次求解均已官方判分：A 解决 6/12，B、C 各解决 8/12；求解及导出累计分别为 71.96、65.82、72.47 分钟。A 启动三个原生调查子代理，一位完成，另两位在同一题失败；C 自行选择了全部单代理执行。71 次 Jev 调用均成功，API 耗时合计 56.09 秒。
+
+三组全部解决的五题中，A 比 B 少 12.7% 未命中 token，但输出多 27.9%、耗时多 6.7%。本次没有证明 Auto 降低整体消耗或提高解决率。Jev 压力决策全部选择保留历史，没有发生实际上下文替换，筛选应用效果仍未验证。逐题补丁、真实用量、首次/后续请求、局限和复现命令见 [实验说明](experiments/jev-cache-20261012/README.md)。
+
+开发试跑的失败和中断单独保留；曾访问后续发行版源码的开放网络试跑不进入正式比较。取消请求缺失的 usage 未填零。没有可靠的执行服务计费依据时不计算美元费用。Jev [官方目前标为限时免费](https://opencode.ai/v2/docs/console/models#jev)，接口未提供价格或计费字段。
 
 接口与职责细节见 [Auto 与 dsh](docs/subsystems/auto-dsh.md)。原版功能与配置参考 [Magpie 官方文档](https://usemagpie.ai/docs/start) 和 [本仓库 reference](docs/reference.md)。上游提案另存为草稿，发送前由用户审阅。
 

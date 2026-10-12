@@ -1,0 +1,159 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-ce71c75e-2275-4183-9eee-9b2040463d55",
+      "tools": {
+        "bash": 28,
+        "read": 8,
+        "grep": 1,
+        "edit": 2,
+        "write": 1
+      },
+      "compactions": [
+        {
+          "type": "compaction/summary",
+          "time": 1791814694587,
+          "startTime": 1791814679309,
+          "compactionId": "28c15591-8e95-4b12-b840-e6d1a67be3ae",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 8,
+            "end": 39
+          },
+          "shadowedSeqs": [
+            8,
+            9,
+            13,
+            15,
+            17,
+            20,
+            64,
+            25,
+            27,
+            29,
+            32,
+            34,
+            37,
+            39
+          ],
+          "shadowedTokenCount": 8446,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 5344,
+            "outputTokens": 1747,
+            "totalTokens": 13747,
+            "cacheReadTokens": 6656,
+            "reasoningTokens": 553
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791814694587,
+          "startTime": 1791814679309,
+          "compactionId": "28c15591-8e95-4b12-b840-e6d1a67be3ae",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791814742336,
+          "startTime": 1791814730417,
+          "compactionId": "e1f6b229-45c1-4289-a284-e3e39e38e0c3",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 80,
+            "end": 71
+          },
+          "shadowedSeqs": [
+            80,
+            42,
+            44,
+            46,
+            49,
+            51,
+            54,
+            56,
+            59,
+            61,
+            67,
+            69,
+            71
+          ],
+          "shadowedTokenCount": 10433,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4302,
+            "outputTokens": 2366,
+            "totalTokens": 11788,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 851
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791814742337,
+          "startTime": 1791814730417,
+          "compactionId": "e1f6b229-45c1-4289-a284-e3e39e38e0c3",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791814829734,
+          "startTime": 1791814821009,
+          "compactionId": "9acc045e-e351-4d82-b416-afcd0940bd17",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 113,
+            "end": 129
+          },
+          "shadowedSeqs": [
+            113,
+            74,
+            76,
+            84,
+            86,
+            89,
+            90,
+            92,
+            95,
+            97,
+            99,
+            102,
+            104,
+            107,
+            109,
+            117,
+            119,
+            122,
+            124,
+            127,
+            129
+          ],
+          "shadowedTokenCount": 11977,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 628,
+            "outputTokens": 1891,
+            "totalTokens": 14423,
+            "cacheReadTokens": 11904,
+            "reasoningTokens": 13
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791814829735,
+          "startTime": 1791814821009,
+          "compactionId": "9acc045e-e351-4d82-b416-afcd0940bd17",
+          "turn": 1
+        }
+      ],
+      "delegationResults": []
+    }
+  ]
+}

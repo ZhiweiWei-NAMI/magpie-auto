@@ -1,0 +1,35 @@
+[
+  {
+    "at": "2026-10-12T14:46:50.026Z",
+    "kind": "root_start",
+    "session": "session-398ba7ff-18d6-45af-8e3b-c3ef91a7c712"
+  },
+  {
+    "at": "2026-10-12T14:46:51.077Z",
+    "kind": "jev",
+    "session": "session-398ba7ff-18d6-45af-8e3b-c3ef91a7c712",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 1049.6133060000002,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.64,
+        "probabilities": {
+          "parallel": 0.04,
+          "review": 0.2,
+          "single": 0.76
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2196,
+      "output_tokens": 38
+    },
+    "elapsedMs": 992.716
+  }
+]

@@ -1,0 +1,2 @@
+{"localModelStatus": 200, "deepseekPresent": true}
+URLError: <urlopen error [Errno -3] Temporary failure in name resolution>

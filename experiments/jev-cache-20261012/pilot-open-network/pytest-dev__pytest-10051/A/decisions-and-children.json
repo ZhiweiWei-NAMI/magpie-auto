@@ -1,0 +1,111 @@
+[
+  {
+    "at": "2026-10-12T14:05:00.242Z",
+    "kind": "root_start",
+    "session": "session-86602252-3da8-4016-9eae-8555056cd4f0"
+  },
+  {
+    "at": "2026-10-12T14:05:00.944Z",
+    "kind": "jev",
+    "session": "session-86602252-3da8-4016-9eae-8555056cd4f0",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 692.2497770000002,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.58,
+        "probabilities": {
+          "parallel": 0.07,
+          "review": 0.21,
+          "single": 0.72
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1162,
+      "output_tokens": 38
+    },
+    "elapsedMs": 633.453
+  },
+  {
+    "at": "2026-10-12T14:06:42.841Z",
+    "kind": "jev",
+    "session": "session-86602252-3da8-4016-9eae-8555056cd4f0",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 915.610274000006,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_51",
+      "event_54",
+      "event_56"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.88,
+        "probabilities": {
+          "keep": 0.94,
+          "select": 0.06
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3762,
+      "output_tokens": 31
+    },
+    "elapsedMs": 907.985
+  },
+  {
+    "at": "2026-10-12T14:06:42.842Z",
+    "kind": "context_kept",
+    "session": "session-86602252-3da8-4016-9eae-8555056cd4f0",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 25722
+  },
+  {
+    "at": "2026-10-12T14:07:29.586Z",
+    "kind": "jev",
+    "session": "session-86602252-3da8-4016-9eae-8555056cd4f0",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 623.9505889999855,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_66",
+      "event_69",
+      "event_71"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.58,
+        "probabilities": {
+          "keep": 0.79,
+          "select": 0.21
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 4860,
+      "output_tokens": 31
+    },
+    "elapsedMs": 616.595
+  },
+  {
+    "at": "2026-10-12T14:07:29.587Z",
+    "kind": "context_kept",
+    "session": "session-86602252-3da8-4016-9eae-8555056cd4f0",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 33818
+  }
+]

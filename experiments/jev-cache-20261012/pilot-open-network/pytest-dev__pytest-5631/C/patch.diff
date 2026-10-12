@@ -1,0 +1,59 @@
+diff --git a/src/_pytest/compat.py b/src/_pytest/compat.py
+index d238061b4..61c897f06 100644
+--- a/src/_pytest/compat.py
++++ b/src/_pytest/compat.py
+@@ -68,7 +68,12 @@ def num_mock_patch_args(function):
+     if any(mock_modules):
+         sentinels = [m.DEFAULT for m in mock_modules if m is not None]
+         return len(
+-            [p for p in patchings if not p.attribute_name and p.new in sentinels]
++            [
++                p
++                for p in patchings
++                if not p.attribute_name
++                and any(p.new is sentinel for sentinel in sentinels)
++            ]
+         )
+     return len(patchings)
+ 
+diff --git a/testing/python/integration.py b/testing/python/integration.py
+index a6b8dddf3..373354052 100644
+--- a/testing/python/integration.py
++++ b/testing/python/integration.py
+@@ -119,6 +119,36 @@ class TestMockDecoration:
+         values = getfuncargnames(f)
+         assert values == ("y", "z")
+ 
++    def test_getfuncargnames_patching_with_array(self):
++        from _pytest.compat import getfuncargnames
++        from unittest.mock import patch
++
++        class T:
++            def original(self, x, y, z):
++                pass
++
++        # Mirrors numpy arrays: comparing to another object yields an object
++        # whose truth value is ambiguous, which used to raise ValueError while
++        # checking ``p.new in sentinels``.
++        class ArrayLike:
++            def __eq__(self, other):
++                return self
++
++            def __bool__(self):
++                raise ValueError(
++                    "The truth value of an array with more than one element "
++                    "is ambiguous."
++                )
++
++        @patch.object(T, "original", new=ArrayLike())
++        def f(x, y, z):
++            pass
++
++        # An explicit ``new`` is not the DEFAULT sentinel, so no argument is
++        # consumed by the patch; the important part is that this does not raise.
++        values = getfuncargnames(f)
++        assert values == ("x", "y", "z")
++
+     def test_unittest_mock(self, testdir):
+         testdir.makepyfile(
+             """

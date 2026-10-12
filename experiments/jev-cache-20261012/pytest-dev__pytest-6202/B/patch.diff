@@ -1,0 +1,48 @@
+diff --git a/changelog/6203.bugfix.rst b/changelog/6203.bugfix.rst
+new file mode 100644
+index 0000000..5b1473d
+--- /dev/null
++++ b/changelog/6203.bugfix.rst
+@@ -0,0 +1 @@
++Fix test node ids containing ``.[`` (such as a parametrized id ``..[``) being corrupted in test report headlines, which showed ``[`` instead.
+diff --git a/src/_pytest/python.py b/src/_pytest/python.py
+index b8b365a..5f2af31 100644
+--- a/src/_pytest/python.py
++++ b/src/_pytest/python.py
+@@ -286,7 +286,7 @@ class PyobjMixin(PyobjContext):
+             parts.append(name)
+         parts.reverse()
+         s = ".".join(parts)
+-        return s.replace(".[", "[")
++        return s
+ 
+     def reportinfo(self):
+         # XXX caching?
+diff --git a/testing/test_collection.py b/testing/test_collection.py
+index 8050e80..2cd4d62 100644
+--- a/testing/test_collection.py
++++ b/testing/test_collection.py
+@@ -711,6 +711,23 @@ class Test_genitems:
+         assert s.endswith("test_example_items1.testone")
+         print(s)
+ 
++    def test_getmodpath_with_dot_bracket(self, testdir):
++        # Node ids containing ".[" must not be corrupted (e.g. "..[").
++        p = testdir.makepyfile(
++            """
++            import pytest
++
++            @pytest.mark.parametrize("a", ["..["])
++            def test_boo(a):
++                pass
++        """
++        )
++        items, reprec = testdir.inline_genitems(p)
++        assert len(items) == 1
++        # the ".[" sequence in the node id must not be corrupted.
++        assert items[0].getmodpath() == "test_boo[..[]"
++        assert items[0].reportinfo()[2] == "test_boo[..[]"
++
+     def test_class_and_functions_discovery_using_glob(self, testdir):
+         """
+         tests that python_classes and python_functions config options work

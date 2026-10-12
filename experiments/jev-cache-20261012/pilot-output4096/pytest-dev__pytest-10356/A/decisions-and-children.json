@@ -1,0 +1,45 @@
+[
+  {
+    "at": "2026-10-12T13:03:11.458Z",
+    "kind": "root_start",
+    "session": "session-45cf7efb-e876-47ed-a611-32ce2b322eda"
+  },
+  {
+    "at": "2026-10-12T13:03:12.916Z",
+    "kind": "jev",
+    "session": "session-45cf7efb-e876-47ed-a611-32ce2b322eda",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 1457.681622,
+    "model": "jev-1.13-free",
+    "action": "review",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "review",
+        "confidence": 0.07,
+        "probabilities": {
+          "parallel": 0.37,
+          "review": 0.38,
+          "single": 0.25
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2124,
+      "output_tokens": 38
+    },
+    "elapsedMs": 1408.155
+  },
+  {
+    "at": "2026-10-12T13:03:13.029Z",
+    "kind": "child_start",
+    "runId": "76759263-1e44-4882-904c-ecde45291712",
+    "provider": "spawn",
+    "id": "1dbcfaf3-b5e1-4cbd-9f8d-eb2204b72a66",
+    "local": true,
+    "parent": "session-45cf7efb-e876-47ed-a611-32ce2b322eda",
+    "active": 1
+  }
+]

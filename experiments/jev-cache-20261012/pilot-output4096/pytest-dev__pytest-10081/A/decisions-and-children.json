@@ -1,0 +1,148 @@
+[
+  {
+    "at": "2026-10-12T12:55:42.408Z",
+    "kind": "root_start",
+    "session": "session-cf46db3b-1691-4759-8656-94779d4308ac"
+  },
+  {
+    "at": "2026-10-12T12:55:43.484Z",
+    "kind": "jev",
+    "session": "session-cf46db3b-1691-4759-8656-94779d4308ac",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 1075.2714459999997,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.25,
+        "probabilities": {
+          "parallel": 0.23,
+          "review": 0.27,
+          "single": 0.5
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2643,
+      "output_tokens": 38
+    },
+    "elapsedMs": 1033.651
+  },
+  {
+    "at": "2026-10-12T12:57:10.617Z",
+    "kind": "jev",
+    "session": "session-cf46db3b-1691-4759-8656-94779d4308ac",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 835.8908799999917,
+    "model": "jev-1.13-free",
+    "selectedIds": [
+      "message_0",
+      "message_1",
+      "message_2",
+      "message_3",
+      "message_4",
+      "message_5",
+      "message_6",
+      "message_7",
+      "message_8",
+      "message_9",
+      "message_10",
+      "message_11",
+      "message_12",
+      "message_13",
+      "message_14",
+      "message_15",
+      "message_16",
+      "message_17",
+      "message_18"
+    ],
+    "answers": {
+      "keep_0": {
+        "type": "noul",
+        "noul": 0.42
+      },
+      "keep_1": {
+        "type": "noul",
+        "noul": 0.54
+      },
+      "keep_10": {
+        "type": "noul",
+        "noul": 0.69
+      },
+      "keep_11": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "keep_12": {
+        "type": "noul",
+        "noul": 0.66
+      },
+      "keep_13": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "keep_14": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "keep_15": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "keep_16": {
+        "type": "noul",
+        "noul": 0.69
+      },
+      "keep_17": {
+        "type": "noul",
+        "noul": 0.71
+      },
+      "keep_18": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "keep_2": {
+        "type": "noul",
+        "noul": 0.51
+      },
+      "keep_3": {
+        "type": "noul",
+        "noul": 0.46
+      },
+      "keep_4": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "keep_5": {
+        "type": "noul",
+        "noul": 0.5
+      },
+      "keep_6": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "keep_7": {
+        "type": "noul",
+        "noul": 0.72
+      },
+      "keep_8": {
+        "type": "noul",
+        "noul": 0.84
+      },
+      "keep_9": {
+        "type": "noul",
+        "noul": 0.69
+      }
+    },
+    "usage": {
+      "input_tokens": 17769,
+      "output_tokens": 355
+    },
+    "elapsedMs": 831.152
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "purpose": "Early native B/C chain validation, not part of the controlled benchmark",
+  "arm": "B",
+  "sessions": [
+    {
+      "session": "session-67114322-19cc-495c-a69b-41b52eacdf62",
+      "parent": null
+    }
+  ],
+  "tools": {
+    "bash": 2,
+    "read": 3,
+    "write": 2,
+    "edit": 1
+  },
+  "nativeUsageEvents": 6,
+  "testExitCode": 0,
+  "apiWallTime": null,
+  "actualModelInNativeUsage": null,
+  "note": "Raw per-HTTP accounting was not captured in this early check. Configured model was dsh-workbuddy/deepseek-v4.1-flash; absent counters are not zero."
+}

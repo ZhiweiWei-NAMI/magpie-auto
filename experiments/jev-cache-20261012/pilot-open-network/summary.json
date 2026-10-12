@@ -1,0 +1,446 @@
+{
+  "A": {
+    "tasks": 8,
+    "officialResolved": 6,
+    "ungraded": 0,
+    "solveSecondsObserved": 1810.9485,
+    "solveSecondsUnobserved": 0,
+    "modelRequests": 330,
+    "childrenStarted": 3,
+    "maxChildConcurrency": 2,
+    "deepseek": {
+      "input": {
+        "observed": 5793033,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 192671,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 4324223,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 1468810,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "jev": {
+      "input": {
+        "observed": 105932,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 893,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workload": {
+      "input": {
+        "observed": 5898965,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 193564,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "contextReplacements": 0,
+    "firstAndLaterRequests": {
+      "first": {
+        "requests": 10,
+        "input": {
+          "observed": 64683,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1519,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 57087,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 7596,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "later": {
+        "requests": 293,
+        "input": {
+          "observed": 5728350,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 191152,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 4267136,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 1461214,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "nonAppendRequests": 0,
+    "systemChanges": 0,
+    "toolChanges": 0,
+    "compactionRequests": 0,
+    "requestSeconds": {
+      "main": {
+        "observed": 870.7932000000003,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "child": {
+        "observed": 568.3605000000001,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "jev": {
+        "observed": 21.700599999999998,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "unattributed": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "jevDecisionSecondsObserved": 21.638126999999997,
+    "jevDecisionTimeUnobserved": 0,
+    "accountChangesObserved": 293,
+    "prefixByPurpose": {
+      "execution": {
+        "requests": 303,
+        "nonAppend": 0,
+        "systemChanges": 0,
+        "toolChanges": 0
+      },
+      "compaction": {
+        "requests": 0,
+        "nonAppend": 0,
+        "systemChanges": 0,
+        "toolChanges": 0
+      }
+    }
+  },
+  "B": {
+    "tasks": 8,
+    "officialResolved": 8,
+    "ungraded": 0,
+    "solveSecondsObserved": 2024.3008,
+    "solveSecondsUnobserved": 0,
+    "modelRequests": 302,
+    "childrenStarted": 0,
+    "maxChildConcurrency": 0,
+    "deepseek": {
+      "input": {
+        "observed": 4100011,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 192797,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 2166271,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 1933740,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "jev": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workload": {
+      "input": {
+        "observed": 4100011,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 192797,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "contextReplacements": 0,
+    "firstAndLaterRequests": {
+      "first": {
+        "requests": 8,
+        "input": {
+          "observed": 49644,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1133,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 42495,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 7149,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "later": {
+        "requests": 294,
+        "input": {
+          "observed": 4050367,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 191664,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 2123776,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 1926591,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      }
+    },
+    "nonAppendRequests": 38,
+    "systemChanges": 0,
+    "toolChanges": 0,
+    "compactionRequests": 16,
+    "requestSeconds": {
+      "main": {
+        "observed": 1423.2334000000003,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "child": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "jev": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "unattributed": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "jevDecisionSecondsObserved": 0,
+    "jevDecisionTimeUnobserved": 0,
+    "accountChangesObserved": 294,
+    "prefixByPurpose": {
+      "execution": {
+        "requests": 286,
+        "nonAppend": 22,
+        "systemChanges": 0,
+        "toolChanges": 0
+      },
+      "compaction": {
+        "requests": 16,
+        "nonAppend": 16,
+        "systemChanges": 0,
+        "toolChanges": 0
+      }
+    }
+  },
+  "C": {
+    "tasks": 9,
+    "officialResolved": 7,
+    "ungraded": 0,
+    "solveSecondsObserved": 2348.8393,
+    "solveSecondsUnobserved": 0,
+    "modelRequests": 358,
+    "childrenStarted": 0,
+    "maxChildConcurrency": 0,
+    "deepseek": {
+      "input": {
+        "observed": 4923097,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 263500,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 2590592,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 2332505,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "jev": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workload": {
+      "input": {
+        "observed": 4923097,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 263500,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "contextReplacements": 0,
+    "firstAndLaterRequests": {
+      "first": {
+        "requests": 9,
+        "input": {
+          "observed": 56021,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1484,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 49152,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 6869,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "later": {
+        "requests": 349,
+        "input": {
+          "observed": 4867076,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 262016,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 2541440,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 2325636,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      }
+    },
+    "nonAppendRequests": 54,
+    "systemChanges": 0,
+    "toolChanges": 0,
+    "compactionRequests": 23,
+    "requestSeconds": {
+      "main": {
+        "observed": 1811.5177000000006,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "child": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "jev": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "unattributed": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "jevDecisionSecondsObserved": 0,
+    "jevDecisionTimeUnobserved": 0,
+    "accountChangesObserved": 349,
+    "prefixByPurpose": {
+      "execution": {
+        "requests": 335,
+        "nonAppend": 31,
+        "systemChanges": 0,
+        "toolChanges": 0
+      },
+      "compaction": {
+        "requests": 23,
+        "nonAppend": 23,
+        "systemChanges": 0,
+        "toolChanges": 0
+      }
+    }
+  }
+}

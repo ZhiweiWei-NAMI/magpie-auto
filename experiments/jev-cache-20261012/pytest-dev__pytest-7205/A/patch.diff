@@ -1,0 +1,91 @@
+diff --git a/changelog/7151.bugfix.rst b/changelog/7151.bugfix.rst
+new file mode 100644
+index 0000000..1d5d7ba
+--- /dev/null
++++ b/changelog/7151.bugfix.rst
+@@ -0,0 +1,2 @@
++Fixed ``BytesWarning`` when using ``--setup-show`` with a bytes fixture
++parameter.
+diff --git a/src/_pytest/setuponly.py b/src/_pytest/setuponly.py
+index c9cc589..9fc218a 100644
+--- a/src/_pytest/setuponly.py
++++ b/src/_pytest/setuponly.py
+@@ -1,4 +1,5 @@
+ import pytest
++from _pytest._io.saferepr import saferepr
+ 
+ 
+ def pytest_addoption(parser):
+@@ -66,7 +67,7 @@ def _show_fixture_action(fixturedef, msg):
+             tw.write(" (fixtures used: {})".format(", ".join(deps)))
+ 
+     if hasattr(fixturedef, "cached_param"):
+-        tw.write("[{}]".format(fixturedef.cached_param))
++        tw.write("[{}]".format(saferepr(fixturedef.cached_param)))
+ 
+     tw.flush()
+ 
+diff --git a/testing/test_setuponly.py b/testing/test_setuponly.py
+index e26a33d..0cc5976 100644
+--- a/testing/test_setuponly.py
++++ b/testing/test_setuponly.py
+@@ -1,3 +1,5 @@
++import sys
++
+ import pytest
+ from _pytest.config import ExitCode
+ 
+@@ -146,10 +148,10 @@ def test_show_fixtures_with_parameters(testdir, mode):
+ 
+     result.stdout.fnmatch_lines(
+         [
+-            "SETUP    S arg_same?foo?",
+-            "TEARDOWN S arg_same?foo?",
+-            "SETUP    S arg_same?bar?",
+-            "TEARDOWN S arg_same?bar?",
++            "SETUP    S arg_same['foo']",
++            "TEARDOWN S arg_same['foo']",
++            "SETUP    S arg_same['bar']",
++            "TEARDOWN S arg_same['bar']",
+         ]
+     )
+ 
+@@ -179,7 +181,7 @@ def test_show_fixtures_with_parameter_ids(testdir, mode):
+     assert result.ret == 0
+ 
+     result.stdout.fnmatch_lines(
+-        ["SETUP    S arg_same?spam?", "SETUP    S arg_same?ham?"]
++        ["SETUP    S arg_same['spam']", "SETUP    S arg_same['ham']"]
+     )
+ 
+ 
+@@ -198,7 +200,28 @@ def test_show_fixtures_with_parameter_ids_function(testdir, mode):
+     result = testdir.runpytest(mode, p)
+     assert result.ret == 0
+ 
+-    result.stdout.fnmatch_lines(["*SETUP    F foobar?FOO?", "*SETUP    F foobar?BAR?"])
++    result.stdout.fnmatch_lines(
++        ["        SETUP    F foobar['FOO']", "        SETUP    F foobar['BAR']"]
++    )
++
++
++def test_show_fixtures_with_bytes_parameter(testdir):
++    """Bytes parameters should not raise a BytesWarning (#7151)."""
++    p = testdir.makepyfile(
++        """
++        import pytest
++        @pytest.fixture(params=[b'Hello World'])
++        def foobar(request):
++            pass
++        def test_foobar(foobar):
++            pass
++    """
++    )
++
++    result = testdir.run(sys.executable, "-bb", "-m", "pytest", "--setup-show", str(p))
++    assert result.ret == 0
++
++    result.stdout.fnmatch_lines(["*SETUP    F foobar?b'Hello World'?"])
+ 
+ 
+ def test_dynamic_fixture_request(testdir):

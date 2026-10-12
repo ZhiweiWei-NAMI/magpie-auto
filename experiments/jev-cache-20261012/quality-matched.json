@@ -1,0 +1,147 @@
+{
+  "selection": "Tasks officially resolved by all three groups; full-group failures remain in summary.json.",
+  "tasks": [
+    "pytest-dev__pytest-10051",
+    "pytest-dev__pytest-10081",
+    "pytest-dev__pytest-5262",
+    "pytest-dev__pytest-5631",
+    "pytest-dev__pytest-5809"
+  ],
+  "groups": {
+    "A": {
+      "tasks": 5,
+      "solveSeconds": 815.9029,
+      "modelRequests": 143,
+      "childrenStarted": 0,
+      "deepseek": {
+        "input": {
+          "observed": 1876892,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 111286,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 1275648,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 601244,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "input": {
+          "observed": 40021,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 407,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jevProxySeconds": {
+        "observed": 9.929400000000001,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "B": {
+      "tasks": 5,
+      "solveSeconds": 764.4850000000001,
+      "modelRequests": 131,
+      "childrenStarted": 0,
+      "deepseek": {
+        "input": {
+          "observed": 1545019,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 87032,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 856064,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 688955,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jevProxySeconds": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "C": {
+      "tasks": 5,
+      "solveSeconds": 838.5137,
+      "modelRequests": 135,
+      "childrenStarted": 0,
+      "deepseek": {
+        "input": {
+          "observed": 1546200,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 93764,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 941696,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 604504,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jevProxySeconds": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    }
+  }
+}

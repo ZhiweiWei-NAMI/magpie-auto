@@ -1,0 +1,149 @@
+[
+  {
+    "at": "2026-10-12T15:43:51.275Z",
+    "kind": "root_start",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024"
+  },
+  {
+    "at": "2026-10-12T15:43:52.299Z",
+    "kind": "jev",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 1022.9888269999997,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.34,
+        "probabilities": {
+          "parallel": 0.15,
+          "review": 0.29,
+          "single": 0.56
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 818,
+      "output_tokens": 38
+    },
+    "elapsedMs": 970.999
+  },
+  {
+    "at": "2026-10-12T15:46:43.016Z",
+    "kind": "jev",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 1025.7788129999826,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_60",
+      "event_63",
+      "event_65"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.8,
+        "probabilities": {
+          "keep": 0.9,
+          "select": 0.1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3802,
+      "output_tokens": 31
+    },
+    "elapsedMs": 1016.144
+  },
+  {
+    "at": "2026-10-12T15:46:43.017Z",
+    "kind": "context_kept",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 25961
+  },
+  {
+    "at": "2026-10-12T15:47:34.967Z",
+    "kind": "jev",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 649.5167730000103,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_90",
+      "event_93",
+      "event_95"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.86,
+        "probabilities": {
+          "keep": 0.93,
+          "select": 0.07
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1952,
+      "output_tokens": 31
+    },
+    "elapsedMs": 640.778
+  },
+  {
+    "at": "2026-10-12T15:47:34.968Z",
+    "kind": "context_kept",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 34648
+  },
+  {
+    "at": "2026-10-12T15:49:24.552Z",
+    "kind": "jev",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 968.9532879999606,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_145",
+      "event_148",
+      "event_150"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.9,
+        "probabilities": {
+          "keep": 0.95,
+          "select": 0.05
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2087,
+      "output_tokens": 31
+    },
+    "elapsedMs": 956.743
+  },
+  {
+    "at": "2026-10-12T15:49:24.558Z",
+    "kind": "context_kept",
+    "session": "session-6ae7d216-5ee0-4107-9295-40f153e75024",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 42763
+  }
+]

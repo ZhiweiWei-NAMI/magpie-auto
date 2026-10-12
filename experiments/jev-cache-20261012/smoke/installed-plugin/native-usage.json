@@ -1,0 +1,57 @@
+[
+  {
+    "session": "session-234c71c7-b2dc-430d-af58-f824e54594da",
+    "time": 1791820758947,
+    "usage": {
+      "inputTokens": 7211,
+      "outputTokens": 83,
+      "totalTokens": 7550,
+      "cacheReadTokens": 256,
+      "reasoningTokens": 7
+    }
+  },
+  {
+    "session": "session-234c71c7-b2dc-430d-af58-f824e54594da",
+    "time": 1791820760596,
+    "usage": {
+      "inputTokens": 7427,
+      "outputTokens": 70,
+      "totalTokens": 7753,
+      "cacheReadTokens": 256,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "session": "session-234c71c7-b2dc-430d-af58-f824e54594da",
+    "time": 1791820763939,
+    "usage": {
+      "inputTokens": 7853,
+      "outputTokens": 451,
+      "totalTokens": 8560,
+      "cacheReadTokens": 256,
+      "reasoningTokens": 156
+    }
+  },
+  {
+    "session": "session-234c71c7-b2dc-430d-af58-f824e54594da",
+    "time": 1791820766154,
+    "usage": {
+      "inputTokens": 8205,
+      "outputTokens": 113,
+      "totalTokens": 8574,
+      "cacheReadTokens": 256,
+      "reasoningTokens": 49
+    }
+  },
+  {
+    "session": "session-234c71c7-b2dc-430d-af58-f824e54594da",
+    "time": 1791820769009,
+    "usage": {
+      "inputTokens": 8361,
+      "outputTokens": 318,
+      "totalTokens": 8935,
+      "cacheReadTokens": 256,
+      "reasoningTokens": 6
+    }
+  }
+]

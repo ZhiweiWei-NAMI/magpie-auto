@@ -1,0 +1,364 @@
+[
+  {
+    "at": "2026-10-12T13:46:37.462Z",
+    "kind": "root_start",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3"
+  },
+  {
+    "at": "2026-10-12T13:46:39.027Z",
+    "kind": "jev",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 1564.6496000000002,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.11,
+        "probabilities": {
+          "parallel": 0.2,
+          "review": 0.39,
+          "single": 0.41
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2643,
+      "output_tokens": 38
+    },
+    "elapsedMs": 1519.594
+  },
+  {
+    "at": "2026-10-12T13:47:51.579Z",
+    "kind": "jev",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 1314.1734700000088,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_9",
+      "event_13",
+      "event_15",
+      "event_17",
+      "event_20",
+      "event_22",
+      "event_24",
+      "event_27",
+      "event_29",
+      "event_32",
+      "event_34",
+      "event_36",
+      "event_39",
+      "event_42",
+      "event_43",
+      "event_46",
+      "event_48",
+      "event_50"
+    ],
+    "answers": {
+      "keep_0": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "keep_1": {
+        "type": "noul",
+        "noul": 0.54
+      },
+      "keep_10": {
+        "type": "noul",
+        "noul": 0.47
+      },
+      "keep_11": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "keep_12": {
+        "type": "noul",
+        "noul": 0.79
+      },
+      "keep_13": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "keep_14": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "keep_15": {
+        "type": "noul",
+        "noul": 0.75
+      },
+      "keep_16": {
+        "type": "noul",
+        "noul": 0.54
+      },
+      "keep_17": {
+        "type": "noul",
+        "noul": 0.88
+      },
+      "keep_2": {
+        "type": "noul",
+        "noul": 0.45
+      },
+      "keep_3": {
+        "type": "noul",
+        "noul": 0.58
+      },
+      "keep_4": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "keep_5": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "keep_6": {
+        "type": "noul",
+        "noul": 0.66
+      },
+      "keep_7": {
+        "type": "noul",
+        "noul": 0.77
+      },
+      "keep_8": {
+        "type": "noul",
+        "noul": 0.88
+      },
+      "keep_9": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.72,
+        "probabilities": {
+          "keep": 0.86,
+          "select": 0.14
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 18536,
+      "output_tokens": 363
+    },
+    "elapsedMs": 1308.849
+  },
+  {
+    "at": "2026-10-12T13:47:51.580Z",
+    "kind": "context_kept",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 25137
+  },
+  {
+    "at": "2026-10-12T13:48:48.056Z",
+    "kind": "jev",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 1134.8498280000058,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_9",
+      "event_13",
+      "event_15",
+      "event_17",
+      "event_20",
+      "event_22",
+      "event_24",
+      "event_27",
+      "event_29",
+      "event_32",
+      "event_34",
+      "event_36",
+      "event_39",
+      "event_42",
+      "event_43",
+      "event_46",
+      "event_48",
+      "event_50",
+      "event_53",
+      "event_55",
+      "event_57",
+      "event_60",
+      "event_62",
+      "event_65",
+      "event_67",
+      "event_70",
+      "event_72",
+      "event_75",
+      "event_77",
+      "event_80",
+      "event_82"
+    ],
+    "answers": {
+      "keep_0": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "keep_1": {
+        "type": "noul",
+        "noul": 0.52
+      },
+      "keep_10": {
+        "type": "noul",
+        "noul": 0.41
+      },
+      "keep_11": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "keep_12": {
+        "type": "noul",
+        "noul": 0.67
+      },
+      "keep_13": {
+        "type": "noul",
+        "noul": 0.7
+      },
+      "keep_14": {
+        "type": "noul",
+        "noul": 0.66
+      },
+      "keep_15": {
+        "type": "noul",
+        "noul": 0.73
+      },
+      "keep_16": {
+        "type": "noul",
+        "noul": 0.49
+      },
+      "keep_17": {
+        "type": "noul",
+        "noul": 0.8
+      },
+      "keep_18": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "keep_19": {
+        "type": "noul",
+        "noul": 0.39
+      },
+      "keep_2": {
+        "type": "noul",
+        "noul": 0.47
+      },
+      "keep_20": {
+        "type": "noul",
+        "noul": 0.76
+      },
+      "keep_21": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "keep_22": {
+        "type": "noul",
+        "noul": 0.81
+      },
+      "keep_23": {
+        "type": "noul",
+        "noul": 0.78
+      },
+      "keep_24": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "keep_25": {
+        "type": "noul",
+        "noul": 0.62
+      },
+      "keep_26": {
+        "type": "noul",
+        "noul": 0.43
+      },
+      "keep_27": {
+        "type": "noul",
+        "noul": 0.61
+      },
+      "keep_28": {
+        "type": "noul",
+        "noul": 0.69
+      },
+      "keep_29": {
+        "type": "noul",
+        "noul": 0.67
+      },
+      "keep_3": {
+        "type": "noul",
+        "noul": 0.54
+      },
+      "keep_30": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "keep_4": {
+        "type": "noul",
+        "noul": 0.59
+      },
+      "keep_5": {
+        "type": "noul",
+        "noul": 0.74
+      },
+      "keep_6": {
+        "type": "noul",
+        "noul": 0.63
+      },
+      "keep_7": {
+        "type": "noul",
+        "noul": 0.74
+      },
+      "keep_8": {
+        "type": "noul",
+        "noul": 0.83
+      },
+      "keep_9": {
+        "type": "noul",
+        "noul": 0.64
+      },
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.5,
+        "probabilities": {
+          "keep": 0.75,
+          "select": 0.25
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 33848,
+      "output_tokens": 610
+    },
+    "elapsedMs": 1124.062
+  },
+  {
+    "at": "2026-10-12T13:48:48.058Z",
+    "kind": "context_kept",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 33587
+  },
+  {
+    "at": "2026-10-12T13:49:38.690Z",
+    "kind": "jev",
+    "session": "session-de9888ff-41d2-42b0-9d41-4aa7f79a3cf3",
+    "trigger": "pressure",
+    "httpStatus": 502,
+    "wallMs": 1291.056733000005,
+    "decision": {
+      "selectedIds": null,
+      "elapsedMs": 1283.675,
+      "httpStatus": 400
+    },
+    "error": "Jev HTTP 400: {\"detail\":{\"error_type\":\"max_tokens_exceeded\"}}"
+  }
+]

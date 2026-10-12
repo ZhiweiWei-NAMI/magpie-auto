@@ -1,0 +1,9 @@
+test_bounds (test_ports.PortTests) ... ok
+test_invalid_bounds (test_ports.PortTests) ... ok
+test_invalid_strings (test_ports.PortTests) ... ok
+test_invalid_types (test_ports.PortTests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

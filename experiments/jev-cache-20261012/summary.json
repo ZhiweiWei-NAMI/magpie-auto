@@ -1,0 +1,818 @@
+{
+  "A": {
+    "tasks": 12,
+    "officialResolved": 6,
+    "ungraded": 0,
+    "solveSecondsObserved": 4317.4697,
+    "solveSecondsUnobserved": 0,
+    "modelRequests": 544,
+    "executionStatuses": {
+      "agent_error": 3,
+      "finished": 5,
+      "timeout": 4
+    },
+    "childrenStarted": {
+      "observed": 3,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "childrenCollected": {
+      "observed": 3,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "childrenCompletedObserved": 1,
+    "maxChildConcurrencyObserved": 2,
+    "childConcurrencyUnobservedTasks": 0,
+    "deepseek": {
+      "input": {
+        "observed": 9079454,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "output": {
+        "observed": 638404,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 6477568,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 2601886,
+        "unobserved_requests": 3,
+        "complete": false
+      }
+    },
+    "jev": {
+      "input": {
+        "observed": 293226,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 2285,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workload": {
+      "input": {
+        "observed": 9372680,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "output": {
+        "observed": 640689,
+        "unobserved_requests": 3,
+        "complete": false
+      }
+    },
+    "contextReplacements": 0,
+    "firstAndLaterRequests": {
+      "first": {
+        "requests": 14,
+        "input": {
+          "observed": 90361,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 2083,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 72704,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 17657,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "elapsed_seconds": {
+          "observed": 23.6601,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "later": {
+        "requests": 459,
+        "input": {
+          "observed": 8989093,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "output": {
+          "observed": 636321,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 6404864,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 2584229,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "elapsed_seconds": {
+          "observed": 3610.1289999999976,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "nonAppendRequests": 0,
+    "systemChanges": 0,
+    "toolChanges": 0,
+    "compactionRequests": 0,
+    "requestSeconds": {
+      "main": {
+        "observed": 2803.186499999999,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "child": {
+        "observed": 830.6026000000002,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "jev": {
+        "observed": 56.263900000000035,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "unattributed": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "roles": {
+      "main": {
+        "requests": 369,
+        "input": {
+          "observed": 6538612,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "output": {
+          "observed": 489063,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 4648064,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 1890548,
+          "unobserved_requests": 3,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 104,
+        "input": {
+          "observed": 2540842,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 149341,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 1829504,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 711338,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 71,
+        "input": {
+          "observed": 293226,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 2285,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 71,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 71,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "actualModels": {
+      "deepseek-v4.1-flash": 470,
+      "jev-1.13-free": 71
+    },
+    "actualModelUnobservedRequests": 3,
+    "jevDecisionSecondsObserved": 56.08998899999999,
+    "jevDecisionTimeUnobserved": 0,
+    "accountChangesObserved": 459,
+    "prefixByPurpose": {
+      "execution": {
+        "requests": 473,
+        "nonAppend": 0,
+        "systemChanges": 0,
+        "toolChanges": 0
+      },
+      "compaction": {
+        "requests": 0,
+        "nonAppend": 0,
+        "systemChanges": 0,
+        "toolChanges": 0
+      }
+    }
+  },
+  "B": {
+    "tasks": 12,
+    "officialResolved": 8,
+    "ungraded": 0,
+    "solveSecondsObserved": 3949.1530999999995,
+    "solveSecondsUnobserved": 0,
+    "modelRequests": 544,
+    "executionStatuses": {
+      "agent_error": 3,
+      "finished": 9
+    },
+    "childrenStarted": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "childrenCollected": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "childrenCompletedObserved": 0,
+    "maxChildConcurrencyObserved": 0,
+    "childConcurrencyUnobservedTasks": 0,
+    "deepseek": {
+      "input": {
+        "observed": 6985241,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 552384,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 3398400,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 3586841,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "jev": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workload": {
+      "input": {
+        "observed": 6985241,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 552384,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "contextReplacements": 0,
+    "firstAndLaterRequests": {
+      "first": {
+        "requests": 12,
+        "input": {
+          "observed": 75446,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1611,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 61440,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 14006,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "elapsed_seconds": {
+          "observed": 21.0108,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "later": {
+        "requests": 532,
+        "input": {
+          "observed": 6909795,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 550773,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 3336960,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 3572835,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "elapsed_seconds": {
+          "observed": 3158.8810999999982,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "nonAppendRequests": 111,
+    "systemChanges": 0,
+    "toolChanges": 0,
+    "compactionRequests": 55,
+    "requestSeconds": {
+      "main": {
+        "observed": 3179.8918999999987,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "child": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "jev": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "unattributed": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "roles": {
+      "main": {
+        "requests": 544,
+        "input": {
+          "observed": 6985241,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 552384,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 3398400,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 3586841,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "actualModels": {
+      "deepseek-v4.1-flash": 544
+    },
+    "actualModelUnobservedRequests": 0,
+    "jevDecisionSecondsObserved": 0,
+    "jevDecisionTimeUnobserved": 0,
+    "accountChangesObserved": 532,
+    "prefixByPurpose": {
+      "execution": {
+        "requests": 489,
+        "nonAppend": 59,
+        "systemChanges": 0,
+        "toolChanges": 0
+      },
+      "compaction": {
+        "requests": 55,
+        "nonAppend": 52,
+        "systemChanges": 0,
+        "toolChanges": 0
+      }
+    }
+  },
+  "C": {
+    "tasks": 12,
+    "officialResolved": 8,
+    "ungraded": 0,
+    "solveSecondsObserved": 4348.0301,
+    "solveSecondsUnobserved": 0,
+    "modelRequests": 571,
+    "executionStatuses": {
+      "agent_error": 5,
+      "finished": 5,
+      "timeout": 2
+    },
+    "childrenStarted": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "childrenCollected": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "childrenCompletedObserved": 0,
+    "maxChildConcurrencyObserved": 0,
+    "childConcurrencyUnobservedTasks": 0,
+    "deepseek": {
+      "input": {
+        "observed": 7167774,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 580658,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 3678720,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 3489054,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "jev": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workload": {
+      "input": {
+        "observed": 7167774,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 580658,
+        "unobserved_requests": 1,
+        "complete": false
+      }
+    },
+    "contextReplacements": 0,
+    "firstAndLaterRequests": {
+      "first": {
+        "requests": 12,
+        "input": {
+          "observed": 75482,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 1736,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 61440,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 14042,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "elapsed_seconds": {
+          "observed": 19.7332,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "later": {
+        "requests": 559,
+        "input": {
+          "observed": 7092292,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 578922,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 3617280,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 3475012,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "elapsed_seconds": {
+          "observed": 3415.8578999999986,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "nonAppendRequests": 113,
+    "systemChanges": 0,
+    "toolChanges": 0,
+    "compactionRequests": 56,
+    "requestSeconds": {
+      "main": {
+        "observed": 3435.591099999999,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "child": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "jev": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "unattributed": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "roles": {
+      "main": {
+        "requests": 571,
+        "input": {
+          "observed": 7167774,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 580658,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 3678720,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 3489054,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "actualModels": {
+      "deepseek-v4.1-flash": 570
+    },
+    "actualModelUnobservedRequests": 1,
+    "jevDecisionSecondsObserved": 0,
+    "jevDecisionTimeUnobserved": 0,
+    "accountChangesObserved": 559,
+    "prefixByPurpose": {
+      "execution": {
+        "requests": 515,
+        "nonAppend": 59,
+        "systemChanges": 0,
+        "toolChanges": 0
+      },
+      "compaction": {
+        "requests": 56,
+        "nonAppend": 54,
+        "systemChanges": 0,
+        "toolChanges": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10081",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10356",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5262",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5262",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5262",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5631",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5631",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5631",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5787",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5787",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5787",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5809",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5809",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5809",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5840",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5840",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-5840",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6197",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6197",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6197",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6202",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6202",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-6202",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7205",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7205",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7205",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "B"
+  }
+]

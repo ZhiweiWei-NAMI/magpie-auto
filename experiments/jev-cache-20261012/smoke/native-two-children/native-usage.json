@@ -1,0 +1,288 @@
+[
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811192901,
+    "usage": {
+      "inputTokens": 2701,
+      "outputTokens": 133,
+      "totalTokens": 7954,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 48
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811201395,
+    "usage": {
+      "inputTokens": 8198,
+      "outputTokens": 1213,
+      "totalTokens": 9795,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 1085
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811204986,
+    "usage": {
+      "inputTokens": 3709,
+      "outputTokens": 236,
+      "totalTokens": 9065,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 105
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811215917,
+    "usage": {
+      "inputTokens": 8681,
+      "outputTokens": 1821,
+      "totalTokens": 10886,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 1054
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811218039,
+    "usage": {
+      "inputTokens": 4768,
+      "outputTokens": 71,
+      "totalTokens": 9959,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 9
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811221575,
+    "usage": {
+      "inputTokens": 5190,
+      "outputTokens": 622,
+      "totalTokens": 10932,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 5
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811224264,
+    "usage": {
+      "inputTokens": 5850,
+      "outputTokens": 185,
+      "totalTokens": 11155,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 110
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811228768,
+    "usage": {
+      "inputTokens": 6165,
+      "outputTokens": 497,
+      "totalTokens": 11782,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811233043,
+    "usage": {
+      "inputTokens": 6706,
+      "outputTokens": 502,
+      "totalTokens": 12328,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 214
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811236001,
+    "usage": {
+      "inputTokens": 7038,
+      "outputTokens": 262,
+      "totalTokens": 12420,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 41
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811240075,
+    "usage": {
+      "inputTokens": 4876,
+      "outputTokens": 189,
+      "totalTokens": 12873,
+      "cacheReadTokens": 7808,
+      "reasoningTokens": 126
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811242180,
+    "usage": {
+      "inputTokens": 4681,
+      "outputTokens": 79,
+      "totalTokens": 13336,
+      "cacheReadTokens": 8576,
+      "reasoningTokens": 44
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811244387,
+    "usage": {
+      "inputTokens": 4615,
+      "outputTokens": 139,
+      "totalTokens": 13458,
+      "cacheReadTokens": 8704,
+      "reasoningTokens": 39
+    }
+  },
+  {
+    "session": "session-ffdfad39-3e5d-4c60-8ee7-ce410faa5962",
+    "time": 1791811249277,
+    "usage": {
+      "inputTokens": 4602,
+      "outputTokens": 627,
+      "totalTokens": 14189,
+      "cacheReadTokens": 8960,
+      "reasoningTokens": 12
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811130188,
+    "usage": {
+      "inputTokens": 5562,
+      "outputTokens": 123,
+      "totalTokens": 6069,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 33
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811134430,
+    "usage": {
+      "inputTokens": 5884,
+      "outputTokens": 172,
+      "totalTokens": 6440,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 4
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811141698,
+    "usage": {
+      "inputTokens": 6786,
+      "outputTokens": 989,
+      "totalTokens": 8159,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 865
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811154928,
+    "usage": {
+      "inputTokens": 1566,
+      "outputTokens": 1750,
+      "totalTokens": 9204,
+      "cacheReadTokens": 5888,
+      "reasoningTokens": 1360
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811165039,
+    "usage": {
+      "inputTokens": 2159,
+      "outputTokens": 1374,
+      "totalTokens": 9677,
+      "cacheReadTokens": 6144,
+      "reasoningTokens": 1153
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811180744,
+    "usage": {
+      "inputTokens": 3574,
+      "outputTokens": 2260,
+      "totalTokens": 10954,
+      "cacheReadTokens": 5120,
+      "reasoningTokens": 1903
+    }
+  },
+  {
+    "session": "3a1e1759-4671-485f-a672-5d1883835468",
+    "time": 1791811189975,
+    "usage": {
+      "inputTokens": 8855,
+      "outputTokens": 1484,
+      "totalTokens": 10723,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 192
+    }
+  },
+  {
+    "session": "1979468a-13eb-4364-bf06-416182535f85",
+    "time": 1791811130159,
+    "usage": {
+      "inputTokens": 5560,
+      "outputTokens": 154,
+      "totalTokens": 6098,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 8
+    }
+  },
+  {
+    "session": "1979468a-13eb-4364-bf06-416182535f85",
+    "time": 1791811133989,
+    "usage": {
+      "inputTokens": 5916,
+      "outputTokens": 172,
+      "totalTokens": 6472,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 4
+    }
+  },
+  {
+    "session": "1979468a-13eb-4364-bf06-416182535f85",
+    "time": 1791811137256,
+    "usage": {
+      "inputTokens": 6818,
+      "outputTokens": 296,
+      "totalTokens": 7498,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 93
+    }
+  },
+  {
+    "session": "1979468a-13eb-4364-bf06-416182535f85",
+    "time": 1791811144043,
+    "usage": {
+      "inputTokens": 1823,
+      "outputTokens": 829,
+      "totalTokens": 8540,
+      "cacheReadTokens": 5888,
+      "reasoningTokens": 451
+    }
+  },
+  {
+    "session": "1979468a-13eb-4364-bf06-416182535f85",
+    "time": 1791811150212,
+    "usage": {
+      "inputTokens": 7962,
+      "outputTokens": 857,
+      "totalTokens": 9203,
+      "cacheReadTokens": 384,
+      "reasoningTokens": 185
+    }
+  }
+]

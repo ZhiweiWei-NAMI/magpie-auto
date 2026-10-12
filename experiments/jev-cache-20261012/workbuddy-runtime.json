@@ -1,0 +1,9 @@
+{
+  "endpoint": "http://127.0.0.1:8788",
+  "health_policy": "least_inflight",
+  "process_started": "2026-09-27T18:49:28+08:00",
+  "source_modified_after_process_start": true,
+  "native_session_header": "x-wb-session-id",
+  "binding_observation": "Same-session requests receive different x-wb-account values; pseudonymous values are retained per request.",
+  "effect": "Stable request prefixes do not establish stable account selection. Cache statistics are actual API observations under account rotation."
+}

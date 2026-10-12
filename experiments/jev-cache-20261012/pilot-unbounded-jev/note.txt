@@ -1,0 +1,1 @@
+Pilot with output cap 16384 and dsh-auto v0.1.0. Stopped after Jev pressure decisions exceeded the documented 32k state budget. All completed runs and the interrupted run remain. This is not the final three-group comparison. Missing interrupted execution time is unobserved. The same predetermined 12 tasks will be rerun with the state-budget fix.

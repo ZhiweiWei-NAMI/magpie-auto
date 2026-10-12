@@ -1,0 +1,92 @@
+diff --git a/changelog/5821.bugfix.rst b/changelog/5821.bugfix.rst
+new file mode 100644
+index 0000000..ec4e831
+--- /dev/null
++++ b/changelog/5821.bugfix.rst
+@@ -0,0 +1,4 @@
++Fix ``ImportError`` while loading ``conftest.py`` files when using pytest from a
++working directory whose casing differs from the one stored in the filesystem
++(e.g. ``c:\test`` instead of ``C:\test``), which was a regression introduced in
++5.1.2.
+diff --git a/src/_pytest/pathlib.py b/src/_pytest/pathlib.py
+index 0403b69..5efe0fb 100644
+--- a/src/_pytest/pathlib.py
++++ b/src/_pytest/pathlib.py
+@@ -11,7 +11,6 @@ from functools import partial
+ from os.path import expanduser
+ from os.path import expandvars
+ from os.path import isabs
+-from os.path import normcase
+ from os.path import sep
+ from posixpath import sep as posix_sep
+ 
+@@ -343,4 +342,4 @@ def unique_path(path):
+ 
+     This is needed only for ``py.path.local``; ``pathlib.Path`` handles this
+     natively with ``resolve()``."""
+-    return type(path)(normcase(str(path.realpath())))
++    return type(path)(str(path.realpath()))
+diff --git a/testing/test_conftest.py b/testing/test_conftest.py
+index 9888f54..a5b65b5 100644
+--- a/testing/test_conftest.py
++++ b/testing/test_conftest.py
+@@ -292,6 +292,32 @@ def test_conftest_badcase(testdir):
+     assert result.ret == ExitCode.NO_TESTS_COLLECTED
+ 
+ 
++@pytest.mark.skipif(
++    os.path.normcase("x") != os.path.normcase("X"),
++    reason="only relevant for case insensitive file systems",
++)
++def test_conftest_badcase_with_test(testdir):
++    """Ensure the conftest.py module is importable when the directory casing
++    used to invoke pytest is not the one stored in the filesystem (#5821)."""
++    root = testdir.mkdir("JenkinsRoot")
++    root.mkdir("test")
++    root.join("setup.py").write("")
++    test = root.join("test")
++    test.join("__init__.py").write("")
++    test.join("conftest.py").write(
++        "import pytest\n"
++        "@pytest.fixture\n"
++        "def fix():\n"
++        "    return 1\n"
++    )
++    test.join("test_foo.py").write("def test_foo(fix):\n    assert fix == 1\n")
++
++    testdir.tmpdir.join("jenkinsroot/test").chdir()
++    result = testdir.runpytest()
++    assert result.ret == ExitCode.OK
++    result.stdout.fnmatch_lines(["*1 passed*"])
++
++
+ def test_no_conftest(testdir):
+     testdir.makeconftest("assert 0")
+     result = testdir.runpytest("--noconftest")
+diff --git a/testing/test_pathlib.py b/testing/test_pathlib.py
+index 45daeae..915d8e3 100644
+--- a/testing/test_pathlib.py
++++ b/testing/test_pathlib.py
+@@ -8,6 +8,7 @@ from _pytest.pathlib import fnmatch_ex
+ from _pytest.pathlib import get_lock_path
+ from _pytest.pathlib import maybe_delete_a_numbered_dir
+ from _pytest.pathlib import Path
++from _pytest.pathlib import unique_path
+ 
+ 
+ class TestPort:
+@@ -76,6 +77,14 @@ class TestPort:
+         assert not match(pattern, path)
+ 
+ 
++def test_unique_path_preserves_case(tmp_path):
++    """``unique_path`` resolves symlinks without altering the path casing (#5821)."""
++    subdir = py.path.local(str(tmp_path)).mkdir("MixedCase")
++    result = unique_path(subdir)
++    assert str(result) == str(subdir.realpath())
++    assert result == subdir
++
++
+ def test_access_denied_during_cleanup(tmp_path, monkeypatch):
+     """Ensure that deleting a numbered dir does not fail because of OSErrors (#4262)."""
+     path = tmp_path / "temp-1"

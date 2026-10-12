@@ -3157,7 +3157,7 @@ func (s *Server) forwardOnce(ctx context.Context, p provider.Provider, to provid
 	req.Header.Set("Accept", "application/json, text/event-stream")
 	req.Header.Set("User-Agent", "magpie/"+Version)
 	if p.ID == "dsh-workbuddy" {
-		// WorkBuddy binds one account to each dsh session; metadata stays out of the prompt.
+		// Pass native session metadata for WorkBuddy versions that support binding.
 		if id := in.Get("x-deepseek-harness-session-id"); id != "" {
 			req.Header.Set("x-wb-session-id", id)
 		}

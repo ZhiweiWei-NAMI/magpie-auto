@@ -1,0 +1,450 @@
+[
+  {
+    "at": "2026-10-12T19:18:22.340Z",
+    "kind": "root_start",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f"
+  },
+  {
+    "at": "2026-10-12T19:18:23.317Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 976.2016899999999,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.14,
+        "probabilities": {
+          "parallel": 0.21,
+          "review": 0.36,
+          "single": 0.43
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2371,
+      "output_tokens": 38
+    },
+    "elapsedMs": 924.842
+  },
+  {
+    "at": "2026-10-12T19:19:41.785Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 563.558933999986,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_63",
+      "event_66",
+      "event_68"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.84,
+        "probabilities": {
+          "keep": 0.92,
+          "select": 0.08
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6132,
+      "output_tokens": 31
+    },
+    "elapsedMs": 553.122
+  },
+  {
+    "at": "2026-10-12T19:19:41.786Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 27725
+  },
+  {
+    "at": "2026-10-12T19:20:36.751Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 605.9867109999759,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_73",
+      "event_76",
+      "event_78"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.82,
+        "probabilities": {
+          "keep": 0.91,
+          "select": 0.09
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6170,
+      "output_tokens": 31
+    },
+    "elapsedMs": 597.614
+  },
+  {
+    "at": "2026-10-12T19:20:36.752Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 38582
+  },
+  {
+    "at": "2026-10-12T19:21:14.039Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 586.2037859999982,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_90",
+      "event_93",
+      "event_95"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.66,
+        "probabilities": {
+          "keep": 0.83,
+          "select": 0.17
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 7192,
+      "output_tokens": 31
+    },
+    "elapsedMs": 575.233
+  },
+  {
+    "at": "2026-10-12T19:21:14.040Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 46723
+  },
+  {
+    "at": "2026-10-12T19:22:05.076Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 673.8619120000221,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_129",
+      "event_132",
+      "event_134"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.78,
+        "probabilities": {
+          "keep": 0.89,
+          "select": 0.11
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6802,
+      "output_tokens": 31
+    },
+    "elapsedMs": 662.443
+  },
+  {
+    "at": "2026-10-12T19:22:05.076Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 55884
+  },
+  {
+    "at": "2026-10-12T19:22:52.846Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 667.3151029999717,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_159",
+      "event_162",
+      "event_164"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.6,
+        "probabilities": {
+          "keep": 0.8,
+          "select": 0.2
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 7836,
+      "output_tokens": 31
+    },
+    "elapsedMs": 657.281
+  },
+  {
+    "at": "2026-10-12T19:22:52.846Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 66108
+  },
+  {
+    "at": "2026-10-12T19:23:55.580Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 653.0773740000441,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_174",
+      "event_177",
+      "event_179"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.74,
+        "probabilities": {
+          "keep": 0.87,
+          "select": 0.13
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6001,
+      "output_tokens": 31
+    },
+    "elapsedMs": 642.735
+  },
+  {
+    "at": "2026-10-12T19:23:55.581Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 78592
+  },
+  {
+    "at": "2026-10-12T19:24:42.202Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 718.1699870000011,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_184",
+      "event_189"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.68,
+        "probabilities": {
+          "keep": 0.84,
+          "select": 0.16
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2894,
+      "output_tokens": 31
+    },
+    "elapsedMs": 707.449
+  },
+  {
+    "at": "2026-10-12T19:24:42.203Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 89167
+  },
+  {
+    "at": "2026-10-12T19:25:30.124Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 788.7187919999706,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_194",
+      "event_197",
+      "event_199"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.8,
+        "probabilities": {
+          "keep": 0.9,
+          "select": 0.1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6946,
+      "output_tokens": 31
+    },
+    "elapsedMs": 775.809
+  },
+  {
+    "at": "2026-10-12T19:25:30.125Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 99301
+  },
+  {
+    "at": "2026-10-12T19:26:21.294Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 675.9180359999882,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_199",
+      "event_204"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.56,
+        "probabilities": {
+          "keep": 0.78,
+          "select": 0.22
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 4320,
+      "output_tokens": 31
+    },
+    "elapsedMs": 664.796
+  },
+  {
+    "at": "2026-10-12T19:26:21.295Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 110461
+  },
+  {
+    "at": "2026-10-12T19:27:00.176Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 629.9591270000092,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_209",
+      "event_212",
+      "event_214"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.48,
+        "probabilities": {
+          "keep": 0.74,
+          "select": 0.26
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 7026,
+      "output_tokens": 31
+    },
+    "elapsedMs": 617.027
+  },
+  {
+    "at": "2026-10-12T19:27:00.177Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 118554
+  },
+  {
+    "at": "2026-10-12T19:27:41.148Z",
+    "kind": "jev",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 935.9234929999802,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_214",
+      "event_219"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.42,
+        "probabilities": {
+          "keep": 0.71,
+          "select": 0.29
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3421,
+      "output_tokens": 31
+    },
+    "elapsedMs": 925.94
+  },
+  {
+    "at": "2026-10-12T19:27:41.149Z",
+    "kind": "context_kept",
+    "session": "session-af8810f7-9dca-4fad-8718-107ef1bdba7f",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 126909
+  }
+]

@@ -1,0 +1,100 @@
+diff --git a/changelog/10356.bugfix.rst b/changelog/10356.bugfix.rst
+new file mode 100644
+index 0000000..0b8cfb9
+--- /dev/null
++++ b/changelog/10356.bugfix.rst
+@@ -0,0 +1 @@
++Fixed marks applied to classes not being inherited from all base classes when using multiple inheritance.
+diff --git a/src/_pytest/mark/structures.py b/src/_pytest/mark/structures.py
+index 800a25c..c6113bb 100644
+--- a/src/_pytest/mark/structures.py
++++ b/src/_pytest/mark/structures.py
+@@ -355,14 +355,37 @@ class MarkDecorator:
+         return self.with_args(*args, **kwargs)
+ 
+ 
+-def get_unpacked_marks(obj: object) -> Iterable[Mark]:
+-    """Obtain the unpacked marks that are stored on an object."""
+-    mark_list = getattr(obj, "pytestmark", [])
+-    if not isinstance(mark_list, list):
+-        mark_list = [mark_list]
++def get_unpacked_marks(
++    obj: Union[object, type],
++    *,
++    consider_mro: bool = True,
++) -> Iterable[Mark]:
++    """Obtain the unpacked marks that are stored on an object.
++
++    If obj is a class and consider_mro is true, return marks applied to
++    this class and all of its super classes in MRO order.
++
++    If consider_mro is false, do not consider the MRO, only return marks
++    applied directly to the object.
++    """
++    if isinstance(obj, type):
++        if consider_mro:
++            mark_lists = [x.__dict__.get("pytestmark", []) for x in obj.__mro__]
++        else:
++            mark_lists = [obj.__dict__.get("pytestmark", [])]
++        # Flatten the lists of marks, wrapping non-list values (a single mark
++        # may be stored directly instead of a list).
++        mark_list = [mark for marks in mark_lists for mark in _as_list(marks)]
++    else:
++        mark_list = _as_list(getattr(obj, "pytestmark", []))
+     return normalize_mark_list(mark_list)
+ 
+ 
++def _as_list(obj: object) -> List[object]:
++    """Wrap ``obj`` in a list unless it already is one."""
++    return obj if isinstance(obj, list) else [obj]
++
++
+ def normalize_mark_list(
+     mark_list: Iterable[Union[Mark, MarkDecorator]]
+ ) -> Iterable[Mark]:
+@@ -388,7 +411,7 @@ def store_mark(obj, mark: Mark) -> None:
+     assert isinstance(mark, Mark), mark
+     # Always reassign name to avoid updating pytestmark in a reference that
+     # was only borrowed.
+-    obj.pytestmark = [*get_unpacked_marks(obj), mark]
++    obj.pytestmark = [*get_unpacked_marks(obj, consider_mro=False), mark]
+ 
+ 
+ # Typing for builtin pytest marks. This is cheating; it gives builtin marks
+diff --git a/testing/test_mark.py b/testing/test_mark.py
+index 65f2581..87827f0 100644
+--- a/testing/test_mark.py
++++ b/testing/test_mark.py
+@@ -561,6 +561,32 @@ class TestFunctional:
+         items, rec = pytester.inline_genitems(p)
+         self.assert_markers(items, test_foo=("a", "b", "c"), test_bar=("a", "b", "d"))
+ 
++    def test_mark_decorator_multiple_baseclasses_merged(
++        self, pytester: Pytester
++    ) -> None:
++        """Marks from all base classes are inherited, not just the first in MRO."""
++        p = pytester.makepyfile(
++            """
++            import pytest
++
++            @pytest.mark.a
++            class Base(object): pass
++
++            @pytest.mark.b
++            class Base2(object): pass
++
++            @pytest.mark.c
++            class Test1(Base, Base2):
++                def test_foo(self): pass
++
++            class Test2(Base, Base2):
++                @pytest.mark.d
++                def test_bar(self): pass
++        """
++        )
++        items, rec = pytester.inline_genitems(p)
++        self.assert_markers(items, test_foo=("a", "b", "c"), test_bar=("a", "b", "d"))
++
+     def test_mark_closest(self, pytester: Pytester) -> None:
+         p = pytester.makepyfile(
+             """

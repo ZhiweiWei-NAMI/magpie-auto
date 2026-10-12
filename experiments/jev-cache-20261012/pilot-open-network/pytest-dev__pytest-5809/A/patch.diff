@@ -1,0 +1,40 @@
+diff --git a/changelog/5764.bugfix.rst b/changelog/5764.bugfix.rst
+new file mode 100644
+index 000000000..6e0b4c090
+--- /dev/null
++++ b/changelog/5764.bugfix.rst
+@@ -0,0 +1,3 @@
++``--pastebin`` now uses ``lexer=text`` instead of ``lexer=python3`` when
++sending the test session output to ``bpaste.net``, avoiding HTTP 400 errors
++for certain contents.
+diff --git a/src/_pytest/pastebin.py b/src/_pytest/pastebin.py
+index 41576a615..7a3e80231 100644
+--- a/src/_pytest/pastebin.py
++++ b/src/_pytest/pastebin.py
+@@ -77,11 +77,7 @@ def create_new_paste(contents):
+         from urllib.request import urlopen
+         from urllib.parse import urlencode
+ 
+-    params = {
+-        "code": contents,
+-        "lexer": "python3" if sys.version_info[0] >= 3 else "python",
+-        "expiry": "1week",
+-    }
++    params = {"code": contents, "lexer": "text", "expiry": "1week"}
+     url = "https://bpaste.net"
+     response = urlopen(url, data=urlencode(params).encode("ascii")).read()
+     m = re.search(r'href="/raw/(\w+)"', response.decode("utf-8"))
+diff --git a/testing/test_pastebin.py b/testing/test_pastebin.py
+index bac8f9802..aac0b651e 100644
+--- a/testing/test_pastebin.py
++++ b/testing/test_pastebin.py
+@@ -126,8 +126,7 @@ class TestPaste(object):
+         assert len(mocked_urlopen) == 1
+         url, data = mocked_urlopen[0]
+         assert type(data) is bytes
+-        lexer = "python3" if sys.version_info[0] >= 3 else "python"
+         assert url == "https://bpaste.net"
+-        assert "lexer=%s" % lexer in data.decode()
++        assert "lexer=text" in data.decode()
+         assert "code=full-paste-contents" in data.decode()
+         assert "expiry=1week" in data.decode()

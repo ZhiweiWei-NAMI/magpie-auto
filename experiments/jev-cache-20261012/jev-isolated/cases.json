@@ -1,0 +1,46 @@
+[
+  {
+    "name": "api_verification",
+    "state": "Current task: Verify OpenCode Jev's free structured decision API with tiny independent calls, and record actual answers and latency. Candidate api_engineer can write Python HTTP clients, execute API tests, and diagnose authentication and JSON errors. Candidate research_writer can explain research and edit documents but cannot execute API tests. History h1: The user requires keeping magpie-auto's GLM default unchanged; only isolated Jev checks are authorized. History h2: Jev uses /systemone with state and typed questions, rather than a chat completion endpoint. History h3: Yesterday the user asked for an unrelated lunch recommendation.",
+    "questions": {
+      "agent": {
+        "type": "choice",
+        "instructions": "Which candidate's capabilities best fit the current task?",
+        "criteria": {
+          "api_engineer": "Executes API tests and diagnoses HTTP and JSON problems",
+          "research_writer": "Writes research explanations and edits documents"
+        }
+      },
+      "retain_h1": {"type": "noul", "instructions": "Should history h1 be retained as context to perform the current task correctly?"},
+      "retain_h2": {"type": "noul", "instructions": "Should history h2 be retained as context to perform the current task correctly?"},
+      "retain_h3": {"type": "noul", "instructions": "Should history h3 be retained as context to perform the current task correctly?"},
+      "h2_relevance": {
+        "type": "score",
+        "instructions": "How useful is history h2 for the current task?",
+        "criteria": ["Unrelated to performing the current task", "Provides helpful background but is not required", "Provides an essential constraint or fact needed to perform the task correctly"]
+      }
+    }
+  },
+  {
+    "name": "research_summary",
+    "state": "Current task: Write a brief lab meeting summary from the provided experiment notes. No API calls or software changes are needed. Candidate api_engineer can write Python HTTP clients, execute API tests, and diagnose authentication and JSON errors. Candidate research_writer can explain research and edit documents but cannot execute API tests. History h1: The user requests three plain-language sentences. History h2: Run A lost its input samples, so no measurement exists; a missing measurement must never be reported as zero. History h3: A previous unrelated API experiment used the /systemone endpoint.",
+    "questions": {
+      "agent": {
+        "type": "choice",
+        "instructions": "Which candidate's capabilities best fit the current task?",
+        "criteria": {
+          "api_engineer": "Executes API tests and diagnoses HTTP and JSON problems",
+          "research_writer": "Writes research explanations and edits documents"
+        }
+      },
+      "retain_h1": {"type": "noul", "instructions": "Should history h1 be retained as context to perform the current task correctly?"},
+      "retain_h2": {"type": "noul", "instructions": "Should history h2 be retained as context to perform the current task correctly?"},
+      "retain_h3": {"type": "noul", "instructions": "Should history h3 be retained as context to perform the current task correctly?"},
+      "h2_relevance": {
+        "type": "score",
+        "instructions": "How useful is history h2 for the current task?",
+        "criteria": ["Unrelated to performing the current task", "Provides helpful background but is not required", "Provides an essential constraint or fact needed to perform the task correctly"]
+      }
+    }
+  }
+]

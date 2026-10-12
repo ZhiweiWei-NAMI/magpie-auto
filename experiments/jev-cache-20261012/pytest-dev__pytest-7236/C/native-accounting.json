@@ -1,0 +1,372 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-f7a781b1-abe1-41f6-8682-47c8452f6336",
+      "tools": {
+        "bash": 39,
+        "read": 18,
+        "edit": 7,
+        "grep": 2,
+        "write": 1
+      },
+      "compactions": [
+        {
+          "type": "compaction/summary",
+          "time": 1791832291174,
+          "startTime": 1791832279816,
+          "compactionId": "2a86ae7f-33a7-4b33-986f-391be9b5b705",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 8,
+            "end": 59
+          },
+          "shadowedSeqs": [
+            8,
+            9,
+            13,
+            15,
+            17,
+            20,
+            22,
+            67,
+            27,
+            29,
+            31,
+            34,
+            37,
+            38,
+            41,
+            43,
+            45,
+            48,
+            50,
+            52,
+            55,
+            57,
+            59
+          ],
+          "shadowedTokenCount": 12521,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 8367,
+            "outputTokens": 2306,
+            "totalTokens": 15793,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 530
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832291175,
+          "startTime": 1791832279816,
+          "compactionId": "2a86ae7f-33a7-4b33-986f-391be9b5b705",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832338387,
+          "startTime": 1791832329617,
+          "compactionId": "98a576aa-b62d-407d-bc71-0a8f3d128cd9",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 70,
+            "end": 79
+          },
+          "shadowedSeqs": [
+            70,
+            62,
+            64,
+            74,
+            92,
+            79
+          ],
+          "shadowedTokenCount": 11093,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4555,
+            "outputTokens": 2159,
+            "totalTokens": 11834,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 103
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832338387,
+          "startTime": 1791832329617,
+          "compactionId": "98a576aa-b62d-407d-bc71-0a8f3d128cd9",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832384799,
+          "startTime": 1791832375138,
+          "compactionId": "2b603825-b6e7-4645-b9f2-cfbfa97cbfa3",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 95,
+            "end": 104
+          },
+          "shadowedSeqs": [
+            95,
+            80,
+            82,
+            84,
+            87,
+            89,
+            99,
+            101,
+            104
+          ],
+          "shadowedTokenCount": 10439,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4458,
+            "outputTokens": 2360,
+            "totalTokens": 11938,
+            "cacheReadTokens": 5120,
+            "reasoningTokens": 280
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832384800,
+          "startTime": 1791832375138,
+          "compactionId": "2b603825-b6e7-4645-b9f2-cfbfa97cbfa3",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832440653,
+          "startTime": 1791832430090,
+          "compactionId": "d065db85-9c29-4442-8c11-aec2d26f2e33",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 140,
+            "end": 131
+          },
+          "shadowedSeqs": [
+            140,
+            105,
+            107,
+            110,
+            112,
+            115,
+            117,
+            120,
+            122,
+            124,
+            127,
+            129,
+            131
+          ],
+          "shadowedTokenCount": 9608,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 7372,
+            "outputTokens": 2519,
+            "totalTokens": 15139,
+            "cacheReadTokens": 5248,
+            "reasoningTokens": 7
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832440654,
+          "startTime": 1791832430090,
+          "compactionId": "d065db85-9c29-4442-8c11-aec2d26f2e33",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832485310,
+          "startTime": 1791832474808,
+          "compactionId": "01069ab3-6c3a-47b5-91a0-f7ad4d77d160",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 186,
+            "end": 182
+          },
+          "shadowedSeqs": [
+            186,
+            134,
+            136,
+            144,
+            146,
+            149,
+            150,
+            152,
+            155,
+            157,
+            160,
+            162,
+            165,
+            167,
+            170,
+            172,
+            175,
+            177,
+            180,
+            182
+          ],
+          "shadowedTokenCount": 11399,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 6848,
+            "outputTokens": 2590,
+            "totalTokens": 14942,
+            "cacheReadTokens": 5504,
+            "reasoningTokens": 318
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832485311,
+          "startTime": 1791832474808,
+          "compactionId": "01069ab3-6c3a-47b5-91a0-f7ad4d77d160",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832555491,
+          "startTime": 1791832544792,
+          "compactionId": "a7c21021-2945-43df-a6ce-bdd8d52c9344",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 219,
+            "end": 228
+          },
+          "shadowedSeqs": [
+            219,
+            190,
+            210,
+            195,
+            197,
+            200,
+            202,
+            205,
+            207,
+            213,
+            215,
+            223,
+            225,
+            228
+          ],
+          "shadowedTokenCount": 11691,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 8087,
+            "outputTokens": 2608,
+            "totalTokens": 15943,
+            "cacheReadTokens": 5248,
+            "reasoningTokens": 7
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832555491,
+          "startTime": 1791832544792,
+          "compactionId": "a7c21021-2945-43df-a6ce-bdd8d52c9344",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832606727,
+          "startTime": 1791832596278,
+          "compactionId": "c9536322-5d0b-4c5e-9e3e-6af9b359401d",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 255,
+            "end": 264
+          },
+          "shadowedSeqs": [
+            255,
+            229,
+            231,
+            234,
+            236,
+            239,
+            241,
+            244,
+            246,
+            249,
+            251,
+            259,
+            261,
+            264
+          ],
+          "shadowedTokenCount": 13734,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 6158,
+            "outputTokens": 2791,
+            "totalTokens": 14453,
+            "cacheReadTokens": 5504,
+            "reasoningTokens": 0
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832606728,
+          "startTime": 1791832596278,
+          "compactionId": "c9536322-5d0b-4c5e-9e3e-6af9b359401d",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791832655653,
+          "startTime": 1791832645081,
+          "compactionId": "26d19a81-6119-412c-937d-f0a9a0d38c2e",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 281,
+            "end": 277
+          },
+          "shadowedSeqs": [
+            281,
+            265,
+            267,
+            270,
+            272,
+            275,
+            277
+          ],
+          "shadowedTokenCount": 10491,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4863,
+            "outputTokens": 2895,
+            "totalTokens": 13262,
+            "cacheReadTokens": 5504,
+            "reasoningTokens": 7
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791832655654,
+          "startTime": 1791832645081,
+          "compactionId": "26d19a81-6119-412c-937d-f0a9a0d38c2e",
+          "turn": 1
+        }
+      ],
+      "delegationResults": []
+    }
+  ]
+}

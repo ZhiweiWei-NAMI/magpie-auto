@@ -1,0 +1,8 @@
+{
+  "executionStatus": "timeout",
+  "admittedModelRequests": 57,
+  "jevHTTP": [],
+  "errors": [],
+  "modelUsageUnobserved": 1,
+  "note": "600-second timeouts and the 64-request task cap are local experiment limits, not OpenCode authentication, balance or rate-limit errors."
+}

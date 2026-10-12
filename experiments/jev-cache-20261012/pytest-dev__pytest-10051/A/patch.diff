@@ -1,0 +1,57 @@
+diff --git a/changelog/10032.bugfix.rst b/changelog/10032.bugfix.rst
+new file mode 100644
+index 0000000..c366a8d
+--- /dev/null
++++ b/changelog/10032.bugfix.rst
+@@ -0,0 +1,2 @@
++Fixed ``caplog.get_records()`` becoming decoupled from ``caplog.records`` after
++calling ``caplog.clear()``.
+diff --git a/src/_pytest/logging.py b/src/_pytest/logging.py
+index a4f4214..1c5b64b 100644
+--- a/src/_pytest/logging.py
++++ b/src/_pytest/logging.py
+@@ -345,6 +345,10 @@ class LogCaptureHandler(logging_StreamHandler):
+         self.records = []
+         self.stream = StringIO()
+ 
++    def clear(self) -> None:
++        self.records.clear()
++        self.stream = StringIO()
++
+     def handleError(self, record: logging.LogRecord) -> None:
+         if logging.raiseExceptions:
+             # Fail the test if the log message is bad (emit failed).
+@@ -440,7 +444,7 @@ class LogCaptureFixture:
+ 
+     def clear(self) -> None:
+         """Reset the list of log records and the captured log text."""
+-        self.handler.reset()
++        self.handler.clear()
+ 
+     def set_level(self, level: Union[int, str], logger: Optional[str] = None) -> None:
+         """Set the level of a logger for the duration of a test.
+diff --git a/testing/logging/test_fixture.py b/testing/logging/test_fixture.py
+index bcb20de..efe06a0 100644
+--- a/testing/logging/test_fixture.py
++++ b/testing/logging/test_fixture.py
+@@ -151,6 +151,20 @@ def test_clear(caplog):
+     assert not caplog.text
+ 
+ 
++def test_clear_preserves_records_list_identity(caplog):
++    """``caplog.records`` and ``caplog.get_records`` must stay in sync after clear."""
++    caplog.set_level(logging.INFO)
++    logger.info("before clear")
++    assert caplog.get_records("call") is caplog.records
++    caplog.clear()
++    assert not caplog.records
++    assert caplog.get_records("call") == []
++    assert caplog.get_records("call") is caplog.records
++    logger.info("after clear")
++    assert caplog.get_records("call") == caplog.records
++    assert [r.message for r in caplog.get_records("call")] == ["after clear"]
++
++
+ @pytest.fixture
+ def logging_during_setup_and_teardown(caplog):
+     caplog.set_level("INFO")

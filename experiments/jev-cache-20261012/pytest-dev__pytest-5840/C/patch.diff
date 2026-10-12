@@ -1,0 +1,60 @@
+diff --git a/changelog/5842.bugfix.rst b/changelog/5842.bugfix.rst
+new file mode 100644
+index 0000000..2f219c0
+--- /dev/null
++++ b/changelog/5842.bugfix.rst
+@@ -0,0 +1,5 @@
++Fix ``ImportError while loading conftest`` on Windows when the conftest path
++contained uppercase characters. ``_pytest.pathlib.unique_path`` now returns a
++case-preserving canonical path instead of lowercasing it via
++``os.path.normcase``, so the module name derived from the path is no longer
++mangled.
+diff --git a/src/_pytest/pathlib.py b/src/_pytest/pathlib.py
+index 0403b69..5efe0fb 100644
+--- a/src/_pytest/pathlib.py
++++ b/src/_pytest/pathlib.py
+@@ -11,7 +11,6 @@ from functools import partial
+ from os.path import expanduser
+ from os.path import expandvars
+ from os.path import isabs
+-from os.path import normcase
+ from os.path import sep
+ from posixpath import sep as posix_sep
+ 
+@@ -343,4 +342,4 @@ def unique_path(path):
+ 
+     This is needed only for ``py.path.local``; ``pathlib.Path`` handles this
+     natively with ``resolve()``."""
+-    return type(path)(normcase(str(path.realpath())))
++    return type(path)(str(path.realpath()))
+diff --git a/testing/test_pathlib.py b/testing/test_pathlib.py
+index 45daeae..c9d64ea 100644
+--- a/testing/test_pathlib.py
++++ b/testing/test_pathlib.py
+@@ -8,6 +8,7 @@ from _pytest.pathlib import fnmatch_ex
+ from _pytest.pathlib import get_lock_path
+ from _pytest.pathlib import maybe_delete_a_numbered_dir
+ from _pytest.pathlib import Path
++from _pytest.pathlib import unique_path
+ 
+ 
+ class TestPort:
+@@ -89,3 +90,18 @@ def test_access_denied_during_cleanup(tmp_path, monkeypatch):
+     lock_path = get_lock_path(path)
+     maybe_delete_a_numbered_dir(path)
+     assert not lock_path.is_file()
++
++
++def test_unique_path_preserves_case(tmp_path):
++    """``unique_path`` must canonicalize the path without lowercasing it (#5842).
++
++    On Windows ``os.path.normcase`` lowercases paths, which used to mangle the
++    module name derived from a conftest path and broke conftest imports when
++    any directory in the path contained uppercase characters.
++    """
++    d = tmp_path / "JenkinsRoot" / "Python"
++    d.mkdir(parents=True)
++    path = py.path.local(str(d))
++    result = unique_path(path)
++    assert isinstance(result, py.path.local)
++    assert str(result).endswith(os.path.join("JenkinsRoot", "Python"))

@@ -1,0 +1,14 @@
+{
+  "instance_id": "pytest-dev__pytest-10081",
+  "arm": "A",
+  "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10081:latest",
+  "sharedImagePreparationSeconds": 0.253,
+  "agentExitCode": 0,
+  "executionStatus": "finished",
+  "executionSeconds": 302.0205,
+  "patchBytes": 2753,
+  "solveAndExportSeconds": 302.7916,
+  "childrenStarted": 0,
+  "childrenCollected": 0,
+  "maxChildConcurrency": 0
+}

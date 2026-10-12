@@ -1,0 +1,6 @@
+{
+  "reason": "Restart the same fixed task list with solver egress isolation after later-version reference access was found.",
+  "patch": "Actual in-flight working-tree snapshot, before interruption.",
+  "executionSeconds": null,
+  "solveAndExportSeconds": null
+}

@@ -1,0 +1,8 @@
+{
+  "instance_id": "pytest-dev__pytest-10051",
+  "arm": "A",
+  "executionStatus": "code_produced_recording_error",
+  "executionSeconds": null,
+  "note": "Completed solver and exported patch, but container-created 0600 record was initially unreadable by the host. Wall timing was not persisted; no zero is substituted. Retained as preflight, outside the final comparison.",
+  "childrenStarted": 0
+}

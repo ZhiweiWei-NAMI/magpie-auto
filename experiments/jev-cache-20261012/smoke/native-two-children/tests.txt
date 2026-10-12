@@ -1,0 +1,11 @@
+test_malformed_uses_documented_message (test_ops.Tests) ... ok
+test_negative_bounds_and_reversed_messages (test_ops.Tests) ... ok
+test_negative_single_uses_documented_message (test_ops.Tests) ... ok
+test_permissive_whitespace_around_separator (test_ops.Tests) ... ok
+test_ranges (test_ops.Tests) ... ok
+test_tag (test_ops.Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

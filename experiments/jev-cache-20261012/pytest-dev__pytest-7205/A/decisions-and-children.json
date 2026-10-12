@@ -1,0 +1,187 @@
+[
+  {
+    "at": "2026-10-12T19:04:17.746Z",
+    "kind": "root_start",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87"
+  },
+  {
+    "at": "2026-10-12T19:04:18.745Z",
+    "kind": "jev",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "trigger": "task_start",
+    "httpStatus": 200,
+    "wallMs": 998.9426550000003,
+    "model": "jev-1.13-free",
+    "action": "single",
+    "selectedIds": [],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "single",
+        "confidence": 0.74,
+        "probabilities": {
+          "parallel": 0.03,
+          "review": 0.14,
+          "single": 0.83
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2250,
+      "output_tokens": 38
+    },
+    "elapsedMs": 940.288
+  },
+  {
+    "at": "2026-10-12T19:06:00.433Z",
+    "kind": "jev",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 921.5952939999988,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_47",
+      "event_50",
+      "event_52"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.76,
+        "probabilities": {
+          "keep": 0.88,
+          "select": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 4461,
+      "output_tokens": 31
+    },
+    "elapsedMs": 910.606
+  },
+  {
+    "at": "2026-10-12T19:06:00.434Z",
+    "kind": "context_kept",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 24641
+  },
+  {
+    "at": "2026-10-12T19:07:01.668Z",
+    "kind": "jev",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 668.4634150000056,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_82",
+      "event_85",
+      "event_87"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.54,
+        "probabilities": {
+          "keep": 0.77,
+          "select": 0.23
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3584,
+      "output_tokens": 31
+    },
+    "elapsedMs": 656.095
+  },
+  {
+    "at": "2026-10-12T19:07:01.669Z",
+    "kind": "context_kept",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 32725
+  },
+  {
+    "at": "2026-10-12T19:07:57.290Z",
+    "kind": "jev",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 613.3410210000002,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_182",
+      "event_185",
+      "event_187"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.86,
+        "probabilities": {
+          "keep": 0.93,
+          "select": 0.07
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3677,
+      "output_tokens": 31
+    },
+    "elapsedMs": 601.79
+  },
+  {
+    "at": "2026-10-12T19:07:57.291Z",
+    "kind": "context_kept",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 42898
+  },
+  {
+    "at": "2026-10-12T19:09:24.569Z",
+    "kind": "jev",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "trigger": "pressure",
+    "httpStatus": 200,
+    "wallMs": 586.182620000036,
+    "model": "jev-1.13-free",
+    "action": "keep",
+    "selectedIds": [
+      "event_202",
+      "event_205",
+      "event_207"
+    ],
+    "answers": {
+      "route": {
+        "type": "choice",
+        "choice": "keep",
+        "confidence": 0.76,
+        "probabilities": {
+          "keep": 0.88,
+          "select": 0.12
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3183,
+      "output_tokens": 31
+    },
+    "elapsedMs": 570.938
+  },
+  {
+    "at": "2026-10-12T19:09:24.570Z",
+    "kind": "context_kept",
+    "session": "session-1ed10ab3-b905-416b-a8b6-627f34280c87",
+    "reason": "Jev chose stable history",
+    "estimatedContextTokens": 51508
+  }
+]

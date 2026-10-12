@@ -1,0 +1,1 @@
+Pilot with a shared 4096-token per-call output cap. Reasoning-only cap exhaustion stopped some agents before a patch. All attempts are retained; an interrupted case has incomplete timing. The final fixed 12-task comparison uses the same tasks and a shared 16384-token output cap, without feeding pilot outputs to solvers.

@@ -1,0 +1,114 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-5d495648-d7b8-4992-865f-6a6ba164e215",
+      "tools": {
+        "bash": 25,
+        "grep": 3,
+        "read": 8,
+        "edit": 2,
+        "write": 1
+      },
+      "compactions": [
+        {
+          "type": "compaction/summary",
+          "time": 1791823785733,
+          "startTime": 1791823779064,
+          "compactionId": "6b9cc18f-0bfb-497e-a860-385033a2f9da",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 8,
+            "end": 51
+          },
+          "shadowedSeqs": [
+            8,
+            9,
+            13,
+            15,
+            17,
+            20,
+            22,
+            25,
+            27,
+            30,
+            32,
+            35,
+            37,
+            39,
+            42,
+            44,
+            47,
+            49,
+            51
+          ],
+          "shadowedTokenCount": 9969,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 6328,
+            "outputTokens": 1090,
+            "totalTokens": 14330,
+            "cacheReadTokens": 6912,
+            "reasoningTokens": 0
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791823785735,
+          "startTime": 1791823779064,
+          "compactionId": "6b9cc18f-0bfb-497e-a860-385033a2f9da",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791823856636,
+          "startTime": 1791823849836,
+          "compactionId": "a843289c-64db-47e2-9855-e36cbd045d6b",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 81,
+            "end": 90
+          },
+          "shadowedSeqs": [
+            81,
+            54,
+            56,
+            58,
+            61,
+            63,
+            65,
+            68,
+            70,
+            72,
+            75,
+            77,
+            85,
+            87,
+            90
+          ],
+          "shadowedTokenCount": 10428,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 556,
+            "outputTokens": 1358,
+            "totalTokens": 11642,
+            "cacheReadTokens": 9728,
+            "reasoningTokens": 0
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791823856637,
+          "startTime": 1791823849836,
+          "compactionId": "a843289c-64db-47e2-9855-e36cbd045d6b",
+          "turn": 1
+        }
+      ],
+      "delegationResults": []
+    }
+  ]
+}

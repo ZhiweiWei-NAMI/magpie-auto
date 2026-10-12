@@ -1,0 +1,75 @@
+diff --git a/changelog/10061.bugfix.rst b/changelog/10061.bugfix.rst
+new file mode 100644
+index 000000000..d5b6a3fef
+--- /dev/null
++++ b/changelog/10061.bugfix.rst
+@@ -0,0 +1,2 @@
++Fixed ``--pdb`` calling :meth:`unittest.TestCase.tearDown` for test classes skipped with
++class-level ``@unittest.skip`` or ``@pytest.mark.skip`` marks.
+diff --git a/src/_pytest/unittest.py b/src/_pytest/unittest.py
+index 851e4943b..80cdd7a56 100644
+--- a/src/_pytest/unittest.py
++++ b/src/_pytest/unittest.py
+@@ -316,7 +316,14 @@ class TestCaseFunction(Function):
+             # Arguably we could always postpone tearDown(), but this changes the moment where the
+             # TestCase instance interacts with the results object, so better to only do it
+             # when absolutely needed.
+-            if self.config.getoption("usepdb") and not _is_skipped(self.obj):
++            # Class-level skips set ``__unittest_skip__`` on the test case
++            # class rather than on the test method, so the instance needs to be
++            # checked as well.
++            if (
++                self.config.getoption("usepdb")
++                and not _is_skipped(self.obj)
++                and not _is_skipped(self._testcase)
++            ):
+                 self._explicit_tearDown = self._testcase.tearDown
+                 setattr(self._testcase, "tearDown", lambda *args: None)
+ 
+diff --git a/testing/test_unittest.py b/testing/test_unittest.py
+index fb3128145..f6f58897f 100644
+--- a/testing/test_unittest.py
++++ b/testing/test_unittest.py
+@@ -1274,6 +1274,42 @@ def test_pdb_teardown_skipped(
+     assert tracked == []
+ 
+ 
++@pytest.mark.parametrize("mark", ["@unittest.skip", "@pytest.mark.skip"])
++def test_pdb_teardown_class_skipped(
++    pytester: Pytester, monkeypatch: MonkeyPatch, mark: str
++) -> None:
++    """With --pdb, setUp and tearDown should not be called for class-level skipped tests."""
++    tracked: List[str] = []
++    monkeypatch.setattr(
++        pytest, "test_pdb_teardown_class_skipped", tracked, raising=False
++    )
++
++    pytester.makepyfile(
++        """
++        import unittest
++        import pytest
++
++        {mark}("skipped for reasons")
++        class MyTestCase(unittest.TestCase):
++
++            def setUp(self):
++                pytest.test_pdb_teardown_class_skipped.append("setUp:" + self.id())
++
++            def tearDown(self):
++                pytest.test_pdb_teardown_class_skipped.append("tearDown:" + self.id())
++
++            def test_1(self):
++                pass
++
++    """.format(
++            mark=mark
++        )
++    )
++    result = pytester.runpytest_inprocess("--pdb")
++    result.stdout.fnmatch_lines("* 1 skipped in *")
++    assert tracked == []
++
++
+ def test_async_support(pytester: Pytester) -> None:
+     pytest.importorskip("unittest.async_case")
+ 
