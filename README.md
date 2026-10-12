@@ -302,6 +302,32 @@ If magpie saved you from editing one more config file, **a ⭐ helps others find
   </picture>
 </a>
 
+## Auto in this fork
+
+Auto is optional; existing Magpie behavior is unchanged when it is off.
+Configure an existing GLM provider/model in Providers, then enable Auto and
+choose that model for decisions. Auto asks it for constrained JSON selecting
+one configured agent/model route, effort and relevant source records. Invalid
+or unavailable choices fail visibly. It does not use Jev.
+
+Create a task, start it, then continue with a new bounded request. Gateway routes
+produce model responses; workspace routes run a native file-tool agent through
+Magpie's normal transport. Give a workspace route an existing absolute folder.
+It can list and read files there; writing requires an explicit per-route opt-in.
+The loop is bounded and cancellable, and records changed files as artifacts.
+Current requests
+take priority; selected history fits a bounded context. Task state, raw history,
+source IDs and reported usage stay local. Preferences and feedback affect later
+route choices for that task; they do not change model weights. Workspace content
+selected by tools goes to the configured model provider. External CLI sessions,
+shell commands and network tools are outside this adapter's capabilities.
+
+Build with `go build -tags nogui -o magpie-auto .`. For a separate portable
+installation, put an empty `.portable` file beside the binary and run
+`./magpie-auto web --addr 127.0.0.1:3436` with a separate `MAGPIE_ADDR`.
+Keep the console private. Provider credentials remain in Magpie's existing
+provider configuration; Auto configuration contains model IDs, never keys.
+
 ## License
 
 [MIT](LICENSE)

@@ -399,6 +399,11 @@ type Settings struct {
 	// panel shows, nothing more: routing, caps, the Usage page and the menu
 	// bar's cells still have them. The panel's order is UsageOrder.
 	PanelUsageHidden []string `json:"panelUsageHidden,omitempty"`
+	// UsageAgentsHidden are the clients, by the id the ledger records them
+	// under ("curl", "Go-http-client", an agent's id), that the Usage page's
+	// Agents list leaves out (ikunbots on X). It is that list's only: the
+	// ledger keeps their calls, and the totals and the chart count them.
+	UsageAgentsHidden []string `json:"usageAgentsHidden,omitempty"`
 	// Visible narrows the models an agent is shown, by agent id: the
 	// families (the tag a provider or group is given), provider ids and
 	// group ids its lists hold. An agent it doesn't name is shown them all.
@@ -1065,6 +1070,7 @@ func save(s Settings, recording bool) error {
 	s.AgentOrder, s.AgentsHidden, s.AgentsShown = ids(s.AgentOrder), ids(s.AgentsHidden), ids(s.AgentsShown)
 	s.UsageOrder = ids(s.UsageOrder)
 	s.PanelUsageHidden = ids(s.PanelUsageHidden)
+	s.UsageAgentsHidden = ids(s.UsageAgentsHidden)
 	s.TrayUsages = ids(s.TrayUsages)
 	for i, u := range s.CodexAutoReset {
 		s.CodexAutoReset[i] = strings.ToLower(u)

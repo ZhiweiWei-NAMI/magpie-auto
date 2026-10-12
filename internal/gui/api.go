@@ -1077,6 +1077,8 @@ func Handler(w Windows, gw *gateway.Server) http.Handler {
 		in.UsageOrder = cur.UsageOrder // the Usage page's, dragged there
 		// and what the tray panel's Allowances tab leaves out, set there
 		in.PanelUsageHidden = cur.PanelUsageHidden
+		// and the clients the Usage page's Agents list leaves out, set there
+		in.UsageAgentsHidden = cur.UsageAgentsHidden
 		// how agents' lists name models, set on its own for the agents to be told
 		in.PlainNames, in.PlainOwnNames = cur.PlainNames, cur.PlainOwnNames
 		in.CodexAgentsV1 = cur.CodexAgentsV1
@@ -1547,12 +1549,13 @@ func Handler(w Windows, gw *gateway.Server) http.Handler {
 		writeJSON(rw, settingsState())
 	})
 	// the Usage page's order of its cards, which the tray panel's Allowances
-	// tab follows, and what that tab leaves out, in magpie's settings; one
-	// not sent stays as it is
+	// tab follows, what that tab leaves out, and the clients the page's
+	// Agents list leaves out, in magpie's settings; one not sent stays as it is
 	mux.HandleFunc("POST /api/usage/arrange", func(rw http.ResponseWriter, r *http.Request) {
 		var in struct {
-			Order       *[]string
-			PanelHidden *[]string
+			Order        *[]string
+			PanelHidden  *[]string
+			AgentsHidden *[]string
 		}
 		if err := json.NewDecoder(r.Body).Decode(&in); err != nil {
 			fail(rw, err)
@@ -1564,6 +1567,9 @@ func Handler(w Windows, gw *gateway.Server) http.Handler {
 		}
 		if in.PanelHidden != nil {
 			s.PanelUsageHidden = *in.PanelHidden
+		}
+		if in.AgentsHidden != nil {
+			s.UsageAgentsHidden = *in.AgentsHidden
 		}
 		if err := settings.Save(s); err != nil {
 			fail(rw, err)

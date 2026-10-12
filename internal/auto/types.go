@@ -1,7 +1,9 @@
+// Package auto owns bounded chat and native workspace tasks.
 package auto
 
 import (
 	"context"
+	"encoding/json"
 	"time"
 )
 
@@ -14,167 +16,121 @@ type Config struct {
 }
 type Route struct {
 	ID          string   `json:"id"`
+	Label       string   `json:"label"`
 	Adapter     string   `json:"adapter"`
 	Model       string   `json:"model"`
 	Description string   `json:"description"`
 	Efforts     []string `json:"efforts"`
-	Command     string   `json:"command"`
-	Args        []string `json:"args"`
-	CWD         string   `json:"cwd"`
-	Sandbox     string   `json:"sandbox,omitempty"`
+	Workspace   string   `json:"workspace,omitempty"`
+	AllowWrites bool     `json:"allowWrites"`
 }
 type Preferences struct {
 	Quality float64 `json:"quality"`
 	Cost    float64 `json:"cost"`
 	Speed   float64 `json:"speed"`
 }
-type Executor interface {
-	Run(context.Context, RunInput, func(Event)) (RunResult, error)
+
+// A nil emitter requests one non-streamed JSON decision. Usage is copied only
+// from the provider's reply; absent counters and cache measurements stay absent.
+type ChatTransport func(context.Context, string, string, string, func(string, string)) (ChatResult, error)
+type ChatResult struct {
+	Text      string
+	RequestID string
+	Usage     json.RawMessage
+	ToolCalls []ToolCall
+	Calls     []ChatUsage
 }
-type RunInput struct {
-	TaskID, RunID, Prompt string
-	Route                 Route
-	Effort                string
-	RequestAction         func(context.Context, ActionRequest) (ActionResponse, error)
+type ToolCall struct {
+	ID       string `json:"id"`
+	Type     string `json:"type"`
+	Function struct {
+		Name      string `json:"name"`
+		Arguments string `json:"arguments"`
+	} `json:"function"`
 }
-type RunResult struct {
-	ThreadID  string
-	Artifacts []Artifact
-}
-type Event struct {
-	ID           string    `json:"id"`
-	TaskID       string    `json:"taskId"`
-	RunID        string    `json:"runId"`
-	Kind         string    `json:"kind"`
-	Text         string    `json:"text"`
-	At           time.Time `json:"at"`
-	SourceID     string    `json:"sourceId,omitempty"`
-	OriginTaskID string    `json:"originTaskId,omitempty"`
-	OriginRunID  string    `json:"originRunId,omitempty"`
+type ChatUsage struct {
+	RequestID string          `json:"requestId,omitempty"`
+	Usage     json.RawMessage `json:"usage,omitempty"`
 }
 type Artifact struct {
-	TaskID   string `json:"taskId"`
 	ID       string `json:"id"`
-	Path     string `json:"path"`
+	TaskID   string `json:"taskId"`
 	RunID    string `json:"runId"`
 	SourceID string `json:"sourceId"`
+	Path     string `json:"path"`
+	Bytes    int    `json:"bytes"`
+	SHA256   string `json:"sha256"`
+}
+type Event struct {
+	ID     string    `json:"id"`
+	TaskID string    `json:"taskId"`
+	RunID  string    `json:"runId,omitempty"`
+	Kind   string    `json:"kind"`
+	Text   string    `json:"text"`
+	At     time.Time `json:"at"`
 }
 type Source struct {
-	SourceID string `json:"sourceId,omitempty"`
-	TaskID   string `json:"taskId,omitempty"`
-	RunID    string `json:"runId,omitempty"`
-	ID       string `json:"id"`
-	Kind     string `json:"kind"`
-	Text     string `json:"text"`
+	ID     string `json:"id"`
+	TaskID string `json:"taskId"`
+	RunID  string `json:"runId,omitempty"`
+	Kind   string `json:"kind"`
+	Status string `json:"status,omitempty"`
+	Text   string `json:"text"`
 }
 type Decision struct {
 	RouteID   string   `json:"routeId"`
 	Effort    string   `json:"effort"`
-	Action    string   `json:"action"`
 	SourceIDs []string `json:"sourceIds"`
 	Reason    string   `json:"reason"`
 }
 type Run struct {
-	ChildTaskID      string     `json:"childTaskId,omitempty"`
-	ChildRunID       string     `json:"childRunId,omitempty"`
-	ParentTaskID     string     `json:"parentTaskId,omitempty"`
-	ParentRunID      string     `json:"parentRunId,omitempty"`
-	ContextSourceIDs []string   `json:"contextSourceIds"`
-	Route            Route      `json:"route"`
-	ID               string     `json:"id"`
-	Status           string     `json:"status"`
-	Message          string     `json:"message"`
-	Request          RunRequest `json:"request"`
-	Decision         *Decision  `json:"decision,omitempty"`
-	ThreadID         string     `json:"threadId,omitempty"`
-	Context          string     `json:"context,omitempty"`
-	Error            string     `json:"error,omitempty"`
-	Started          time.Time  `json:"started"`
-	Finished         time.Time  `json:"finished,omitempty"`
+	ID                string          `json:"id"`
+	Status            string          `json:"status"`
+	Message           string          `json:"message"`
+	Request           RunRequest      `json:"request"`
+	Route             Route           `json:"route"`
+	Decision          *Decision       `json:"decision,omitempty"`
+	Context           string          `json:"context,omitempty"`
+	ContextSourceIDs  []string        `json:"contextSourceIds"`
+	RequestID         string          `json:"requestId,omitempty"`
+	Decider           string          `json:"decider"`
+	DecisionRequestID string          `json:"decisionRequestId,omitempty"`
+	Usage             json.RawMessage `json:"usage,omitempty"`
+	DecisionUsage     json.RawMessage `json:"decisionUsage,omitempty"`
+	Calls             []ChatUsage     `json:"calls,omitempty"`
+	Error             string          `json:"error,omitempty"`
+	Started           time.Time       `json:"started"`
+	Finished          time.Time       `json:"finished,omitempty"`
 }
 type Task struct {
-	State          CurrentState       `json:"state"`
-	PendingActions []ActionRequest    `json:"pendingActions"`
-	ID             string             `json:"id"`
-	Goal           string             `json:"goal"`
-	ParentID       string             `json:"parentId,omitempty"`
-	Dependencies   []string           `json:"dependencies"`
-	Status         string             `json:"status"`
-	Summary        string             `json:"summary"`
-	Preferences    Preferences        `json:"preferences"`
-	RouteScores    map[string]float64 `json:"routeScores"`
-	Runs           []Run              `json:"runs"`
-	Events         []Event            `json:"events"`
-	Sources        []Source           `json:"sources"`
-	Artifacts      []Artifact         `json:"artifacts"`
-	Created        time.Time          `json:"created"`
-	Updated        time.Time          `json:"updated"`
-}
-
-type ActionRequest struct {
-	ID               string           `json:"id"`
-	TaskID           string           `json:"taskId"`
-	RunID            string           `json:"runId"`
-	ThreadID         string           `json:"threadId"`
-	TurnID           string           `json:"turnId"`
-	ItemID           string           `json:"itemId"`
-	Kind             string           `json:"kind"`
-	Command          string           `json:"command"`
-	CWD              string           `json:"cwd"`
-	Reason           string           `json:"reason"`
-	Paths            []string         `json:"paths"`
-	Questions        []ActionQuestion `json:"questions"`
-	AllowedDecisions []string         `json:"allowedDecisions"`
-}
-type ActionQuestion struct {
-	ID       string         `json:"id"`
-	Header   string         `json:"header"`
-	Question string         `json:"question"`
-	IsOther  bool           `json:"isOther"`
-	IsSecret bool           `json:"isSecret"`
-	Options  []ActionOption `json:"options"`
-}
-type ActionOption struct {
-	Label       string `json:"label"`
-	Description string `json:"description"`
-}
-type ActionResponse struct {
-	Decision string              `json:"decision"`
-	Answers  map[string][]string `json:"answers,omitempty"`
+	ID           string             `json:"id"`
+	Goal         string             `json:"goal"`
+	ParentID     string             `json:"parentId,omitempty"`
+	Dependencies []string           `json:"dependencies"`
+	Status       string             `json:"status"`
+	Preferences  Preferences        `json:"preferences"`
+	RouteScores  map[string]float64 `json:"routeScores"`
+	State        CurrentState       `json:"state"`
+	Runs         []Run              `json:"runs"`
+	Events       []Event            `json:"events"`
+	Sources      []Source           `json:"sources"`
+	Artifacts    []Artifact         `json:"artifacts"`
+	Created      time.Time          `json:"created"`
+	Updated      time.Time          `json:"updated"`
 }
 type StateRecord struct {
 	Text     string `json:"text"`
+	Status   string `json:"status,omitempty"`
 	SourceID string `json:"sourceId"`
 	TaskID   string `json:"taskId"`
-	RunID    string `json:"runId"`
-}
-type ExplicitConstraints struct {
-	RouteID string `json:"routeId,omitempty"`
-	Effort  string `json:"effort,omitempty"`
-}
-type DependencyState struct {
-	TaskID   string `json:"taskId"`
-	RunID    string `json:"runId"`
-	Status   string `json:"status"`
-	SourceID string `json:"sourceId"`
-}
-type SourceRef struct {
-	SourceID string `json:"sourceId,omitempty"`
-	ID       string `json:"id"`
-	Kind     string `json:"kind"`
-	TaskID   string `json:"taskId"`
-	RunID    string `json:"runId"`
+	RunID    string `json:"runId,omitempty"`
 }
 type CurrentState struct {
-	Goal                StateRecord         `json:"goal"`
-	CurrentRequest      StateRecord         `json:"currentRequest"`
-	Phase               string              `json:"phase"`
-	Progress            StateRecord         `json:"progress"`
-	ExplicitConstraints ExplicitConstraints `json:"explicitConstraints"`
-	CurrentResult       StateRecord         `json:"currentResult"`
-	CompletedResults    []StateRecord       `json:"completedResults"`
-	PendingDependencies []DependencyState   `json:"pendingDependencies"`
-	SourceRefs          []SourceRef         `json:"sourceRefs"`
+	Phase               string        `json:"phase"`
+	CurrentRequest      StateRecord   `json:"currentRequest"`
+	CurrentResult       StateRecord   `json:"currentResult"`
+	PendingDependencies []StateRecord `json:"pendingDependencies"`
+	SourceRefs          []Source      `json:"sourceRefs"`
 }
 type CreateInput struct {
 	Goal         string      `json:"goal"`
@@ -194,9 +150,15 @@ type FeedbackInput struct {
 	Text        string       `json:"text"`
 	Preferences *Preferences `json:"preferences,omitempty"`
 }
+type TaskSummary struct {
+	ID      string    `json:"id"`
+	Goal    string    `json:"goal"`
+	Status  string    `json:"status"`
+	Updated time.Time `json:"updated"`
+}
 type Snapshot struct {
-	Config     Config `json:"config"`
-	Tasks      []Task `json:"tasks"`
-	Configured bool   `json:"configured"`
-	Error      string `json:"error,omitempty"`
+	Config     Config        `json:"config"`
+	Tasks      []TaskSummary `json:"tasks"`
+	Configured bool          `json:"configured"`
+	Error      string        `json:"error,omitempty"`
 }

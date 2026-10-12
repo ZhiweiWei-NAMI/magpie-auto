@@ -3236,6 +3236,12 @@ func (s *Server) forwardOnce(ctx context.Context, p provider.Provider, to provid
 	if to == provider.Anthropic {
 		s.fitUserBetas(p, req.Header)
 	}
+	sent := len(body)
+	if p.Account != nil && p.Account.Agent == "codex" {
+		// a turn goes zstd-compressed, as Codex's own client sends it;
+		// sent plain, ChatGPT answered a 1.1 MB one 503 (ylorn on X)
+		sent = provider.CodexCompressed(req, body)
+	}
 	res, err := p.Do(s.client, req)
 	if err != nil {
 		return res, err
@@ -3246,7 +3252,7 @@ func (s *Server) forwardOnce(ctx context.Context, p provider.Provider, to provid
 	if p.Account != nil && p.Account.Agent == "codex" {
 		// a large request ChatGPT closed the connection on: asked again,
 		// nobody resting for it, and said what may help (#1628)
-		res = codexDropped(res, len(body))
+		res = codexDropped(res, sent)
 	}
 	// what a Codex account's reply says it has used, for its cap (#1295)
 	heardCodexLimits(p, res)

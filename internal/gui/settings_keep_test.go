@@ -141,6 +141,7 @@ func TestSettingsSaveKeepsWhatItDoesNotSend(t *testing.T) {
 		QuotaLeft:            true,
 		UsageOrder:           []string{"kimi", "codex"},
 		PanelUsageHidden:     []string{"deepseek"},
+		UsageAgentsHidden:    []string{"curl"},
 		PlainNames:           true,
 		PlainOwnNames:        true,
 		CodexAgentsV1:        true,

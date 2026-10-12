@@ -698,6 +698,7 @@ func (s *Server) codexUpstreamOn(w http.ResponseWriter, r *http.Request, rest st
 	autoReset := false // a Codex reset looked at, once
 	resetNote := ""    // what spending it did, for the request log
 	resets := 0        // times a large request ChatGPT closed on was asked again (#1628)
+	sent := len(body)  // the bytes that went, compressed (provider.CodexCompressed)
 	for tries := 0; ; tries++ {
 		ctx := provider.ViaSignedIn(r.Context(), "codex")
 		if on != nil {
@@ -727,6 +728,9 @@ func (s *Server) codexUpstreamOn(w http.ResponseWriter, r *http.Request, rest st
 		}
 		// left to the transport, the reply comes back plain for the usage in it
 		req.Header.Del("Accept-Encoding")
+		// a turn to ChatGPT goes zstd-compressed again, as Codex sent it
+		// before magpie read it (ylorn on X); an API key's goes plain
+		sent = provider.CodexCompressed(req, body)
 		if res, err = s.client.Do(req); err != nil {
 			msg := "OpenAI: " + err.Error()
 			if rest == "/responses" {
@@ -752,7 +756,7 @@ func (s *Server) codexUpstreamOn(w http.ResponseWriter, r *http.Request, rest st
 				}
 			}
 		}
-		if rest == "/responses" && base != codexAPIBase && res.StatusCode == http.StatusServiceUnavailable && len(body) >= codexDropBody && resets < lastRetries {
+		if rest == "/responses" && base != codexAPIBase && res.StatusCode == http.StatusServiceUnavailable && sent >= codexDropBody && resets < lastRetries {
 			// ChatGPT closed the connection before answering a large
 			// request, which often passes (#1628): asked again after a
 			// moment, as the accounts loop asks its last one again
@@ -792,7 +796,7 @@ func (s *Server) codexUpstreamOn(w http.ResponseWriter, r *http.Request, rest st
 		if base != codexAPIBase {
 			// still closed on after that: Codex is told what may help,
 			// at the 503 it asks again for (#1628)
-			res = codexDropped(res, len(body))
+			res = codexDropped(res, sent)
 		}
 	}
 	defer res.Body.Close()

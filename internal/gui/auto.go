@@ -3,11 +3,9 @@ package gui
 import (
 	"encoding/json"
 	"errors"
+	"mime"
 	"net/http"
-	"net/url"
-	"os"
 	"path/filepath"
-	"strings"
 	"sync"
 
 	autowork "github.com/yetone/magpie/internal/auto"
@@ -15,8 +13,6 @@ import (
 	"github.com/yetone/magpie/internal/settings"
 )
 
-// The manager belongs to this backend, not an HTTP request or a webview.
-// Leaving a page or closing a connection cannot cancel an owned execution.
 var autoBackend struct {
 	sync.Mutex
 	manager *autowork.Manager
@@ -29,15 +25,14 @@ func autoManager() (*autowork.Manager, error) {
 		return nil, errors.New("Auto backend has stopped")
 	}
 	if autoBackend.manager == nil {
-		m, err := autowork.New(filepath.Join(settings.Dir(), "auto"), autowork.CodexExecutor{})
-		if err != nil {
-			return nil, err
-		}
 		gw := served.Load()
 		if gw == nil {
 			gw = gateway.New()
 		}
-		m.UseDecisionTransport(gw.SystemOneDecision)
+		m, err := autowork.New(filepath.Join(settings.Dir(), "auto"), gw.AutoChat, gateway.AutoModelError)
+		if err != nil {
+			return nil, err
+		}
 		autoBackend.manager = m
 	}
 	return autoBackend.manager, nil
@@ -52,240 +47,93 @@ func stopAuto() {
 	}
 }
 
+// Auto shares the console's authentication and owns its requests and tool runs.
 func autoRoutes(mux *http.ServeMux) {
-	manager := func(rw http.ResponseWriter) *autowork.Manager {
-		m, err := autoManager()
-		if err != nil {
-			fail(rw, err)
-			return nil
-		}
-		rw.Header().Set("Cache-Control", "no-store")
-		return m
+	decode := func(w http.ResponseWriter, r *http.Request, value any) error {
+		return json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<20)).Decode(value)
 	}
-	decode := func(rw http.ResponseWriter, r *http.Request, out any) bool {
-		err := json.NewDecoder(http.MaxBytesReader(rw, r.Body, 1<<20)).Decode(out)
-		if err != nil {
-			fail(rw, err)
-			return false
-		}
-		return true
-	}
-	mux.HandleFunc("GET /api/auto", func(rw http.ResponseWriter, r *http.Request) {
-		if m := manager(rw); m != nil {
-			writeJSON(rw, m.Snapshot())
-		}
-	})
-	mux.HandleFunc("POST /api/auto/config", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
-			return
-		}
-		var in autowork.Config
-		if !decode(rw, r, &in) {
-			return
-		}
-		if err := m.SetConfig(in); err != nil {
-			fail(rw, err)
-			return
-		}
-		writeJSON(rw, m.Snapshot())
-	})
-	mux.HandleFunc("POST /api/auto/tasks", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
-			return
-		}
-		var in autowork.CreateInput
-		if !decode(rw, r, &in) {
-			return
-		}
-		t, err := m.Create(in)
-		if err != nil {
-			fail(rw, err)
-			return
-		}
-		writeJSON(rw, t)
-	})
-	mux.HandleFunc("GET /api/auto/tasks/{id}", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
-			return
-		}
-		t, err := m.Task(r.PathValue("id"))
-		if err != nil {
-			http.Error(rw, err.Error(), http.StatusNotFound)
-			return
-		}
-		writeJSON(rw, t)
-	})
-	for _, action := range []string{"start", "continue"} {
-		mux.HandleFunc("POST /api/auto/tasks/{id}/"+action, func(rw http.ResponseWriter, r *http.Request) {
-			m := manager(rw)
-			if m == nil {
-				return
-			}
-			var in autowork.RunRequest
-			if !decode(rw, r, &in) {
-				return
-			}
-			var t autowork.Task
-			var err error
-			if action == "start" {
-				t, err = m.Start(r.PathValue("id"), in)
-			} else {
-				t, err = m.Continue(r.PathValue("id"), in)
+	handle := func(pattern string, f func(http.ResponseWriter, *http.Request, *autowork.Manager) (any, error)) {
+		mux.HandleFunc(pattern, func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Cache-Control", "no-store")
+			m, err := autoManager()
+			var result any
+			if err == nil {
+				result, err = f(w, r, m)
 			}
 			if err != nil {
-				fail(rw, err)
+				fail(w, err)
 				return
 			}
-			writeJSON(rw, t)
+			writeJSON(w, result)
 		})
 	}
-	mux.HandleFunc("POST /api/auto/tasks/{id}/cancel", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
-			return
-		}
-		if err := m.Cancel(r.PathValue("id")); err != nil {
-			fail(rw, err)
-			return
-		}
-		t, err := m.Task(r.PathValue("id"))
-		if err != nil {
-			fail(rw, err)
-			return
-		}
-		writeJSON(rw, t)
+	handle("GET /api/auto", func(_ http.ResponseWriter, _ *http.Request, m *autowork.Manager) (any, error) {
+		return m.Snapshot(), nil
 	})
-	mux.HandleFunc("POST /api/auto/tasks/{id}/feedback", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
+	handle("GET /api/auto/tasks/{id}", func(_ http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
+		return m.Task(r.PathValue("id"))
+	})
+	mux.HandleFunc("GET /api/auto/tasks/{id}/artifacts/{artifact}", func(w http.ResponseWriter, r *http.Request) {
+		m, err := autoManager()
+		if err != nil {
+			fail(w, err)
 			return
 		}
-		var in autowork.FeedbackInput
-		if !decode(rw, r, &in) {
+		f, err := m.OpenArtifact(r.PathValue("id"), r.PathValue("artifact"))
+		if err != nil {
+			fail(w, err)
 			return
+		}
+		defer f.Close()
+		info, err := f.Stat()
+		if err != nil {
+			fail(w, err)
+			return
+		}
+		w.Header().Set("Cache-Control", "no-store")
+		w.Header().Set("Content-Disposition", mime.FormatMediaType("attachment", map[string]string{"filename": info.Name()}))
+		http.ServeContent(w, r, info.Name(), info.ModTime(), f)
+	})
+	handle("POST /api/auto/config", func(w http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
+		var c autowork.Config
+		if err := decode(w, r, &c); err != nil {
+			return nil, err
+		}
+		if err := m.SetConfig(c); err != nil {
+			return nil, err
+		}
+		return m.Snapshot(), nil
+	})
+	handle("POST /api/auto/tasks", func(w http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
+		var in autowork.CreateInput
+		if err := decode(w, r, &in); err != nil {
+			return nil, err
+		}
+		return m.Create(in)
+	})
+	for _, action := range []string{"start", "continue"} {
+		handle("POST /api/auto/tasks/{id}/"+action, func(w http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
+			var in autowork.RunRequest
+			if err := decode(w, r, &in); err != nil {
+				return nil, err
+			}
+			return m.Start(r.PathValue("id"), in)
+		})
+	}
+	handle("POST /api/auto/tasks/{id}/cancel", func(_ http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
+		if err := m.Cancel(r.PathValue("id")); err != nil {
+			return nil, err
+		}
+		return m.Task(r.PathValue("id"))
+	})
+	handle("POST /api/auto/tasks/{id}/feedback", func(w http.ResponseWriter, r *http.Request, m *autowork.Manager) (any, error) {
+		var in autowork.FeedbackInput
+		if err := decode(w, r, &in); err != nil {
+			return nil, err
 		}
 		if err := m.Feedback(r.PathValue("id"), in); err != nil {
-			fail(rw, err)
-			return
+			return nil, err
 		}
-		t, err := m.Task(r.PathValue("id"))
-		if err != nil {
-			fail(rw, err)
-			return
-		}
-		writeJSON(rw, t)
+		return m.Task(r.PathValue("id"))
 	})
-	mux.HandleFunc("POST /api/auto/tasks/{id}/actions/{action}", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
-			return
-		}
-		var in autowork.ActionResponse
-		if !decode(rw, r, &in) {
-			return
-		}
-		if err := m.ReplyAction(r.PathValue("id"), r.PathValue("action"), in); err != nil {
-			fail(rw, err)
-			return
-		}
-		t, err := m.Task(r.PathValue("id"))
-		if err != nil {
-			fail(rw, err)
-			return
-		}
-		writeJSON(rw, t)
-	})
-	mux.HandleFunc("GET /api/auto/tasks/{id}/artifacts/{artifact}", func(rw http.ResponseWriter, r *http.Request) {
-		m := manager(rw)
-		if m == nil {
-			return
-		}
-		t, err := m.Task(r.PathValue("id"))
-		if err != nil {
-			http.NotFound(rw, r)
-			return
-		}
-		for _, a := range t.Artifacts {
-			if a.ID != r.PathValue("artifact") {
-				continue
-			}
-			owner := t
-			if a.TaskID != "" && a.TaskID != t.ID {
-				owner, err = m.Task(a.TaskID)
-				if err != nil {
-					http.NotFound(rw, r)
-					return
-				}
-				// Resolve only an exact recorded child artifact reference. The
-				// recorded owner's run retains the original workspace snapshot.
-				found := false
-				for _, actual := range owner.Artifacts {
-					if actual.ID == a.ID && actual.RunID == a.RunID && actual.SourceID == a.SourceID && actual.Path == a.Path {
-						found = true
-						break
-					}
-				}
-				if !found {
-					http.NotFound(rw, r)
-					return
-				}
-			}
-			for _, run := range owner.Runs {
-				if run.ID != a.RunID {
-					continue
-				}
-				file, err := autoArtifactPath(run.Route.CWD, a.Path)
-				if err != nil {
-					fail(rw, err)
-					return
-				}
-				rw.Header().Set("Content-Disposition", "attachment; filename*=UTF-8''"+url.PathEscape(filepath.Base(file)))
-				http.ServeFile(rw, r, file)
-				return
-			}
-		}
-		http.NotFound(rw, r)
-	})
-}
-
-// Only recorded regular artifacts within the execution's original workspace
-// can be downloaded. Resolve symlinks before checking the containment boundary.
-func autoArtifactPath(cwd, path string) (string, error) {
-	if cwd == "" || path == "" {
-		return "", errors.New("artifact has no recorded workspace")
-	}
-	root, err := filepath.EvalSymlinks(cwd)
-	if err != nil {
-		return "", err
-	}
-	root, err = filepath.Abs(root)
-	if err != nil {
-		return "", err
-	}
-	if !filepath.IsAbs(path) {
-		path = filepath.Join(root, path)
-	}
-	file, err := filepath.EvalSymlinks(path)
-	if err != nil {
-		return "", err
-	}
-	file, err = filepath.Abs(file)
-	if err != nil {
-		return "", err
-	}
-	rel, err := filepath.Rel(root, file)
-	if err != nil || rel == ".." || strings.HasPrefix(rel, ".."+string(filepath.Separator)) || filepath.IsAbs(rel) {
-		return "", errors.New("artifact is outside its execution workspace")
-	}
-	info, err := os.Stat(file)
-	if err != nil {
-		return "", err
-	}
-	if !info.Mode().IsRegular() {
-		return "", errors.New("artifact is not a regular file")
-	}
-	return file, nil
 }

@@ -964,6 +964,33 @@ body.window .field.solo { grid-column: auto; }
 .row.stat .num b { font-weight: 600; }
 .row.stat .num small { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
 .row.stat .cost { flex: none; min-width: 58px; text-align: right; color: var(--green); font-variant-numeric: tabular-nums; font-size: 12px; }
+/* an Agents row's actions: shown as the row is hovered, as a Finder row's are,
+   and always where nothing hovers */
+.row.stat .us-more { flex: none; width: 22px; height: 22px; opacity: 0; transition: opacity .12s, background .12s, color .12s; }
+/* where a pointer hovers it takes no room: its margins give back its width
+   and the gap before it, so the row at rest is laid out as it was, and it
+   shows over the end of the share bar, on the card's own colour */
+@media (hover: hover) {
+  .row.stat .us-more { position: relative; margin: 0 -9px 0 -22px; background: var(--card); }
+  .row.stat .us-more:hover { background: var(--pill); }
+}
+.row.stat:hover .us-more { opacity: 1; }
+.row.stat .us-more:focus-visible { opacity: 1; }
+.row.stat .us-more.open { opacity: 1; background: var(--pill); color: var(--fg); }
+@media (hover: none) { .row.stat .us-more { opacity: 1; margin: 0 -4px 0 -2px; } }
+.row.stat .us-unhide { flex: none; margin-right: -4px; }
+/* the action's room comes out of the name's, which ends in "…" */
+.row.stat.acts .who { flex-shrink: 1; }
+/* the hidden ones: a quiet line under the list, opening them dimmed */
+.us-hid { display: flex; flex-direction: column; flex: none; }
+.us-hid[hidden] { display: none; }
+.us-hid .us-hidline { align-self: flex-start; display: inline-flex; align-items: center; gap: 4px; margin: 4px 0 0 2px; font-size: 11.5px; color: var(--faint); }
+.us-hid .us-hidline:hover { color: var(--fg-2); }
+.us-hid .us-hidline svg { transition: transform .15s; }
+.us-hid .us-hidline[aria-expanded="true"] svg { transform: rotate(180deg); }
+.us-hid .list { margin-top: 4px; }
+.us-hid .list[hidden] { display: none; }
+.row.stat.hid > :not(.us-unhide) { opacity: .55; }
 .usage-note { padding: 10px 4px 2px; font-size: 11px; color: var(--faint); user-select: text; -webkit-user-select: text; }
 .usage-pane { display: flex; flex-direction: column; flex: none; }
 .usage-pane[hidden] { display: none; }
@@ -3169,6 +3196,9 @@ body.panel .modal { padding: 16px 12px; }
   body.web .row.stat .num { grid-column: 2 / 4; grid-row: 2; min-width: 0; align-items: flex-start; }
   body.web .row.stat .num small { max-width: 100%; white-space: normal; }
   body.web .row.stat .share { grid-column: 2 / 4; grid-row: 3; margin: 0; }
+  body.web .row.stat.acts { grid-template-columns: 20px minmax(0, 1fr) auto auto; }
+  body.web .row.stat.acts .num, body.web .row.stat.acts .share { grid-column: 2 / 5; }
+  body.web .row.stat .us-more, body.web .row.stat .us-unhide { grid-column: 4; grid-row: 1; margin: 0; }
   body.web .connect { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   body.web .connect label { text-align: left; margin-top: 6px; }
   body.web .connect .segs { flex-wrap: wrap; }
