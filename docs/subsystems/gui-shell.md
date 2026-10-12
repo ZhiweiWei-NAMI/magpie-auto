@@ -188,3 +188,14 @@ BROWSER=webkit node --test internal/gui/tests/click-scroll.test.cjs
 webkit`). Set `NODE_PATH` when Playwright is installed outside the repo. The
 Test workflow in CI does not run this suite, so a GUI change must run it
 locally and report the result. See [`tests/README.md`](../../internal/gui/tests/README.md).
+
+## Auto workspace
+
+The opt-in Auto view adds durable owned tasks beside external Sessions history.
+[`auto.go`](../../internal/gui/auto.go) attaches task/configuration, start, continue, cancel, feedback, action replies and recorded artifact download routes to the existing authenticated GUI handler. One manager belongs to the backend and closes during `stopServing`; an HTTP disconnect does not cancel an execution.
+
+[`internal/auto`](../../internal/auto) owns the raw event journal, task state, run route snapshots, selected source records, task relationships and bounded scheduling. Jev selects among configured executor routes using current requests, task preferences and bounded feedback scores. Each continuation starts a fresh native thread with bounded selected context. A restart marks unfinished runs interrupted.
+
+The Codex app-server adapter defaults to read-only. A route can explicitly allow workspace-write inside its confirmed directory, with network access disabled. Typed approval/input requests remain bound to their owning run; only bounded file approvals can be accepted, while command escalation can be declined or stopped. Input answers are ephemeral. Other clients remain normal Magpie clients and history sources, without advertised Auto lifecycle control. [`AUTO.md`](../../AUTO.md) records configuration, local portable run instructions and capability limits.
+
+The Auto task rail, conversation and inspector are isolated in `assets/auto.js` and `auto.css`; draft/focus survive polling. Artifacts download only when recorded and resolved inside the original run workspace. Feedback changes task route preference scores, not model neural weights.

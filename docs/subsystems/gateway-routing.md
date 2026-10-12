@@ -272,3 +272,7 @@ go test -tags nogui ./internal/provider -run 'TestGroup|TestCodexCreditsSwitch|T
 
 The gateway's `TestMain` gives the package a home of its own, so these tests
 never read real providers or accounts.
+
+## Owned Auto decision requests
+
+[`SystemOneDecision`](../../internal/gateway/auto_decide.go) exposes the existing System One transport to the local Auto task manager. It uses the same provider authentication, request adaptation, rate limits and usage records as normal routing, without a second credential store. Auto validates typed route/effort/context/action choices before executing an owned adapter. Missing decision configuration and malformed answers fail visibly; ordinary routing remains unchanged when Auto is disabled.

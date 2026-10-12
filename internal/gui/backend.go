@@ -28,6 +28,7 @@ var serving sync.WaitGroup
 // once those in flight have finished.
 func stopServing() {
 	endBackend()
+	stopAuto()
 	serving.Wait()
 }
 

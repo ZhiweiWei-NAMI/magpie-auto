@@ -145,7 +145,7 @@ async function api(path, body, heads, signal) {
   }
   // the accounts it names, for Hide accounts to know them (#568); a
   // session's or a library's words aren't looked through
-  if (data && typeof data === "object" && !/^(sessions|library|skills|plugins|market)/.test(path)) noteAccounts(data);
+  if (data && typeof data === "object" && !/^(auto|sessions|library|skills|plugins|market)/.test(path)) noteAccounts(data);
   return data;
 }
 
@@ -3344,6 +3344,7 @@ async function load(again) {
       if (view === "library") window.loadLibrary?.();
       if (view === "plugins") window.loadPlugins?.();
       if (view === "sessions") window.loadSessionsPage?.();
+      if (view === "auto") window.loadAuto?.()?.catch((e) => status(e.message, "err"));
     }
     // a Library drawn before the state came counted the hidden agents too
     else if (view === "library" && hiddenIds().join() !== hid) window.redrawLibrary?.();
@@ -22658,7 +22659,7 @@ async function show(v) {
     }
   }
   view = v;
-  const title = ({ agents: "Agents", providers: "Providers", gateway: "Gateway", routing: "Routing", usage: "Usage", sessions: "Sessions", library: "Library", plugins: "Plugins", settings: "Settings" })[v];
+  const title = ({ agents: "Agents", providers: "Providers", gateway: "Gateway", routing: "Routing", usage: "Usage", sessions: "Sessions", auto: "Auto", library: "Library", plugins: "Plugins", settings: "Settings" })[v];
   $("#pageTitle").dataset.en = title;
   $("#pageTitle").textContent = t(title);
   if (mode === "window") {
@@ -22672,7 +22673,7 @@ async function show(v) {
   $("#prefs").classList.toggle("on", v === "settings");
   if (v === "settings") $("#prefs").setAttribute("aria-current", "page"); else $("#prefs").removeAttribute("aria-current");
   navSubs();
-  for (const id of ["agents", "providers", "gateway", "routing", "usage", "sessions", "library", "plugins", "settings"]) $("#view-" + id).hidden = v !== id;
+  for (const id of ["agents", "providers", "gateway", "routing", "usage", "sessions", "auto", "library", "plugins", "settings"]) $("#view-" + id).hidden = v !== id;
   // back to where the reader was in it, and again once it has what it loads
   const back = () => backToReader($("#view-" + v));
   requestAnimationFrame(back);
@@ -22686,6 +22687,7 @@ async function show(v) {
   if (v === "library") window.loadLibrary?.()?.then(back);
   if (v === "plugins") window.loadPlugins?.()?.then(back);
   if (v === "sessions") window.loadSessionsPage?.()?.then(back);
+  if (v === "auto") window.loadAuto?.()?.then(back, (e) => status(e.message, "err"));
   syncTitle();
   syncURL();
   return true;
@@ -22731,7 +22733,7 @@ $("#prefs").onclick = () => { openSettings(); $("#prefs").blur(); };
 // A newer magpie is looked for on its own, and from Settings › About's Check.
 function refreshKind() {
   if (mode === "panel") return { agents: "agents", usage: "allowances", stats: "requests" }[panelTab] || "models";
-  return { agents: "agents", usage: "usage" }[view] || "models";
+  return { agents: "agents", usage: "usage", auto: "auto" }[view] || "models";
 }
 // syncTitle: the refresh's tooltip says what it reads on the page shown.
 // Called from setPanelTab as the page loads, before this part of it has run.
@@ -22744,11 +22746,13 @@ function syncTitle() {
     allowances: "Read the allowances again now",
     requests: "Read the requests again now",
     models: "Refresh model lists (models.dev and every vendor)",
+    auto: "Refresh Auto tasks",
   }[refreshKind()];
   b.title = t(b.dataset.enTitle);
   b.setAttribute("aria-label", b.title);
 }
 async function refreshPage(kind) {
+  if (kind === "auto") { await window.loadAuto?.(); return t("Auto tasks refreshed"); }
   switch (kind) {
     case "agents":
       state = await api("agents/rescan", {});
@@ -23638,7 +23642,7 @@ if (mode === "window" && params.get("view") === "usage") {
   for (const k of ["tab", "provider", "agent", "computer", "card", "purpose", "via"]) u.searchParams.delete(k);
   history.replaceState(null, "", u);
 }
-if (mode === "window" && ["providers", "gateway", "routing", "usage", "sessions", "library", "plugins", "settings"].includes(params.get("view"))) show(params.get("view"));
+if (mode === "window" && ["providers", "gateway", "routing", "usage", "sessions", "auto", "library", "plugins", "settings"].includes(params.get("view"))) show(params.get("view"));
 else if (mode === "window" && !gatewayMode && !sideNav()) slide($("#nav"), "nav");
 // in gateway mode the first page is Providers, Agents' tab gone
 if (gatewayMode) setGatewayMode(true);
