@@ -40,13 +40,15 @@ MAGPIE_ADDR=127.0.0.1:3435 ./magpie-auto web --addr 127.0.0.1:3436 --no-open
 
 安装并配置 [dsh-auto](https://github.com/ZhiweiWei-NAMI/dsh-auto#启用)。dsh 的独立 profile 用现有 Magpie 网关连接，主代理及 `subagent`、`subagent_fork` 都指定 `dsh-workbuddy/deepseek-v4.1-flash`。关闭插件并重新启用原生 `compaction-basic` 即恢复普通 dsh；无需改变模型服务连接。
 
-服务器已配置独立入口，进入你的任务目录后运行：
+服务器已将插件安装到本机 dsh 的 `auto` profile，进入任务目录后选择：
 
 ```bash
-/mnt/data2/weizhiwei/magpie-auto/run-auto '你的编程任务'
+dsh --profile auto '你的编程任务'
+# 使用同一模型连接，关闭 Auto 并恢复原生压缩
+dsh --profile auto --patch "$DSH_HOME/profiles/auto/node_modules/dsh-auto/off.patch.yml" '你的编程任务'
 ```
 
-此入口使用部署目录的 `dsh-auto-home/settings.yaml` 和 `dsh-auto-home/cordis.patch.yml`，全局 dsh 配置保持原样。最小独立 Jev 验证及实际结构化返回见 [两个小请求](experiments/jev-cache-20261012/jev-isolated/)。
+插件通过原生 bundle 自动挂载，不复制 dsh 执行运行时。连接配置在 `$DSH_HOME/profiles/auto/settings.yaml`，限制与用量日志位置在同目录 `cordis.patch.yml`；沿用本机原生会话与存储。原有 `web`、`headless` profile 保持原配置。旧 `run-auto` 入口仍可用，使用部署目录的独立 `dsh-auto-home`。最小独立 Jev 验证及实际结构化返回见 [两个小请求](experiments/jev-cache-20261012/jev-isolated/)。
 
 ## 上下文与缓存
 
