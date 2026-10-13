@@ -552,6 +552,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /messages", keepsSignIn(s.handle(provider.Anthropic)))
 	mux.HandleFunc("POST /v1/systemone", s.serveSystemOne)
 	mux.HandleFunc("POST /v1/auto/decide", s.serveAutoPlan)
+	mux.HandleFunc("GET /v1/auto/policy", s.serveAutoPolicy)
 	mux.HandleFunc("POST /v1/messages/count_tokens", keepsSignIn(s.countTokens))
 	mux.HandleFunc("POST /v1/images/generations", s.images(false))
 	mux.HandleFunc("POST /images/generations", s.images(false))

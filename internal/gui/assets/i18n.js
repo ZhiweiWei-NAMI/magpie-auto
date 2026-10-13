@@ -4,6 +4,10 @@
 // works. {name} slots are filled by t(str, vars).
 const I18N = {
   zh: {
+    "Strategy instruction": "策略指令",
+    "Applied strategy": "已应用的策略",
+    "Describe your priorities. Save uses Jev once to set routing preferences for new dsh sessions.": "描述你的优先事项。保存时 Jev 调用一次，为新的 dsh 会话设置路由偏好。",
+
     "Tasks": "任务",
     "New task": "新任务",
     "Jev decider": "Jev 决策模型",
@@ -4403,6 +4407,10 @@ const I18N = {
     "~/.dsh/settings.yaml sets its own DeepSeek endpoint or key, which dsh puts over magpie's; clear it in dsh's Models page to go through magpie.": "~/.dsh/settings.yaml 设置了自己的 DeepSeek 地址或 Key，dsh 会优先用它而不是 magpie 的；请在 dsh 的 Models 页面清除它，才能走 magpie。",
   },
   "zh-TW": {
+    "Strategy instruction": "策略指令",
+    "Applied strategy": "已套用的策略",
+    "Describe your priorities. Save uses Jev once to set routing preferences for new dsh sessions.": "描述你的優先事項。儲存時 Jev 呼叫一次，為新的 dsh 工作階段設定路由偏好。",
+
     "Tasks": "任務",
     "New task": "新任務",
     "Jev decider": "Jev 決策模型",
@@ -8785,6 +8793,10 @@ const I18N = {
     "~/.dsh/settings.yaml sets its own DeepSeek endpoint or key, which dsh puts over magpie's; clear it in dsh's Models page to go through magpie.": "~/.dsh/settings.yaml 設定了自己的 DeepSeek 位址或 Key，dsh 會優先用它而不是 magpie 的；請在 dsh 的 Models 頁面清除它，才能走 magpie。",
   },
   ja: {
+    "Strategy instruction": "戦略の指示",
+    "Applied strategy": "適用された戦略",
+    "Describe your priorities. Save uses Jev once to set routing preferences for new dsh sessions.": "優先事項を入力してください。保存時に Jev を一度呼び出し、新しい dsh セッションのルーティング方針を設定します。",
+
     "Tasks": "タスク",
     "New task": "新しいタスク",
     "Jev decider": "Jev 判断モデル",
@@ -13169,6 +13181,10 @@ const I18N = {
     "~/.dsh/settings.yaml sets its own DeepSeek endpoint or key, which dsh puts over magpie's; clear it in dsh's Models page to go through magpie.": "~/.dsh/settings.yaml に独自の DeepSeek エンドポイントやキーがあり、dsh は magpie のものよりそちらを優先します。magpie を経由するには dsh の Models ページで消してください。",
   },
   de: {
+    "Strategy instruction": "Strategieanweisung",
+    "Applied strategy": "Angewendete Strategie",
+    "Describe your priorities. Save uses Jev once to set routing preferences for new dsh sessions.": "Beschreibe deine Prioritäten. Beim Speichern legt ein Jev-Aufruf die Routing-Präferenzen für neue dsh-Sitzungen fest.",
+
     "Tasks": "Aufgaben",
     "New task": "Neue Aufgabe",
     "Jev decider": "Jev-Entscheidungsmodell",

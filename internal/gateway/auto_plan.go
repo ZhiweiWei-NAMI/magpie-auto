@@ -10,6 +10,23 @@ import (
 	"github.com/yetone/magpie/internal/settings"
 )
 
+// Clients snapshot this once per root session; credentials never leave Magpie.
+func (s *Server) serveAutoPolicy(w http.ResponseWriter, r *http.Request) {
+	config, err := autowork.StoredConfig(filepath.Join(settings.Dir(), "auto"))
+	if err != nil {
+		writeError(w, provider.Chat, http.StatusServiceUnavailable, "Auto configuration unavailable")
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Cache-Control", "no-store")
+	_ = json.NewEncoder(w).Encode(struct {
+		Enabled     bool               `json:"enabled"`
+		Routes      []autowork.Route   `json:"routes"`
+		Strategy    *autowork.Strategy `json:"strategy"`
+		Instruction string             `json:"instruction"`
+	}{config.Enabled, config.Routes, config.Strategy, config.StrategyPrompt})
+}
+
 // serveAutoPlan returns a decision only. dsh owns sessions, tools and children.
 func (s *Server) serveAutoPlan(w http.ResponseWriter, r *http.Request) {
 	config, err := autowork.StoredConfig(filepath.Join(settings.Dir(), "auto"))

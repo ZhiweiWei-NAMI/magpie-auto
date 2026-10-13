@@ -77,7 +77,7 @@ func autoRoutes(mux *http.ServeMux) {
 		if err := decode(w, r, &c); err != nil {
 			return nil, err
 		}
-		if err := m.SetConfig(c); err != nil {
+		if err := m.Configure(r.Context(), c); err != nil {
 			return nil, err
 		}
 		return m.Snapshot(), nil

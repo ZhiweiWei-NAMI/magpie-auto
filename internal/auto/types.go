@@ -8,12 +8,14 @@ import (
 )
 
 type Config struct {
-	Enabled       bool    `json:"enabled"`
-	Decider       string  `json:"decider"`
-	JevKeyFile    string  `json:"jevKeyFile,omitempty"`
-	Routes        []Route `json:"routes"`
-	MaxConcurrent int     `json:"maxConcurrent"`
-	ContextBytes  int     `json:"contextBytes"`
+	Enabled        bool      `json:"enabled"`
+	Decider        string    `json:"decider"`
+	JevKeyFile     string    `json:"jevKeyFile,omitempty"`
+	Routes         []Route   `json:"routes"`
+	MaxConcurrent  int       `json:"maxConcurrent"`
+	ContextBytes   int       `json:"contextBytes"`
+	StrategyPrompt string    `json:"strategyPrompt,omitempty"`
+	Strategy       *Strategy `json:"strategy,omitempty"`
 }
 type Route struct {
 	ID          string   `json:"id"`

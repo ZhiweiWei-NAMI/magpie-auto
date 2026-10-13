@@ -39,11 +39,13 @@ for (const engine of process.env.BROWSER ? [process.env.BROWSER] : ['chromium','
         const texts=page.locator('.auto-config-fields input[type=text]');
         assert.equal(await texts.nth(1).inputValue(),'/private/console.key',lang);
         await texts.nth(1).fill('/private/new-console.key');
+        await page.locator('.auto-config textarea').fill('Prefer stable sessions and independent implementation work.');
         await page.locator('.auto-config > button.primary').click();
         await page.waitForFunction(()=>document.querySelector('.auto-config').hidden);
         assert.equal(posts.length,1,lang);
         assert.equal(posts[0].decider,'jev-1.13-free',lang);
         assert.equal(posts[0].jevKeyFile,'/private/new-console.key',lang);
+        assert.equal(posts[0].strategyPrompt,'Prefer stable sessions and independent implementation work.',lang);
         assert.equal(posts[0].routes[0].adapter,'gateway',lang);
         assert.ok(!('workspace' in posts[0].routes[0])&&!('allowWrites' in posts[0].routes[0]),lang);
         assert.deepEqual(errors,[],lang);

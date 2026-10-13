@@ -36,6 +36,12 @@
     for (const entry of routeEditors) entry.inputs.id.required = entry.inputs.model.required = configInputs.enabled.checked;
   };
   const routeFields = make('div', 'auto-routes');
+  const strategyLine = make('label', 'auto-field'), strategyInput = make('textarea', 'auto-message');
+  strategyInput.rows = 2; strategyInput.maxLength = 2000;
+  strategyInput.setAttribute('aria-label', t('Strategy instruction'));
+  strategyLine.append(make('span', '', t('Strategy instruction')), strategyInput);
+  const strategyResult = make('pre', 'auto-muted');
+  strategyResult.setAttribute('aria-label', t('Applied strategy'));
   function addRoute(value = {}) {
     const row = make('div', 'auto-route'), inputs = {}, entry = {row, inputs, adapter:'gateway'};
     for (const [key, label] of [['id','Agent'], ['label','Name'], ['model','Model'], ['description','Task role'], ['efforts','Effort']]) {
@@ -45,9 +51,11 @@
     row.append(make('p', 'auto-muted', t('Inference only; this route cannot read or write workspace files.'))); routeEditors.push(entry);
     row.append(button('Remove', () => { row.remove(); routeEditors.splice(routeEditors.indexOf(entry), 1); })); routeFields.append(row);
   }
-  config.append(fields, make('h3', '', t('Configured agents')), routeFields, button('Add', () => addRoute()), button('Save', () => config.requestSubmit(), 'text primary'));
+  config.append(fields, strategyLine, make('p', 'auto-muted', t('Describe your priorities. Save uses Jev once to set routing preferences for new dsh sessions.')), strategyResult, make('h3', '', t('Configured agents')), routeFields, button('Add', () => addRoute()), button('Save', () => config.requestSubmit(), 'text primary'));
   function fillConfig() {
     const current = data?.config || {enabled:false, decider:'', maxConcurrent:1, contextBytes:16000};
+    strategyInput.value = current.strategyPrompt || '';
+    strategyResult.textContent = current.strategy ? JSON.stringify({mode:current.strategy.mode, weights:current.strategy.weights, routeWeights:current.strategy.routeWeights}, null, 2) : '';
     for (const [key, input] of Object.entries(configInputs)) {
       if (key === 'enabled') input.checked = !!current.enabled; else input.value = current[key] ?? (key === 'decider' ? 'jev-1.13-free' : key === 'jevKeyFile' ? '' : key === 'contextBytes' ? 16000 : 1);
     }
@@ -60,7 +68,7 @@
     event.preventDefault(); action(async () => {
       const next = {
         enabled:configInputs.enabled.checked, decider:configInputs.decider.value.trim(), jevKeyFile:configInputs.jevKeyFile.value.trim(),
-        maxConcurrent:Number(configInputs.maxConcurrent.value), contextBytes:Number(configInputs.contextBytes.value)
+        maxConcurrent:Number(configInputs.maxConcurrent.value), contextBytes:Number(configInputs.contextBytes.value), strategyPrompt:strategyInput.value.trim()
       };
       next.routes = routeEditors.filter(({inputs}) => ['id','label','model','description'].some(key => inputs[key].value.trim())).map(({inputs, adapter}) => {
         const route = {adapter};

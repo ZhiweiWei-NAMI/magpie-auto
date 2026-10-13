@@ -29,12 +29,20 @@ type ContextUnit struct {
 // PlanRequest contains client-owned state; actions describe capabilities, not
 // programs for Magpie to execute. The client implements the selected action.
 type PlanRequest struct {
-	SessionID   string            `json:"sessionId"`
-	Task        string            `json:"task"`
-	Trigger     string            `json:"trigger"`
-	History     []ContextUnit     `json:"history"`
-	Actions     map[string]string `json:"actions,omitempty"`
-	Observation map[string]any    `json:"observation,omitempty"`
+	SessionID   string                 `json:"sessionId"`
+	Task        string                 `json:"task"`
+	Trigger     string                 `json:"trigger"`
+	History     []ContextUnit          `json:"history"`
+	Actions     map[string]string      `json:"actions,omitempty"`
+	Observation map[string]any         `json:"observation,omitempty"`
+	Questions   map[string]JevQuestion `json:"questions,omitempty"`
+}
+
+// JevQuestion keeps independent judgments explicit. Callers compose the answers.
+type JevQuestion struct {
+	Type         string `json:"type"`
+	Instructions string `json:"instructions"`
+	Criteria     any    `json:"criteria,omitempty"`
 }
 
 type PlanResult struct {
@@ -62,7 +70,19 @@ func (j jevClient) ask(ctx context.Context, keyFile string, request PlanRequest)
 		return result, errors.New("Jev needs the complete current task")
 	}
 	questions := map[string]any{}
-	if len(request.Actions) > 0 {
+	if len(request.Questions) > 0 && len(request.Actions) > 0 {
+		return result, errors.New("use either atomic questions or legacy actions, not both")
+	}
+	for id, question := range request.Questions {
+		if err := validateQuestion(id, question); err != nil {
+			return result, err
+		}
+		questions[id] = question
+	}
+	if len(request.Questions) > 256 {
+		return result, errors.New("at most 256 atomic questions may be requested")
+	}
+	if len(request.Questions) == 0 && len(request.Actions) > 0 {
 		questions["route"] = map[string]any{"type": "choice", "instructions": "Which offered action best fits the current task, state and available results? Account for the costs and constraints in the offered action descriptions.", "criteria": request.Actions}
 	}
 	seen := map[string]bool{}
@@ -71,14 +91,16 @@ func (j jevClient) ask(ctx context.Context, keyFile string, request PlanRequest)
 			return result, errors.New("context candidates need unique nonempty IDs")
 		}
 		seen[unit.ID] = true
-		if !unit.Required {
+		if len(request.Questions) == 0 && !unit.Required {
 			questions[fmt.Sprintf("keep_%d", i)] = map[string]string{"type": "noul", "instructions": "Does retaining the COMPLETE candidate " + unit.ID + " help fulfill the current task, preserve a constraint, avoid repeating work, or use an existing result?"}
 		}
 	}
 	if len(questions) == 0 {
 		return result, errors.New("no decision question was requested")
 	}
-	state, err := json.Marshal(request)
+	stateRequest := request
+	stateRequest.Questions = nil // Questions are not duplicated into their own evidence.
+	state, err := json.Marshal(stateRequest)
 	if err != nil {
 		return result, err
 	}
@@ -131,6 +153,14 @@ func (j jevClient) ask(ctx context.Context, keyFile string, request PlanRequest)
 	result.Answers, err = json.Marshal(reply.Answers)
 	if err != nil {
 		return result, err
+	}
+	if len(request.Questions) > 0 {
+		for id, question := range request.Questions {
+			if err := validateAnswer(question, reply.Answers[id]); err != nil {
+				return result, fmt.Errorf("Jev answer %s: %w", id, err)
+			}
+		}
+		return result, nil
 	}
 	if len(request.Actions) > 0 {
 		var answer struct {
