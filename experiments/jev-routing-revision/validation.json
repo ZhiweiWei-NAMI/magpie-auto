@@ -1,0 +1,8 @@
+{
+  "go": "Focused internal/auto and internal/gateway tests selected by Jev|AutoPlan|AutoPolicy|Strategy pass; nogui build passes.",
+  "plugin": "9 focused Node tests pass.",
+  "gui": "Auto configuration page passes Chromium and WebKit across en, zh, zh-TW, ja and de.",
+  "full_suites": "Not repeated; user requested short relevant regressions instead of repeated broad suites.",
+  "runtime": "Genuine Console API, native dsh tool execution, durable continuation and actual compaction were exercised. Failed development probes are included.",
+  "upstream_proposal": "Draft only; not sent."
+}

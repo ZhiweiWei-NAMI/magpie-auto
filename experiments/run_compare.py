@@ -26,6 +26,7 @@ TASK_SECONDS = 600
 REQUEST_LIMIT = 64
 MODEL_BASE = 'http://127.0.0.1:3435/v1'
 DECISION_ENDPOINT = 'http://127.0.0.1:3437/v1/auto/decide'
+AUTO_PROMPT = 'Magpie Auto selects collaboration; use the supplied child results. '
 
 
 def configure_home(home, arm):
@@ -82,7 +83,7 @@ def run_case(client, observer, task, arm, image, preparation_seconds, network):
     prompt='Resolve this issue in the repository. Use real tools to inspect and edit code, and run appropriate tests. '
     if arm=='B':prompt+='This run permits only the main agent; do not delegate. '
     elif arm=='C':prompt+='Native subagents are optional; decide whether they help and collect their results. '
-    else:prompt+='Magpie Auto selects collaboration; use the supplied child results. '
+    else:prompt+=AUTO_PROMPT
     prompt+='Do not read evaluation answers, later releases, fixed upstream tests or reference patches. Only the initial commit and local model service are available. Complete the code fix and report what was tested.\n\n'+task['problem_statement']
     volumes={str(NODE):{'bind':str(NODE),'mode':'ro'},str(EXTENSION):{'bind':str(EXTENSION),'mode':'ro'},str(home):{'bind':str(home),'mode':'rw'}}
     container=client.containers.run(image,command=['sleep','infinity'],detach=True,network=network.name,runtime='runc',
@@ -136,8 +137,10 @@ def run_case(client, observer, task, arm, image, preparation_seconds, network):
         observer.flush()
         lifecycle=events(home)
         (case/'decisions-and-children.json').write_text(json.dumps(lifecycle,indent=2))
-        outcome['childrenStarted']=sum(r['kind']=='child_start' for r in lifecycle)
-        outcome['childrenCollected']=sum(r['kind']=='child_collected' or
+        outcome['childrenStarted']=len({r['id'] for r in lifecycle if r['kind']=='child_start'})
+        outcome['childActivations']=sum(r['kind']=='child_start' for r in lifecycle)
+        collections=[r for r in lifecycle if r['kind']=='child_collected']
+        outcome['childrenCollected']=len(collections) if collections else sum(
             r['kind']=='native_child_tool_result' and not r['isError'] and r['value']['kind']=='foreground' for r in lifecycle)
         outcome['maxChildConcurrency']=max((r['active'] for r in lifecycle if 'active' in r),default=0)
         (case/'result.json').write_text(json.dumps(outcome,indent=2))

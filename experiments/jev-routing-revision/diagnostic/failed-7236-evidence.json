@@ -1,0 +1,45 @@
+{
+  "B": {
+    "source": "Complete native session journals, read-only extraction after the task ended",
+    "toolCalls": {
+      "bash": 30,
+      "read": 22,
+      "grep": 1
+    },
+    "repeatedReadPaths": {
+      "/testbed/src/_pytest/unittest.py": 14,
+      "/testbed/src/_pytest/debugging.py": 3,
+      "/testbed/testing/test_unittest.py": 1,
+      "/testbed/src/_pytest/skipping.py": 2,
+      "/testbed/doc/en/changelog.rst": 1,
+      "/testbed/src/_pytest/nodes.py": 1
+    },
+    "nativeCompactions": 8,
+    "executionFinishReasons": {
+      "tool-calls": 47
+    },
+    "finalPatchBytes": 0,
+    "officialResolved": false
+  },
+  "C": {
+    "source": "Complete native session journals, read-only extraction after the task ended",
+    "toolCalls": {
+      "bash": 23,
+      "read": 17,
+      "grep": 2
+    },
+    "repeatedReadPaths": {
+      "/testbed/src/_pytest/skipping.py": 3,
+      "/testbed/src/_pytest/unittest.py": 9,
+      "/testbed/testing/test_unittest.py": 1,
+      "/testbed/src/_pytest/runner.py": 3,
+      "/testbed/src/_pytest/nodes.py": 1
+    },
+    "nativeCompactions": 8,
+    "executionFinishReasons": {
+      "tool-calls": 42
+    },
+    "finalPatchBytes": 0,
+    "officialResolved": false
+  }
+}

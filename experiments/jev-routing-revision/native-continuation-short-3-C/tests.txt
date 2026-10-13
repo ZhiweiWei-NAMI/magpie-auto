@@ -1,0 +1,10 @@
+test_ascii_and_type_boundaries (test_ops.Checks) ... ok
+test_invalid (test_ops.Checks) ... ok
+test_label (test_ops.Checks) ... ok
+test_tabs (test_ops.Checks) ... ok
+test_window (test_ops.Checks) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

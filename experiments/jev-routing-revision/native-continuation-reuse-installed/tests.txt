@@ -1,0 +1,11 @@
+test_invalid (test_ops.Checks) ... ok
+test_label (test_ops.Checks) ... ok
+test_window (test_ops.Checks) ... ok
+test_booleans_rejected (test_ops.InputValidation) ... ok
+test_more_invalid_strings_rejected (test_ops.InputValidation) ... ok
+test_non_string_types_rejected (test_ops.InputValidation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

@@ -1,0 +1,2075 @@
+[
+  {
+    "at": "2026-10-13T03:48:27.985Z",
+    "kind": "root_start",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a"
+  },
+  {
+    "at": "2026-10-13T03:48:28.109Z",
+    "kind": "policy_snapshot",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "mode": "auto",
+    "policy": {
+      "mode": "automatic",
+      "weights": {
+        "cache": 0.99,
+        "latency": 0.495,
+        "quality": 0.995,
+        "usage": 0.72
+      },
+      "routeWeights": {
+        "deepseek": 0.71,
+        "review": 0.61
+      },
+      "inputId": "0dc4620cf45adb92c214a90921e21c2ee19be38e505a3d7eff4c46dcef5901b0",
+      "decision": {
+        "model": "jev-1.13-free",
+        "selectedIds": null,
+        "answers": {
+          "cache": {
+            "type": "score",
+            "score": 1.98,
+            "confidence": 0.97,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.02,
+              "2": 0.98
+            }
+          },
+          "latency": {
+            "type": "score",
+            "score": 0.99,
+            "confidence": 0.97,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.98,
+              "2": 0
+            }
+          },
+          "mode": {
+            "type": "choice",
+            "choice": "automatic",
+            "confidence": 1,
+            "probabilities": {
+              "automatic": 1,
+              "native": 0,
+              "single": 0
+            }
+          },
+          "profile_0": {
+            "type": "score",
+            "score": 1.42,
+            "confidence": 0.31,
+            "legend": {
+              "0": "The user explicitly discourages this role.",
+              "1": "The user expresses no special preference for this role.",
+              "2": "The user explicitly prefers this role for matching tasks."
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.54,
+              "2": 0.44
+            }
+          },
+          "profile_1": {
+            "type": "score",
+            "score": 1.22,
+            "confidence": 0.46,
+            "legend": {
+              "0": "The user explicitly discourages this role.",
+              "1": "The user expresses no special preference for this role.",
+              "2": "The user explicitly prefers this role for matching tasks."
+            },
+            "probabilities": {
+              "0": 0.07,
+              "1": 0.64,
+              "2": 0.29
+            }
+          },
+          "quality": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 0.98,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.99
+            }
+          },
+          "usage": {
+            "type": "score",
+            "score": 1.44,
+            "confidence": 0.22,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0.04,
+              "1": 0.48,
+              "2": 0.48
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 1078,
+          "output_tokens": 122
+        },
+        "elapsedMs": 519.373,
+        "httpStatus": 200
+      }
+    },
+    "profiles": [
+      {
+        "id": "deepseek/high",
+        "routeId": "deepseek",
+        "label": "Implementation",
+        "capability": "Implement isolated code changes and run regression tests.",
+        "options": {
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "reasoningEffort": "high"
+        }
+      },
+      {
+        "id": "review/high",
+        "routeId": "review",
+        "label": "Independent review",
+        "capability": "Independently diagnose problems, inspect test results and identify edge cases.",
+        "options": {
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "reasoningEffort": "high"
+        }
+      }
+    ]
+  },
+  {
+    "at": "2026-10-13T03:48:30.078Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1803.5927190000002,
+    "usage": {
+      "inputTokens": 5669,
+      "outputTokens": 142,
+      "totalTokens": 6323,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 33
+    }
+  },
+  {
+    "at": "2026-10-13T03:48:30.727Z",
+    "kind": "context_pressure",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "nativeEstimate": 19333,
+    "pressure": 18892,
+    "basis": "observed_input_plus_estimated_growth",
+    "observedInput": 6181
+  },
+  {
+    "at": "2026-10-13T03:48:31.363Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 626.086346,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 0.38,
+        "confidence": 0.43,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.67,
+          "1": 0.28,
+          "2": 0.05
+        }
+      },
+      "importance_1": {
+        "type": "score",
+        "score": 0.06,
+        "confidence": 0.9,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.94,
+          "1": 0.05,
+          "2": 0.01
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.3,
+        "probabilities": {
+          "archive": 0.46,
+          "current": 0.53,
+          "shared": 0.01
+        }
+      },
+      "owner_1": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.76,
+        "probabilities": {
+          "archive": 0.84,
+          "current": 0.15,
+          "shared": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 1914,
+      "output_tokens": 107
+    },
+    "elapsedMs": 618.776
+  },
+  {
+    "at": "2026-10-13T03:48:31.364Z",
+    "kind": "context_scores",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "judgments": [
+      {
+        "source": "event_9_block_0",
+        "part": "event_9_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.38,
+          "confidence": 0.43,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.67,
+            "1": 0.28,
+            "2": 0.05
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.3,
+          "probabilities": {
+            "archive": 0.46,
+            "current": 0.53,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_10_block_0",
+        "part": "event_10_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.06,
+          "confidence": 0.9,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.94,
+            "1": 0.05,
+            "2": 0.01
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.76,
+          "probabilities": {
+            "archive": 0.84,
+            "current": 0.15,
+            "shared": 0.01
+          }
+        },
+        "retained": false
+      }
+    ],
+    "estimatedBefore": 662,
+    "estimatedAfter": 316
+  },
+  {
+    "at": "2026-10-13T03:48:31.371Z",
+    "kind": "context_replaced",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "start": 9,
+    "end": 10,
+    "sourceCount": 2
+  },
+  {
+    "at": "2026-10-13T03:48:34.015Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 2606.606447,
+    "usage": {
+      "inputTokens": 17246,
+      "outputTokens": 195,
+      "totalTokens": 17953,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 10
+    }
+  },
+  {
+    "at": "2026-10-13T03:48:34.193Z",
+    "kind": "context_pressure",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "nativeEstimate": 19859,
+    "pressure": 18214,
+    "basis": "observed_input_plus_estimated_growth",
+    "observedInput": 17758
+  },
+  {
+    "at": "2026-10-13T03:48:38.806Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 4564.445996,
+    "usage": {
+      "inputTokens": 17888,
+      "outputTokens": 704,
+      "totalTokens": 19104,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 305
+    }
+  },
+  {
+    "at": "2026-10-13T03:48:39.054Z",
+    "kind": "context_pressure",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "nativeEstimate": 20749,
+    "pressure": 19184,
+    "basis": "observed_input_plus_estimated_growth",
+    "observedInput": 18400
+  },
+  {
+    "at": "2026-10-13T03:48:39.724Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 600.2699730000004,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 0.05,
+        "confidence": 0.91,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.04,
+          "2": 0.01
+        }
+      },
+      "importance_1": {
+        "type": "score",
+        "score": 0.36,
+        "confidence": 0.47,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.68,
+          "1": 0.29,
+          "2": 0.03
+        }
+      },
+      "importance_2": {
+        "type": "score",
+        "score": 0.05,
+        "confidence": 0.93,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.96,
+          "1": 0.03,
+          "2": 0.01
+        }
+      },
+      "importance_3": {
+        "type": "score",
+        "score": 0.7,
+        "confidence": 0.27,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.39,
+          "1": 0.51,
+          "2": 0.1
+        }
+      },
+      "importance_4": {
+        "type": "score",
+        "score": 0.85,
+        "confidence": 0,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.42,
+          "1": 0.31,
+          "2": 0.27
+        }
+      },
+      "importance_5": {
+        "type": "score",
+        "score": 0.88,
+        "confidence": 0.11,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.36,
+          "1": 0.41,
+          "2": 0.23
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.55,
+        "probabilities": {
+          "archive": 0.7,
+          "current": 0.29,
+          "shared": 0.01
+        }
+      },
+      "owner_1": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.62,
+        "probabilities": {
+          "archive": 0.24,
+          "current": 0.75,
+          "shared": 0.01
+        }
+      },
+      "owner_2": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.82,
+        "probabilities": {
+          "archive": 0.88,
+          "current": 0.12,
+          "shared": 0
+        }
+      },
+      "owner_3": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.27,
+        "probabilities": {
+          "archive": 0.48,
+          "current": 0.51,
+          "shared": 0.01
+        }
+      },
+      "owner_4": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.34,
+        "probabilities": {
+          "archive": 0.56,
+          "current": 0.43,
+          "shared": 0.01
+        }
+      },
+      "owner_5": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.33,
+        "probabilities": {
+          "archive": 0.55,
+          "current": 0.44,
+          "shared": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2637,
+      "output_tokens": 315
+    },
+    "elapsedMs": 593.344
+  },
+  {
+    "at": "2026-10-13T03:48:40.863Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 1138.6218090000002,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 0.01,
+        "confidence": 1,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 1,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.94,
+        "probabilities": {
+          "archive": 0.96,
+          "current": 0.04,
+          "shared": 0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6825,
+      "output_tokens": 55
+    },
+    "elapsedMs": 1129.594
+  },
+  {
+    "at": "2026-10-13T03:48:43.266Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 2402.748379999999,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 0,
+        "confidence": 1,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 1,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.94,
+        "probabilities": {
+          "archive": 0.96,
+          "current": 0.04,
+          "shared": 0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6817,
+      "output_tokens": 55
+    },
+    "elapsedMs": 2394.67
+  },
+  {
+    "at": "2026-10-13T03:48:44.044Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 777.8211200000005,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 0,
+        "confidence": 1,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 1,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.92,
+        "probabilities": {
+          "archive": 0.95,
+          "current": 0.05,
+          "shared": 0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3329,
+      "output_tokens": 55
+    },
+    "elapsedMs": 769.474
+  },
+  {
+    "at": "2026-10-13T03:48:44.640Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 596.0390769999976,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 1.02,
+        "confidence": 0.46,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.17,
+          "1": 0.64,
+          "2": 0.19
+        }
+      },
+      "importance_1": {
+        "type": "score",
+        "score": 0.02,
+        "confidence": 0.98,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.99,
+          "1": 0.01,
+          "2": 0
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.38,
+        "probabilities": {
+          "archive": 0.59,
+          "current": 0.41,
+          "shared": 0
+        }
+      },
+      "owner_1": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.82,
+        "probabilities": {
+          "archive": 0.88,
+          "current": 0.12,
+          "shared": 0
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 2219,
+      "output_tokens": 107
+    },
+    "elapsedMs": 586.953
+  },
+  {
+    "at": "2026-10-13T03:48:44.641Z",
+    "kind": "context_scores",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "judgments": [
+      {
+        "source": "event_22_block_0",
+        "part": "event_22_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.05,
+          "confidence": 0.91,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.95,
+            "1": 0.04,
+            "2": 0.01
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.55,
+          "probabilities": {
+            "archive": 0.7,
+            "current": 0.29,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_22_block_1",
+        "part": "event_22_block_1",
+        "importance": {
+          "type": "score",
+          "score": 0.36,
+          "confidence": 0.47,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.68,
+            "1": 0.29,
+            "2": 0.03
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.62,
+          "probabilities": {
+            "archive": 0.24,
+            "current": 0.75,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_22_block_2",
+        "part": "event_22_block_2",
+        "importance": {
+          "type": "score",
+          "score": 0.05,
+          "confidence": 0.93,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.96,
+            "1": 0.03,
+            "2": 0.01
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.82,
+          "probabilities": {
+            "archive": 0.88,
+            "current": 0.12,
+            "shared": 0
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_14_block_0",
+        "part": "event_14_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.7,
+          "confidence": 0.27,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.39,
+            "1": 0.51,
+            "2": 0.1
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.27,
+          "probabilities": {
+            "archive": 0.48,
+            "current": 0.51,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_14_block_1",
+        "part": "event_14_block_1",
+        "importance": {
+          "type": "score",
+          "score": 0.85,
+          "confidence": 0,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.42,
+            "1": 0.31,
+            "2": 0.27
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.34,
+          "probabilities": {
+            "archive": 0.56,
+            "current": 0.43,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_14_block_2",
+        "part": "event_14_block_2",
+        "importance": {
+          "type": "score",
+          "score": 0.88,
+          "confidence": 0.11,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.36,
+            "1": 0.41,
+            "2": 0.23
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.33,
+          "probabilities": {
+            "archive": 0.55,
+            "current": 0.44,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_16_block_0",
+        "part": "event_16_block_0.part.1",
+        "importance": {
+          "type": "score",
+          "score": 0.01,
+          "confidence": 1,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.94,
+          "probabilities": {
+            "archive": 0.96,
+            "current": 0.04,
+            "shared": 0
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_16_block_0",
+        "part": "event_16_block_0.part.2",
+        "importance": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.94,
+          "probabilities": {
+            "archive": 0.96,
+            "current": 0.04,
+            "shared": 0
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_16_block_0",
+        "part": "event_16_block_0.part.3",
+        "importance": {
+          "type": "score",
+          "score": 0,
+          "confidence": 1,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 1,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.92,
+          "probabilities": {
+            "archive": 0.95,
+            "current": 0.05,
+            "shared": 0
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_18_block_0",
+        "part": "event_18_block_0",
+        "importance": {
+          "type": "score",
+          "score": 1.02,
+          "confidence": 0.46,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.17,
+            "1": 0.64,
+            "2": 0.19
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.38,
+          "probabilities": {
+            "archive": 0.59,
+            "current": 0.41,
+            "shared": 0
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_25_block_0",
+        "part": "event_25_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.02,
+          "confidence": 0.98,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.99,
+            "1": 0.01,
+            "2": 0
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.82,
+          "probabilities": {
+            "archive": 0.88,
+            "current": 0.12,
+            "shared": 0
+          }
+        },
+        "retained": false
+      }
+    ],
+    "estimatedBefore": 13443,
+    "estimatedAfter": 696
+  },
+  {
+    "at": "2026-10-13T03:48:44.646Z",
+    "kind": "context_replaced",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "start": 22,
+    "end": 25,
+    "sourceCount": 5
+  },
+  {
+    "at": "2026-10-13T03:48:46.838Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 2127.7260319999987,
+    "usage": {
+      "inputTokens": 7376,
+      "outputTokens": 110,
+      "totalTokens": 7998,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 6
+    }
+  },
+  {
+    "at": "2026-10-13T03:48:47.078Z",
+    "kind": "context_pressure",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "nativeEstimate": 8569,
+    "pressure": 8018,
+    "basis": "observed_input_plus_estimated_growth",
+    "observedInput": 7888
+  },
+  {
+    "at": "2026-10-13T03:48:47.727Z",
+    "kind": "jev",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "trigger": "selection",
+    "httpStatus": 200,
+    "wallMs": 644.435297,
+    "model": "jev-1.13-free",
+    "selectedIds": null,
+    "answers": {
+      "importance_0": {
+        "type": "score",
+        "score": 0.06,
+        "confidence": 0.93,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.05,
+          "2": 0
+        }
+      },
+      "importance_1": {
+        "type": "score",
+        "score": 0.05,
+        "confidence": 0.93,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.96,
+          "1": 0.03,
+          "2": 0.01
+        }
+      },
+      "importance_10": {
+        "type": "score",
+        "score": 1.55,
+        "confidence": 0.31,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.16,
+          "1": 0.14,
+          "2": 0.7
+        }
+      },
+      "importance_11": {
+        "type": "score",
+        "score": 1.66,
+        "confidence": 0.5,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.11,
+          "1": 0.11,
+          "2": 0.78
+        }
+      },
+      "importance_12": {
+        "type": "score",
+        "score": 1.59,
+        "confidence": 0.38,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.13,
+          "1": 0.15,
+          "2": 0.72
+        }
+      },
+      "importance_13": {
+        "type": "score",
+        "score": 1.55,
+        "confidence": 0.31,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.12,
+          "1": 0.22,
+          "2": 0.66
+        }
+      },
+      "importance_14": {
+        "type": "score",
+        "score": 1.81,
+        "confidence": 0.71,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.06,
+          "1": 0.07,
+          "2": 0.87
+        }
+      },
+      "importance_15": {
+        "type": "score",
+        "score": 0.25,
+        "confidence": 0.61,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.76,
+          "1": 0.22,
+          "2": 0.02
+        }
+      },
+      "importance_2": {
+        "type": "score",
+        "score": 0.42,
+        "confidence": 0.37,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.62,
+          "1": 0.34,
+          "2": 0.04
+        }
+      },
+      "importance_3": {
+        "type": "score",
+        "score": 0.57,
+        "confidence": 0.16,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.54,
+          "1": 0.36,
+          "2": 0.1
+        }
+      },
+      "importance_4": {
+        "type": "score",
+        "score": 0.26,
+        "confidence": 0.61,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.79,
+          "1": 0.16,
+          "2": 0.05
+        }
+      },
+      "importance_5": {
+        "type": "score",
+        "score": 0.73,
+        "confidence": 0.27,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.51,
+          "2": 0.11
+        }
+      },
+      "importance_6": {
+        "type": "score",
+        "score": 0.74,
+        "confidence": 0.25,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.38,
+          "1": 0.5,
+          "2": 0.12
+        }
+      },
+      "importance_7": {
+        "type": "score",
+        "score": 0.06,
+        "confidence": 0.91,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.95,
+          "1": 0.04,
+          "2": 0.01
+        }
+      },
+      "importance_8": {
+        "type": "score",
+        "score": 0.87,
+        "confidence": 0.13,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.36,
+          "1": 0.42,
+          "2": 0.22
+        }
+      },
+      "importance_9": {
+        "type": "score",
+        "score": 1.45,
+        "confidence": 0.17,
+        "legend": {
+          "0": "Unrelated or superseded evidence.",
+          "1": "Potentially useful but not necessary evidence.",
+          "2": "Concrete evidence needed for the remaining assignment."
+        },
+        "probabilities": {
+          "0": 0.2,
+          "1": 0.15,
+          "2": 0.65
+        }
+      },
+      "owner_0": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.79,
+        "probabilities": {
+          "archive": 0.86,
+          "current": 0.14,
+          "shared": 0
+        }
+      },
+      "owner_1": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.69,
+        "probabilities": {
+          "archive": 0.79,
+          "current": 0.2,
+          "shared": 0.01
+        }
+      },
+      "owner_10": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.79,
+        "probabilities": {
+          "archive": 0.12,
+          "current": 0.86,
+          "shared": 0.02
+        }
+      },
+      "owner_11": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.85,
+        "probabilities": {
+          "archive": 0.08,
+          "current": 0.9,
+          "shared": 0.02
+        }
+      },
+      "owner_12": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.8,
+        "probabilities": {
+          "archive": 0.12,
+          "current": 0.87,
+          "shared": 0.01
+        }
+      },
+      "owner_13": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.77,
+        "probabilities": {
+          "archive": 0.13,
+          "current": 0.85,
+          "shared": 0.02
+        }
+      },
+      "owner_14": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.88,
+        "probabilities": {
+          "archive": 0.05,
+          "current": 0.92,
+          "shared": 0.03
+        }
+      },
+      "owner_15": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.25,
+        "probabilities": {
+          "archive": 0.5,
+          "current": 0.48,
+          "shared": 0.02
+        }
+      },
+      "owner_2": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.28,
+        "probabilities": {
+          "archive": 0.47,
+          "current": 0.52,
+          "shared": 0.01
+        }
+      },
+      "owner_3": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.46,
+        "probabilities": {
+          "archive": 0.64,
+          "current": 0.35,
+          "shared": 0.01
+        }
+      },
+      "owner_4": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.67,
+        "probabilities": {
+          "archive": 0.78,
+          "current": 0.22,
+          "shared": 0
+        }
+      },
+      "owner_5": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.28,
+        "probabilities": {
+          "archive": 0.52,
+          "current": 0.47,
+          "shared": 0.01
+        }
+      },
+      "owner_6": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.43,
+        "probabilities": {
+          "archive": 0.62,
+          "current": 0.37,
+          "shared": 0.01
+        }
+      },
+      "owner_7": {
+        "type": "choice",
+        "choice": "archive",
+        "confidence": 0.82,
+        "probabilities": {
+          "archive": 0.88,
+          "current": 0.11,
+          "shared": 0.01
+        }
+      },
+      "owner_8": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.41,
+        "probabilities": {
+          "archive": 0.38,
+          "current": 0.61,
+          "shared": 0.01
+        }
+      },
+      "owner_9": {
+        "type": "choice",
+        "choice": "current",
+        "confidence": 0.64,
+        "probabilities": {
+          "archive": 0.23,
+          "current": 0.76,
+          "shared": 0.01
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 6601,
+      "output_tokens": 847
+    },
+    "elapsedMs": 634.879
+  },
+  {
+    "at": "2026-10-13T03:48:47.728Z",
+    "kind": "context_scores",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "judgments": [
+      {
+        "source": "event_45_block_0",
+        "part": "event_45_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.06,
+          "confidence": 0.93,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.95,
+            "1": 0.05,
+            "2": 0
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.79,
+          "probabilities": {
+            "archive": 0.86,
+            "current": 0.14,
+            "shared": 0
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_45_block_1",
+        "part": "event_45_block_1",
+        "importance": {
+          "type": "score",
+          "score": 0.05,
+          "confidence": 0.93,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.96,
+            "1": 0.03,
+            "2": 0.01
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.69,
+          "probabilities": {
+            "archive": 0.79,
+            "current": 0.2,
+            "shared": 0.01
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_45_block_2",
+        "part": "event_45_block_2",
+        "importance": {
+          "type": "score",
+          "score": 0.42,
+          "confidence": 0.37,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.62,
+            "1": 0.34,
+            "2": 0.04
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.28,
+          "probabilities": {
+            "archive": 0.47,
+            "current": 0.52,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_45_block_3",
+        "part": "event_45_block_3",
+        "importance": {
+          "type": "score",
+          "score": 0.57,
+          "confidence": 0.16,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.54,
+            "1": 0.36,
+            "2": 0.1
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.46,
+          "probabilities": {
+            "archive": 0.64,
+            "current": 0.35,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_45_block_4",
+        "part": "event_45_block_4",
+        "importance": {
+          "type": "score",
+          "score": 0.26,
+          "confidence": 0.61,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.79,
+            "1": 0.16,
+            "2": 0.05
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.67,
+          "probabilities": {
+            "archive": 0.78,
+            "current": 0.22,
+            "shared": 0
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_45_block_5",
+        "part": "event_45_block_5",
+        "importance": {
+          "type": "score",
+          "score": 0.73,
+          "confidence": 0.27,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.38,
+            "1": 0.51,
+            "2": 0.11
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.28,
+          "probabilities": {
+            "archive": 0.52,
+            "current": 0.47,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_45_block_6",
+        "part": "event_45_block_6",
+        "importance": {
+          "type": "score",
+          "score": 0.74,
+          "confidence": 0.25,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.38,
+            "1": 0.5,
+            "2": 0.12
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.43,
+          "probabilities": {
+            "archive": 0.62,
+            "current": 0.37,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_45_block_7",
+        "part": "event_45_block_7",
+        "importance": {
+          "type": "score",
+          "score": 0.06,
+          "confidence": 0.91,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.95,
+            "1": 0.04,
+            "2": 0.01
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.82,
+          "probabilities": {
+            "archive": 0.88,
+            "current": 0.11,
+            "shared": 0.01
+          }
+        },
+        "retained": false
+      },
+      {
+        "source": "event_27_block_0",
+        "part": "event_27_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.87,
+          "confidence": 0.13,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.36,
+            "1": 0.42,
+            "2": 0.22
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.41,
+          "probabilities": {
+            "archive": 0.38,
+            "current": 0.61,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_27_block_1",
+        "part": "event_27_block_1",
+        "importance": {
+          "type": "score",
+          "score": 1.45,
+          "confidence": 0.17,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.2,
+            "1": 0.15,
+            "2": 0.65
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.64,
+          "probabilities": {
+            "archive": 0.23,
+            "current": 0.76,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_27_block_2",
+        "part": "event_27_block_2",
+        "importance": {
+          "type": "score",
+          "score": 1.55,
+          "confidence": 0.31,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.16,
+            "1": 0.14,
+            "2": 0.7
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.79,
+          "probabilities": {
+            "archive": 0.12,
+            "current": 0.86,
+            "shared": 0.02
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_27_block_3",
+        "part": "event_27_block_3",
+        "importance": {
+          "type": "score",
+          "score": 1.66,
+          "confidence": 0.5,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.11,
+            "1": 0.11,
+            "2": 0.78
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.85,
+          "probabilities": {
+            "archive": 0.08,
+            "current": 0.9,
+            "shared": 0.02
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_31_block_0",
+        "part": "event_31_block_0",
+        "importance": {
+          "type": "score",
+          "score": 1.59,
+          "confidence": 0.38,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.13,
+            "1": 0.15,
+            "2": 0.72
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.8,
+          "probabilities": {
+            "archive": 0.12,
+            "current": 0.87,
+            "shared": 0.01
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_32_block_0",
+        "part": "event_32_block_0",
+        "importance": {
+          "type": "score",
+          "score": 1.55,
+          "confidence": 0.31,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.12,
+            "1": 0.22,
+            "2": 0.66
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.77,
+          "probabilities": {
+            "archive": 0.13,
+            "current": 0.85,
+            "shared": 0.02
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_33_block_0",
+        "part": "event_33_block_0",
+        "importance": {
+          "type": "score",
+          "score": 1.81,
+          "confidence": 0.71,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.07,
+            "2": 0.87
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "current",
+          "confidence": 0.88,
+          "probabilities": {
+            "archive": 0.05,
+            "current": 0.92,
+            "shared": 0.03
+          }
+        },
+        "retained": true
+      },
+      {
+        "source": "event_36_block_0",
+        "part": "event_36_block_0",
+        "importance": {
+          "type": "score",
+          "score": 0.25,
+          "confidence": 0.61,
+          "legend": {
+            "0": "Unrelated or superseded evidence.",
+            "1": "Potentially useful but not necessary evidence.",
+            "2": "Concrete evidence needed for the remaining assignment."
+          },
+          "probabilities": {
+            "0": 0.76,
+            "1": 0.22,
+            "2": 0.02
+          }
+        },
+        "owner": {
+          "type": "choice",
+          "choice": "archive",
+          "confidence": 0.25,
+          "probabilities": {
+            "archive": 0.5,
+            "current": 0.48,
+            "shared": 0.02
+          }
+        },
+        "retained": true
+      }
+    ],
+    "estimatedBefore": 1173,
+    "estimatedAfter": 1336
+  },
+  {
+    "at": "2026-10-13T03:48:47.728Z",
+    "kind": "context_kept",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "reason": "Scored sources do not offer a meaningful reduction",
+    "estimatedContextTokens": 8569
+  },
+  {
+    "at": "2026-10-13T03:48:50.530Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 2753.1802480000006,
+    "usage": {
+      "inputTokens": 7551,
+      "outputTokens": 308,
+      "totalTokens": 8371,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 139
+    }
+  },
+  {
+    "at": "2026-10-13T03:48:55.172Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 4419.392056000001,
+    "usage": {
+      "inputTokens": 7838,
+      "outputTokens": 655,
+      "totalTokens": 9005,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 327
+    }
+  },
+  {
+    "at": "2026-10-13T03:48:58.740Z",
+    "kind": "execution_call",
+    "session": "session-7d15247d-ecee-49a9-b14d-258336bd1b7a",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 3354.2398030000004,
+    "usage": {
+      "inputTokens": 8184,
+      "outputTokens": 390,
+      "totalTokens": 9086,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 34
+    }
+  }
+]

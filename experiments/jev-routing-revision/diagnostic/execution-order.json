@@ -1,0 +1,26 @@
+[
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "A"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "B"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "C"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "A"
+  }
+]

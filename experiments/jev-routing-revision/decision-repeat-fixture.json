@@ -1,0 +1,63 @@
+{
+  "sessionId": "fixed-jev-stability-fixture",
+  "task": "Add non-string input regression tests for parse_window in window.py. The implementation child owns window.py and has completed its previous turn. The main agent owns labels.py. No child is currently active.",
+  "trigger": "stability_probe",
+  "history": [
+    {
+      "id": "parser",
+      "kind": "requirement",
+      "text": "parse_window accepts ASCII n or ordered a:b and rejects invalid input with ValueError.",
+      "required": false
+    },
+    {
+      "id": "result",
+      "kind": "child_result",
+      "text": "The implementation child finished parse_window; initial string-input tests pass. Non-string regression tests remain to be added.",
+      "required": false
+    },
+    {
+      "id": "catalog",
+      "kind": "unrelated_history",
+      "text": "An old warehouse catalogue lists blue paper boxes.",
+      "required": false
+    }
+  ],
+  "questions": {
+    "owner": {
+      "type": "choice",
+      "instructions": "Which existing responsibility should receive the follow-up? Judge continuity of ownership only.",
+      "criteria": {
+        "implementation_child": "Existing child that owns window.py and retains its earlier evidence.",
+        "main": "Main agent working on unrelated labels.py.",
+        "new_reviewer": "A new child without prior window.py context."
+      }
+    },
+    "importance_0": {
+      "type": "score",
+      "instructions": "How relevant is complete history candidate parser to the stated follow-up? Judge relevance only.",
+      "criteria": [
+        "Unrelated evidence.",
+        "Useful background.",
+        "Required to complete the follow-up."
+      ]
+    },
+    "importance_1": {
+      "type": "score",
+      "instructions": "How relevant is complete history candidate result to the stated follow-up? Judge relevance only.",
+      "criteria": [
+        "Unrelated evidence.",
+        "Useful background.",
+        "Required to complete the follow-up."
+      ]
+    },
+    "importance_2": {
+      "type": "score",
+      "instructions": "How relevant is complete history candidate catalog to the stated follow-up? Judge relevance only.",
+      "criteria": [
+        "Unrelated evidence.",
+        "Useful background.",
+        "Required to complete the follow-up."
+      ]
+    }
+  }
+}

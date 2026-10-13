@@ -1,0 +1,162 @@
+{
+  "source": "Native continuable child in the installed-plugin probe; all counters are actual API fields.",
+  "interpretation": "Cache hits align closely with an earlier prompt on the same returned account label, while new accounts usually have only a small shared prefix. This supports account affinity as a likely source of hit variability; it is an observational correlation, not a controlled causal account-binding experiment.",
+  "rows": [
+    {
+      "requestNumber": 1,
+      "account": "account-7",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 6105,
+      "hit": 0,
+      "miss": 6105,
+      "systemUnchanged": null,
+      "toolsUnchanged": null,
+      "appendOnly": null
+    },
+    {
+      "requestNumber": 2,
+      "account": "account-9",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 6489,
+      "hit": 384,
+      "miss": 6105,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 3,
+      "account": "account-10",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 6785,
+      "hit": 384,
+      "miss": 6401,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 4,
+      "account": "account-2",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 7305,
+      "hit": 384,
+      "miss": 6921,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 5,
+      "account": "account-4",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 7887,
+      "hit": 384,
+      "miss": 7503,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 6,
+      "account": "account-5",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 8527,
+      "hit": 384,
+      "miss": 8143,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 7,
+      "account": "account-10",
+      "previousSameAccountRequest": 3,
+      "previousSameAccountInput": 6785,
+      "input": 9607,
+      "hit": 6784,
+      "miss": 2823,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 8,
+      "account": "account-2",
+      "previousSameAccountRequest": 4,
+      "previousSameAccountInput": 7305,
+      "input": 10478,
+      "hit": 7296,
+      "miss": 3182,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 9,
+      "account": "account-3",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 10718,
+      "hit": 384,
+      "miss": 10334,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 10,
+      "account": "account-4",
+      "previousSameAccountRequest": 5,
+      "previousSameAccountInput": 7887,
+      "input": 11104,
+      "hit": 7808,
+      "miss": 3296,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 11,
+      "account": "account-5",
+      "previousSameAccountRequest": 6,
+      "previousSameAccountInput": 8527,
+      "input": 11534,
+      "hit": 8448,
+      "miss": 3086,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 12,
+      "account": "account-6",
+      "previousSameAccountRequest": null,
+      "previousSameAccountInput": null,
+      "input": 12383,
+      "hit": 0,
+      "miss": 12383,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    },
+    {
+      "requestNumber": 13,
+      "account": "account-7",
+      "previousSameAccountRequest": 1,
+      "previousSameAccountInput": 6105,
+      "input": 13100,
+      "hit": 6016,
+      "miss": 7084,
+      "systemUnchanged": true,
+      "toolsUnchanged": true,
+      "appendOnly": true
+    }
+  ]
+}

@@ -35,6 +35,22 @@ class Observer:
             def log_message(self, *_):
                 pass
 
+            def do_GET(self):
+                if self.path != '/v1/auto/policy':
+                    self.send_error(404)
+                    return
+                request=urllib.request.Request('http://127.0.0.1:3435/v1/auto/policy',
+                    headers={'Authorization':'Bearer magpie'})
+                try:response=owner.opener.open(request,timeout=10)
+                except urllib.error.HTTPError as error:response=error
+                with response:
+                    body=response.read()
+                    self.send_response(response.code)
+                    self.send_header('Content-Type','application/json')
+                    self.send_header('Content-Length',str(len(body)))
+                    self.end_headers()
+                    self.wfile.write(body)
+
             def do_POST(self):
                 raw = self.rfile.read(int(self.headers['Content-Length']))
                 body = json.loads(raw)

@@ -1,0 +1,1535 @@
+[
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051:latest",
+    "sharedImagePreparationSeconds": 0.2641,
+    "taskEnvironmentPreparationSeconds": 0.655,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 213.3093,
+    "patchBytes": 2154,
+    "solveAndExportSeconds": 214.0397,
+    "childrenStarted": 0,
+    "childActivations": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 28,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 446130,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 22997,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 250112,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 196018,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 28,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 446130,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 22997,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 164.1911,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-routing-v03-A-10051",
+      "exitCode": 0,
+      "evaluationSeconds": 34.7028,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 28,
+        "input": {
+          "observed": 446130,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 22997,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 250112,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 196018,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 28,
+        "input": {
+          "observed": 446130,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 22997,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 250112,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 196018,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 8.4,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 27,
+    "childrenCompletedObserved": 0,
+    "childEndEvents": 0
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051:latest",
+    "sharedImagePreparationSeconds": 0.2641,
+    "taskEnvironmentPreparationSeconds": 0.6547,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 401.3271,
+    "patchBytes": 2142,
+    "solveAndExportSeconds": 402.009,
+    "childrenStarted": 0,
+    "childActivations": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 52,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 591933,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 62729,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 294016,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 297917,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 52,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 591933,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 62729,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 378.9175000000002,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-routing-v03-B-10051",
+      "exitCode": 0,
+      "evaluationSeconds": 34.5376,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 52,
+        "input": {
+          "observed": 591933,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 62729,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 294016,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 297917,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 42,
+        "input": {
+          "observed": 501299,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 38338,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 228224,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 273075,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 10,
+        "input": {
+          "observed": 90634,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 24391,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 65792,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 24842,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "nativeCompactions": 5,
+    "serviceCredits": {
+      "observed": 15.830000000000002,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 51,
+    "childrenCompletedObserved": 0,
+    "childEndEvents": 0
+  },
+  {
+    "instance_id": "pytest-dev__pytest-10051",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051:latest",
+    "sharedImagePreparationSeconds": 0.2641,
+    "taskEnvironmentPreparationSeconds": 0.6489,
+    "agentExitCode": 0,
+    "executionStatus": "finished",
+    "executionSeconds": 560.8847,
+    "patchBytes": 2367,
+    "solveAndExportSeconds": 562.1613,
+    "childrenStarted": 0,
+    "childActivations": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 31,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 438534,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 36946,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 176512,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 262022,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 31,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 438534,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "workloadOutput": {
+      "observed": 36946,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "modelRequestSeconds": 242.27560000000003,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": true,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-routing-v03-C-10051",
+      "exitCode": 0,
+      "evaluationSeconds": 39.7177,
+      "resolved": true,
+      "status": "official_report"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 31,
+        "input": {
+          "observed": 438534,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 36946,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 176512,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 262022,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 27,
+        "input": {
+          "observed": 394640,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 23655,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 148480,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 246160,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "compaction": {
+        "requests": 4,
+        "input": {
+          "observed": 43894,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 13291,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 28032,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 15862,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "nativeCompactions": 4,
+    "serviceCredits": {
+      "observed": 11.78,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 30,
+    "childrenCompletedObserved": 0,
+    "childEndEvents": 0
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "A",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest",
+    "sharedImagePreparationSeconds": 0.2525,
+    "taskEnvironmentPreparationSeconds": 0.6058,
+    "executionStatus": "timeout",
+    "executionSeconds": 600.0076,
+    "patchBytes": 0,
+    "solveAndExportSeconds": 600.7106,
+    "childrenStarted": 0,
+    "childActivations": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 28,
+    "jevRequests": 7,
+    "deepseekUsage": {
+      "input": {
+        "observed": 613761,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 109971,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 357248,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 256513,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 28,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 60932,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 2739,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": null,
+        "unobserved_requests": 7,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": null,
+        "unobserved_requests": 7,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 7,
+        "complete": false
+      }
+    },
+    "workloadInput": {
+      "observed": 674693,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "workloadOutput": {
+      "observed": 112710,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "modelRequestSeconds": 570.2561999999999,
+    "jevRequestSeconds": 8.447799999999999,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 8.4682,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 1,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-routing-v03-A-7236",
+      "exitCode": 0,
+      "evaluationSeconds": 7.7085,
+      "resolved": false,
+      "status": "official_empty_patch"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 28,
+        "input": {
+          "observed": 613761,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 109971,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 357248,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 256513,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 7,
+        "input": {
+          "observed": 60932,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 2739,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": null,
+          "unobserved_requests": 7,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": null,
+          "unobserved_requests": 7,
+          "complete": false
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 28,
+        "input": {
+          "observed": 613761,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 109971,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 357248,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 256513,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "compaction": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 7,
+    "childStopReasons": [],
+    "nativeCompactions": 0,
+    "serviceCredits": {
+      "observed": 20.11,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 27,
+    "childrenCompletedObserved": 0,
+    "childEndEvents": 0
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "B",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest",
+    "sharedImagePreparationSeconds": 0.2525,
+    "taskEnvironmentPreparationSeconds": 0.6216,
+    "executionStatus": "timeout",
+    "executionSeconds": 600.0157,
+    "patchBytes": 0,
+    "solveAndExportSeconds": 600.6581,
+    "childrenStarted": 0,
+    "childActivations": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 56,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 744371,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "output": {
+        "observed": 95477,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 313216,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 431155,
+        "unobserved_requests": 1,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 56,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 744371,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "workloadOutput": {
+      "observed": 95477,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "modelRequestSeconds": 584.1512,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-routing-v03-B-7236",
+      "exitCode": 0,
+      "evaluationSeconds": 7.8275,
+      "resolved": false,
+      "status": "official_empty_patch"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 56,
+        "input": {
+          "observed": 744371,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 95477,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 313216,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 431155,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 48,
+        "input": {
+          "observed": 639889,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "output": {
+          "observed": 66427,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 265600,
+          "unobserved_requests": 1,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 374289,
+          "unobserved_requests": 1,
+          "complete": false
+        }
+      },
+      "compaction": {
+        "requests": 8,
+        "input": {
+          "observed": 104482,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 29050,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 47616,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 56866,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "nativeCompactions": 8,
+    "serviceCredits": {
+      "observed": 23.390000000000004,
+      "unobserved_requests": 1,
+      "complete": false
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 55,
+    "childrenCompletedObserved": 0,
+    "childEndEvents": 0
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7236",
+    "arm": "C",
+    "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-7236:latest",
+    "sharedImagePreparationSeconds": 0.2525,
+    "taskEnvironmentPreparationSeconds": 0.6111,
+    "executionStatus": "timeout",
+    "executionSeconds": 600.0069,
+    "patchBytes": 0,
+    "solveAndExportSeconds": 600.6925,
+    "childrenStarted": 0,
+    "childActivations": 0,
+    "childrenCollected": 0,
+    "maxChildConcurrency": 0,
+    "deepseekRequests": 55,
+    "jevRequests": 0,
+    "deepseekUsage": {
+      "input": {
+        "observed": 663115,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "output": {
+        "observed": 94573,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_hit": {
+        "observed": 307840,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_miss": {
+        "observed": 355275,
+        "unobserved_requests": 3,
+        "complete": false
+      },
+      "cache_write": {
+        "observed": null,
+        "unobserved_requests": 55,
+        "complete": false
+      }
+    },
+    "jevUsage": {
+      "input": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "output": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_hit": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_miss": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      },
+      "cache_write": {
+        "observed": 0,
+        "unobserved_requests": 0,
+        "complete": true
+      }
+    },
+    "workloadInput": {
+      "observed": 663115,
+      "unobserved_requests": 3,
+      "complete": false
+    },
+    "workloadOutput": {
+      "observed": 94573,
+      "unobserved_requests": 3,
+      "complete": false
+    },
+    "modelRequestSeconds": 583.2135999999999,
+    "jevRequestSeconds": 0,
+    "jevTimeUnobserved": 0,
+    "jevProxySeconds": {
+      "observed": 0,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "contextReplacements": 0,
+    "contextKeepDecisions": 0,
+    "officialResolved": false,
+    "officialEvaluation": {
+      "harnessVersion": "v4.1.0",
+      "runId": "jev20261012-routing-v03-C-7236",
+      "exitCode": 0,
+      "evaluationSeconds": 7.9175,
+      "resolved": false,
+      "status": "official_empty_patch"
+    },
+    "requestBreakdown": {
+      "main": {
+        "requests": 55,
+        "input": {
+          "observed": 663115,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "output": {
+          "observed": 94573,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 307840,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 355275,
+          "unobserved_requests": 3,
+          "complete": false
+        }
+      },
+      "child": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "jev": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "unattributed": {
+        "requests": 0,
+        "input": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 0,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "executionPurposes": {
+      "execution": {
+        "requests": 45,
+        "input": {
+          "observed": 541061,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "output": {
+          "observed": 58614,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_hit": {
+          "observed": 247168,
+          "unobserved_requests": 3,
+          "complete": false
+        },
+        "cache_miss": {
+          "observed": 293893,
+          "unobserved_requests": 3,
+          "complete": false
+        }
+      },
+      "compaction": {
+        "requests": 10,
+        "input": {
+          "observed": 122054,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 35959,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 60672,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 61382,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      }
+    },
+    "decisionAPIAttempts": 0,
+    "childStopReasons": [],
+    "nativeCompactions": 8,
+    "serviceCredits": {
+      "observed": 21.14,
+      "unobserved_requests": 3,
+      "complete": false
+    },
+    "priceInformation": "未提供可靠计费依据；不计算美元费用",
+    "cacheWriteObservation": "不可观测；原始兼容字段保留，但不把兼容零值当作原生写缓存统计",
+    "accountChangesObserved": 54,
+    "childrenCompletedObserved": 0,
+    "childEndEvents": 0
+  }
+]

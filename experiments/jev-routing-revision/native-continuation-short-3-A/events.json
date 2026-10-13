@@ -1,0 +1,243 @@
+[
+  {
+    "at": "2026-10-13T03:51:09.360Z",
+    "kind": "root_start",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c"
+  },
+  {
+    "at": "2026-10-13T03:51:09.464Z",
+    "kind": "policy_snapshot",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c",
+    "mode": "auto",
+    "policy": {
+      "mode": "automatic",
+      "weights": {
+        "cache": 0.99,
+        "latency": 0.495,
+        "quality": 0.995,
+        "usage": 0.72
+      },
+      "routeWeights": {
+        "deepseek": 0.71,
+        "review": 0.61
+      },
+      "inputId": "0dc4620cf45adb92c214a90921e21c2ee19be38e505a3d7eff4c46dcef5901b0",
+      "decision": {
+        "model": "jev-1.13-free",
+        "selectedIds": null,
+        "answers": {
+          "cache": {
+            "type": "score",
+            "score": 1.98,
+            "confidence": 0.97,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.02,
+              "2": 0.98
+            }
+          },
+          "latency": {
+            "type": "score",
+            "score": 0.99,
+            "confidence": 0.97,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.98,
+              "2": 0
+            }
+          },
+          "mode": {
+            "type": "choice",
+            "choice": "automatic",
+            "confidence": 1,
+            "probabilities": {
+              "automatic": 1,
+              "native": 0,
+              "single": 0
+            }
+          },
+          "profile_0": {
+            "type": "score",
+            "score": 1.42,
+            "confidence": 0.31,
+            "legend": {
+              "0": "The user explicitly discourages this role.",
+              "1": "The user expresses no special preference for this role.",
+              "2": "The user explicitly prefers this role for matching tasks."
+            },
+            "probabilities": {
+              "0": 0.02,
+              "1": 0.54,
+              "2": 0.44
+            }
+          },
+          "profile_1": {
+            "type": "score",
+            "score": 1.22,
+            "confidence": 0.46,
+            "legend": {
+              "0": "The user explicitly discourages this role.",
+              "1": "The user expresses no special preference for this role.",
+              "2": "The user explicitly prefers this role for matching tasks."
+            },
+            "probabilities": {
+              "0": 0.07,
+              "1": 0.64,
+              "2": 0.29
+            }
+          },
+          "quality": {
+            "type": "score",
+            "score": 1.99,
+            "confidence": 0.98,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.99
+            }
+          },
+          "usage": {
+            "type": "score",
+            "score": 1.44,
+            "confidence": 0.22,
+            "legend": {
+              "0": "The user explicitly accepts trading this objective away.",
+              "1": "The user leaves this objective unspecified or asks for a balance.",
+              "2": "The user explicitly prioritizes this objective."
+            },
+            "probabilities": {
+              "0": 0.04,
+              "1": 0.48,
+              "2": 0.48
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 1078,
+          "output_tokens": 122
+        },
+        "elapsedMs": 519.373,
+        "httpStatus": 200
+      }
+    },
+    "profiles": [
+      {
+        "id": "deepseek/high",
+        "routeId": "deepseek",
+        "label": "Implementation",
+        "capability": "Implement isolated code changes and run regression tests.",
+        "options": {
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "reasoningEffort": "high"
+        }
+      },
+      {
+        "id": "review/high",
+        "routeId": "review",
+        "label": "Independent review",
+        "capability": "Independently diagnose problems, inspect test results and identify edge cases.",
+        "options": {
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "reasoningEffort": "high"
+        }
+      }
+    ]
+  },
+  {
+    "at": "2026-10-13T03:51:11.085Z",
+    "kind": "execution_call",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1497.781575,
+    "usage": {
+      "inputTokens": 5618,
+      "outputTokens": 93,
+      "totalTokens": 6223,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 6
+    }
+  },
+  {
+    "at": "2026-10-13T03:51:12.635Z",
+    "kind": "execution_call",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1296.9681030000002,
+    "usage": {
+      "inputTokens": 5880,
+      "outputTokens": 99,
+      "totalTokens": 6491,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "at": "2026-10-13T03:51:16.808Z",
+    "kind": "execution_call",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 3961.4561519999997,
+    "usage": {
+      "inputTokens": 6466,
+      "outputTokens": 728,
+      "totalTokens": 7706,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 399
+    }
+  },
+  {
+    "at": "2026-10-13T03:51:18.647Z",
+    "kind": "execution_call",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1522.834777,
+    "usage": {
+      "inputTokens": 6920,
+      "outputTokens": 151,
+      "totalTokens": 7583,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 91
+    }
+  },
+  {
+    "at": "2026-10-13T03:51:22.186Z",
+    "kind": "execution_call",
+    "session": "session-283e9521-0b3a-4aa7-bb74-00ed3b7c3c9c",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 3219.411777000001,
+    "usage": {
+      "inputTokens": 7084,
+      "outputTokens": 390,
+      "totalTokens": 7986,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 123
+    }
+  }
+]

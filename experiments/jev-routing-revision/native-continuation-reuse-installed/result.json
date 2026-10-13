@@ -1,0 +1,52 @@
+{
+  "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+  "case": "reuse-installed",
+  "arm": "A",
+  "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+  "timeoutSeconds": 240,
+  "agentExitCode": 0,
+  "executionStatus": "finished",
+  "solveSeconds": 181.35500573925674,
+  "testExitCode": 0,
+  "distinctChildSessions": 1,
+  "completedActivations": 2,
+  "collectedActivations": 2,
+  "contextReplacements": 0,
+  "jevSelectedReuse": true,
+  "continuationValidated": true,
+  "secondActivationFirstRequest": {
+    "requestNumber": 7,
+    "usage": {
+      "prompt_tokens": 9607,
+      "completion_tokens": 252,
+      "total_tokens": 9859,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 123,
+        "rejected_prediction_tokens": 0,
+        "cached_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0,
+        "cached_tokens": 6784
+      },
+      "prompt_cache_hit_tokens": 6784,
+      "prompt_cache_miss_tokens": 2823,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "prompt_cache_write_tokens": 0,
+      "completion_thinking_tokens": 123,
+      "credit": 0.11,
+      "cached_tokens": 0
+    },
+    "systemUnchanged": true,
+    "toolsUnchanged": true,
+    "appendOnlyMessages": true,
+    "elapsedSeconds": 2.4482
+  },
+  "installedPluginRevision": "eaa6ead89be2903cb35a7a9743e45a329267ea97"
+}

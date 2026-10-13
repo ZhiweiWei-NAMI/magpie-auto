@@ -1,0 +1,113 @@
+{
+  "settings": {
+    "agent-default-model": {
+      "provider": "deepseek-official",
+      "model": "dsh-workbuddy/deepseek-v4.1-flash",
+      "reasoningEffort": "high"
+    },
+    "llm-deepseek": {
+      "baseURL": "http://127.0.0.1:3435/v1",
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "thinking": "enabled",
+      "reasoningEffort": "high",
+      "maxTokens": 16384,
+      "models": [
+        {
+          "id": "dsh-workbuddy/deepseek-v4.1-flash",
+          "name": "DeepSeek through Magpie",
+          "contextWindow": 128000,
+          "maxTokens": 16384
+        }
+      ]
+    }
+  },
+  "plugins": [
+    {
+      "id": "session-title-llm",
+      "disabled": true
+    },
+    {
+      "id": "tool-workflow",
+      "disabled": true
+    },
+    {
+      "id": "tool-ralph",
+      "disabled": true
+    },
+    {
+      "id": "tool-web",
+      "disabled": true
+    },
+    {
+      "id": "web-search-deepseek",
+      "disabled": true
+    },
+    {
+      "id": "repeat-tool-reminder",
+      "disabled": true
+    },
+    {
+      "id": "llm-retry",
+      "disabled": true
+    },
+    {
+      "id": "tool-subagent",
+      "config": {
+        "provider": "spawn",
+        "toolName": "subagent",
+        "backgroundMode": "continuable",
+        "maxDepth": 1,
+        "agentOptions": {
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "reasoningEffort": "high"
+        }
+      }
+    },
+    {
+      "id": "tool-subagent-fork",
+      "config": {
+        "provider": "fork",
+        "toolName": "subagent_fork",
+        "backgroundMode": "continuable",
+        "maxDepth": 1,
+        "agentOptions": {
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "reasoningEffort": "high"
+        }
+      }
+    },
+    {
+      "id": "compaction-basic",
+      "disabled": false,
+      "config": {
+        "thresholdRatio": 0.1875,
+        "retainTokens": 8000,
+        "compactionRetries": 0,
+        "maxOverflowRetries": 0
+      }
+    },
+    {
+      "insert": [
+        {
+          "id": "magpie-auto",
+          "name": "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/dsh-extension/index.js",
+          "config": {
+            "mode": "native",
+            "endpoint": "http://127.0.0.1:3437/v1/auto/decide",
+            "maxChildren": 2,
+            "maxConcurrent": 2,
+            "pressureTokens": 64000,
+            "retainTokens": 8000,
+            "recordFile": "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/short-2-C/native-home/auto-events.jsonl",
+            "maxChildRequests": 16,
+            "maxChildTurnRequests": 8,
+            "maxDecisions": 12,
+            "nativeThresholdRatio": 0.8
+          }
+        }
+      ]
+    }
+  ]
+}

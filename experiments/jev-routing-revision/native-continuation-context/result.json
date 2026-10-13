@@ -1,0 +1,8 @@
+{
+  "purpose": "Native continuation integration, not SWE-bench performance comparison",
+  "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+  "agentExitCode": 1,
+  "executionStatus": "agent_error",
+  "solveSeconds": 1.3672592248767614,
+  "testExitCode": 1
+}

@@ -1,0 +1,6 @@
+{
+  "sameInstructionAndRoutes": true,
+  "exactDecisionSnapshotUnchanged": true,
+  "wallSeconds": 0.004755035042762756,
+  "evidence": "POST returned the exact saved Jev answer/usage/elapsed snapshot; Configure reuses matching inputId without AskJev. This is not a new Jev usage observation."
+}

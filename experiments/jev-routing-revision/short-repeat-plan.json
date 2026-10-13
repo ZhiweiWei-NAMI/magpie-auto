@@ -1,0 +1,25 @@
+{
+  "purpose": "Prespecified repeated real coding task for short-task variability, separate from SWE-bench and continuation/context stress probes",
+  "task": "Implement parse_window and normalize_label from two stubs; same test_ops fixture as run_native_probe.py; native tools required",
+  "repetitions": 3,
+  "arms": [
+    "A",
+    "B",
+    "C"
+  ],
+  "execution_order": [
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "C",
+    "A",
+    "B"
+  ],
+  "reasoning_effort": "high",
+  "remote_cache_reset": false,
+  "quality": "Identical real code tests in clean homes/workspaces, including ASCII-only digits, empty input, invalid ranges/non-string inputs, and tab/multiple-space normalization. Declared before any repeated run.",
+  "interpretation": "Three repetitions are enough to expose gross variability, not estimate a reliable tail percentile or prove significance"
+}

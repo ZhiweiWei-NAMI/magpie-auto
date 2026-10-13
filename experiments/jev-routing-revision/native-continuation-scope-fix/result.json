@@ -1,0 +1,9 @@
+{
+  "purpose": "Native continuation integration, not SWE-bench performance comparison",
+  "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+  "executionStatus": "timeout",
+  "solveSeconds": 240.1649237908423,
+  "testExitCode": 0,
+  "continuationValidated": false,
+  "workflowFailure": "Custom plugin session events prevented native cold-resume; raw failure causes retained."
+}

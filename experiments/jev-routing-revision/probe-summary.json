@@ -1,0 +1,2742 @@
+{
+  "scope": "Development / short probes, fixed decision repeats and configuration only; SWE-bench diagnostic is accounted separately. Failed probes included.",
+  "cases": [
+    {
+      "purpose": "Native continuation integration, not SWE-bench performance comparison",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 88.6363165974617,
+      "testExitCode": 0,
+      "continuationValidated": false,
+      "workflowFailure": "A completed continuable child rejected follow-up messages; the child also acted on parent-only instructions.",
+      "case": "native-continuation",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 15,
+          "input": {
+            "observed": 150270,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 6778,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 41472,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 108798,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 54.3931,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 8,
+          "input": {
+            "observed": 71658,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 7171,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 6784,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 64874,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 43.599900000000005,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 2,
+          "input": {
+            "observed": 3339,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 147,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": null,
+            "unobserved_requests": 2,
+            "complete": false
+          },
+          "cache_miss": {
+            "observed": null,
+            "unobserved_requests": 2,
+            "complete": false
+          },
+          "elapsed_seconds": {
+            "observed": 2.2995,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 1,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 23,
+        "jev": 2,
+        "delegation_decision": 2,
+        "child_start": 1,
+        "native_child_tool_result": 3,
+        "child_assignment": 1,
+        "child_end": 1,
+        "child_collected": 1
+      }
+    },
+    {
+      "purpose": "Native continuation integration, not SWE-bench performance comparison",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "agentExitCode": 1,
+      "executionStatus": "agent_error",
+      "solveSeconds": 1.3672592248767614,
+      "testExitCode": 1,
+      "case": "native-continuation-context",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {}
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-context-release",
+      "arm": "A",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 33.938355104997754,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 2,
+      "finalTabRequirement": {
+        "actual": "a-b",
+        "passed": true
+      },
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 7,
+          "input": {
+            "observed": 75336,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 2504,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 3584,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 71752,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 21.5288,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 7,
+          "input": {
+            "observed": 30342,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1541,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": null,
+            "unobserved_requests": 7,
+            "complete": false
+          },
+          "cache_miss": {
+            "observed": null,
+            "unobserved_requests": 7,
+            "complete": false
+          },
+          "elapsed_seconds": {
+            "observed": 6.7455,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 7,
+        "context_pressure": 4,
+        "jev": 7,
+        "context_scores": 3,
+        "context_replaced": 2,
+        "context_kept": 1
+      }
+    },
+    {
+      "purpose": "Real Jev context scoring and native compaction integration; deliberately low pressure threshold, not a performance comparison",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 31.88239162787795,
+      "testExitCode": 0,
+      "finalTabRequirement": {
+        "input": " A\t  B ",
+        "actual": "a-b",
+        "passed": true
+      },
+      "contextReplacements": 2,
+      "case": "native-continuation-context-valid",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 6,
+          "input": {
+            "observed": 66952,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 2272,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 3072,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 63880,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 21.3161,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 7,
+          "input": {
+            "observed": 35160,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 2173,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": null,
+            "unobserved_requests": 7,
+            "complete": false
+          },
+          "cache_miss": {
+            "observed": null,
+            "unobserved_requests": 7,
+            "complete": false
+          },
+          "elapsed_seconds": {
+            "observed": 5.2970999999999995,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 6,
+        "context_pressure": 5,
+        "jev": 7,
+        "context_scores": 3,
+        "context_replaced": 2,
+        "context_kept": 1
+      }
+    },
+    {
+      "purpose": "Native continuation integration, not SWE-bench performance comparison",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 121.64543505385518,
+      "testExitCode": 0,
+      "continuationValidated": true,
+      "distinctChildSessions": 1,
+      "completedActivations": 2,
+      "case": "native-continuation-native-store",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 19,
+          "input": {
+            "observed": 205124,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 6208,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 91904,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 113220,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 65.283,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 13,
+          "input": {
+            "observed": 129761,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 6903,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 42624,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 87137,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 48.27670000000001,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 1,
+          "input": {
+            "observed": 1365,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 66,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": null,
+            "unobserved_requests": 1,
+            "complete": false
+          },
+          "cache_miss": {
+            "observed": null,
+            "unobserved_requests": 1,
+            "complete": false
+          },
+          "elapsed_seconds": {
+            "observed": 1.0414,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 1,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 32,
+        "jev": 1,
+        "delegation_decision": 1,
+        "child_start": 2,
+        "native_child_tool_result": 1,
+        "child_assignment": 1,
+        "child_end": 2,
+        "child_collected": 2
+      }
+    },
+    {
+      "purpose": "Native continuation integration, not SWE-bench performance comparison",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "agentExitCode": 1,
+      "executionStatus": "agent_error",
+      "solveSeconds": 2.720416182652116,
+      "testExitCode": 1,
+      "case": "native-continuation-persistence-fix",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {}
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-reuse-installed",
+      "arm": "A",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 181.35500573925674,
+      "testExitCode": 0,
+      "distinctChildSessions": 1,
+      "completedActivations": 2,
+      "collectedActivations": 2,
+      "contextReplacements": 0,
+      "jevSelectedReuse": true,
+      "continuationValidated": true,
+      "secondActivationFirstRequest": {
+        "requestNumber": 7,
+        "usage": {
+          "prompt_tokens": 9607,
+          "completion_tokens": 252,
+          "total_tokens": 9859,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 123,
+            "rejected_prediction_tokens": 0,
+            "cached_tokens": 0
+          },
+          "prompt_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": 0,
+            "cached_tokens": 6784
+          },
+          "prompt_cache_hit_tokens": 6784,
+          "prompt_cache_miss_tokens": 2823,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "prompt_cache_write_tokens": 0,
+          "completion_thinking_tokens": 123,
+          "credit": 0.11,
+          "cached_tokens": 0
+        },
+        "systemUnchanged": true,
+        "toolsUnchanged": true,
+        "appendOnlyMessages": true,
+        "elapsedSeconds": 2.4482
+      },
+      "installedPluginRevision": "eaa6ead89be2903cb35a7a9743e45a329267ea97",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 17,
+          "input": {
+            "observed": 172926,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 8185,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 68352,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 104574,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 64.492,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 13,
+          "input": {
+            "observed": 122022,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 5420,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 38656,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 83366,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 36.0495,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 5,
+          "input": {
+            "observed": 14602,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 360,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": null,
+            "unobserved_requests": 5,
+            "complete": false
+          },
+          "cache_miss": {
+            "observed": null,
+            "unobserved_requests": 5,
+            "complete": false
+          },
+          "elapsed_seconds": {
+            "observed": 4.0457,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 1,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 30,
+        "jev": 5,
+        "delegation_decision": 5,
+        "native_child_tool_result": 5,
+        "child_start": 2,
+        "child_assignment": 1,
+        "child_end": 2,
+        "child_collected": 2,
+        "child_reused": 1
+      }
+    },
+    {
+      "purpose": "Native continuation integration, not SWE-bench performance comparison",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "executionStatus": "timeout",
+      "solveSeconds": 240.1649237908423,
+      "testExitCode": 0,
+      "continuationValidated": false,
+      "workflowFailure": "Custom plugin session events prevented native cold-resume; raw failure causes retained.",
+      "case": "native-continuation-scope-fix",
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 30,
+          "input": {
+            "observed": 338366,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 11730,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 197504,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 140862,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 100.39510000000001,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 8,
+          "input": {
+            "observed": 59693,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 2612,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 6016,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 53677,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 21.288,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 9,
+          "input": {
+            "observed": 16984,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 714,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": null,
+            "unobserved_requests": 9,
+            "complete": false
+          },
+          "cache_miss": {
+            "observed": null,
+            "unobserved_requests": 9,
+            "complete": false
+          },
+          "elapsed_seconds": {
+            "observed": 6.192700000000001,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 1,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 38,
+        "jev": 9,
+        "delegation_decision": 9,
+        "child_start": 1,
+        "native_child_tool_result": 9,
+        "child_assignment": 1,
+        "child_budget_exhausted": 1,
+        "child_end": 1,
+        "child_collected": 1,
+        "native_message_error": 4
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-1-A",
+      "arm": "A",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 18.904706735163927,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 35070,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1763,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32510,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 14.2091,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-1-B",
+      "arm": "B",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 16.94950950331986,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 34846,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1255,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32286,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 12.1139,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-1-C",
+      "arm": "C",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 16.25083652883768,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 35098,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1309,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32538,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 12.3687,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-2-A",
+      "arm": "A",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 16.55481607466936,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 35004,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1416,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32444,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 12.477599999999999,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-2-B",
+      "arm": "B",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 18.60327585041523,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 35018,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1725,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32458,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 13.9867,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-2-C",
+      "arm": "C",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 18.156142821535468,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 34984,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1916,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32424,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 13.7696,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-3-A",
+      "arm": "A",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 15.246205853298306,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 34528,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1461,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 31968,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 11.4143,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "policy_snapshot": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-3-B",
+      "arm": "B",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 16.760101253166795,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 34758,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1739,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32198,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 12.680699999999998,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "execution_call": 5
+      }
+    },
+    {
+      "purpose": "Native tool integration / short repeated task; separate from SWE-bench",
+      "case": "native-continuation-short-3-C",
+      "arm": "C",
+      "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+      "timeoutSeconds": 240,
+      "agentExitCode": 0,
+      "executionStatus": "finished",
+      "solveSeconds": 19.354226106777787,
+      "testExitCode": 0,
+      "distinctChildSessions": 0,
+      "completedActivations": 0,
+      "collectedActivations": 0,
+      "contextReplacements": 0,
+      "requestObservationAvailable": true,
+      "roles": {
+        "main": {
+          "requests": 5,
+          "input": {
+            "observed": 34634,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1960,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32074,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 14.2201,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "child": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "jev": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        "unattributed": {
+          "requests": 0,
+          "input": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "elapsed_seconds": {
+            "observed": 0,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      },
+      "distinctChildren": 0,
+      "eventCounts": {
+        "root_start": 1,
+        "execution_call": 5
+      }
+    }
+  ],
+  "configuration": {
+    "requests": 3,
+    "input": {
+      "observed": 3214,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "output": {
+      "observed": 366,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "elapsed_seconds": {
+      "observed": 2.157431334257126,
+      "unobserved_requests": 0,
+      "complete": true
+    }
+  },
+  "fixedDecisionRepeats": {
+    "requests": 3,
+    "input": {
+      "observed": 2112,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "output": {
+      "observed": 264,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "elapsed_seconds": {
+      "observed": 2.7253237441182137,
+      "unobserved_requests": 0,
+      "complete": true
+    }
+  },
+  "observedAllModelsIncludingConfiguration": {
+    "requests": 218,
+    "input": {
+      "observed": 1813166,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "output": {
+      "observed": 79958,
+      "unobserved_requests": 0,
+      "complete": true
+    },
+    "elapsed_seconds": {
+      "observed": 624.3675550783752,
+      "unobserved_requests": 0,
+      "complete": true
+    }
+  },
+  "unobservedCases": [],
+  "executionServiceCredit": {
+    "observed": 42.61999999999998,
+    "unobserved_requests": 0,
+    "complete": true
+  },
+  "pricing": "No reliable price/billing basis; Jev cache and cache writes are unobservable.",
+  "M6_shortRepeats": {
+    "A": {
+      "runs": 3,
+      "testsPassed": 3,
+      "medianSeconds": 16.55481607466936,
+      "minSeconds": 15.246205853298306,
+      "maxSeconds": 18.904706735163927,
+      "requests": 15,
+      "jevRequests": 0,
+      "usage": {
+        "input": {
+          "observed": 104602,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 4640,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 7680,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 96922,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "perRun": [
+        {
+          "case": "native-continuation-short-1-A",
+          "seconds": 18.904706735163927,
+          "input": {
+            "observed": 35070,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1763,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32510,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        {
+          "case": "native-continuation-short-2-A",
+          "seconds": 16.55481607466936,
+          "input": {
+            "observed": 35004,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1416,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32444,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        {
+          "case": "native-continuation-short-3-A",
+          "seconds": 15.246205853298306,
+          "input": {
+            "observed": 34528,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1461,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 31968,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      ],
+      "interpretation": "Three repetitions do not establish a reliable P95 or statistical superiority."
+    },
+    "B": {
+      "runs": 3,
+      "testsPassed": 3,
+      "medianSeconds": 16.94950950331986,
+      "minSeconds": 16.760101253166795,
+      "maxSeconds": 18.60327585041523,
+      "requests": 15,
+      "jevRequests": 0,
+      "usage": {
+        "input": {
+          "observed": 104622,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 4719,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 7680,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 96942,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "perRun": [
+        {
+          "case": "native-continuation-short-1-B",
+          "seconds": 16.94950950331986,
+          "input": {
+            "observed": 34846,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1255,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32286,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        {
+          "case": "native-continuation-short-2-B",
+          "seconds": 18.60327585041523,
+          "input": {
+            "observed": 35018,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1725,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32458,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        {
+          "case": "native-continuation-short-3-B",
+          "seconds": 16.760101253166795,
+          "input": {
+            "observed": 34758,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1739,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32198,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      ],
+      "interpretation": "Three repetitions do not establish a reliable P95 or statistical superiority."
+    },
+    "C": {
+      "runs": 3,
+      "testsPassed": 3,
+      "medianSeconds": 18.156142821535468,
+      "minSeconds": 16.25083652883768,
+      "maxSeconds": 19.354226106777787,
+      "requests": 15,
+      "jevRequests": 0,
+      "usage": {
+        "input": {
+          "observed": 104716,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "output": {
+          "observed": 5185,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_hit": {
+          "observed": 7680,
+          "unobserved_requests": 0,
+          "complete": true
+        },
+        "cache_miss": {
+          "observed": 97036,
+          "unobserved_requests": 0,
+          "complete": true
+        }
+      },
+      "perRun": [
+        {
+          "case": "native-continuation-short-1-C",
+          "seconds": 16.25083652883768,
+          "input": {
+            "observed": 35098,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1309,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32538,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        {
+          "case": "native-continuation-short-2-C",
+          "seconds": 18.156142821535468,
+          "input": {
+            "observed": 34984,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1916,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32424,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        },
+        {
+          "case": "native-continuation-short-3-C",
+          "seconds": 19.354226106777787,
+          "input": {
+            "observed": 34634,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "output": {
+            "observed": 1960,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_hit": {
+            "observed": 2560,
+            "unobserved_requests": 0,
+            "complete": true
+          },
+          "cache_miss": {
+            "observed": 32074,
+            "unobserved_requests": 0,
+            "complete": true
+          }
+        }
+      ],
+      "interpretation": "Three repetitions do not establish a reliable P95 or statistical superiority."
+    }
+  }
+}

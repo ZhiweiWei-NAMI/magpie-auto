@@ -1,0 +1,16 @@
+test_invalid (test_ops.Checks) ... ok
+test_label (test_ops.Checks) ... ok
+test_window (test_ops.Checks) ... ok
+test_boolean_rejected (test_window.ParseWindowTests) ... ok
+test_invalid_strings (test_window.ParseWindowTests) ... ok
+test_non_ascii_digits_rejected (test_window.ParseWindowTests) ... ok
+test_non_string_rejected (test_window.ParseWindowTests) ... ok
+test_outer_whitespace_is_trimmed (test_window.ParseWindowTests) ... ok
+test_range_value (test_window.ParseWindowTests) ... ok
+test_returns_plain_ints (test_window.ParseWindowTests) ... ok
+test_single_value (test_window.ParseWindowTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.001s
+
+OK

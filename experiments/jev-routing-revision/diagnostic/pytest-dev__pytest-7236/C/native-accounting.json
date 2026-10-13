@@ -1,0 +1,364 @@
+{
+  "source": "dsh native append-only session journal",
+  "sessions": [
+    {
+      "session": "session-36d54cfe-915d-4254-a98b-2b53417e4fec",
+      "tools": {
+        "bash": 23,
+        "read": 17,
+        "grep": 2
+      },
+      "compactions": [
+        {
+          "type": "compaction/summary",
+          "time": 1791861885754,
+          "startTime": 1791861875644,
+          "compactionId": "81e33238-c799-41d1-b438-d79bd0f2b576",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 8,
+            "end": 60
+          },
+          "shadowedSeqs": [
+            8,
+            9,
+            13,
+            15,
+            18,
+            20,
+            23,
+            25,
+            28,
+            88,
+            33,
+            35,
+            38,
+            40,
+            43,
+            45,
+            48,
+            50,
+            53,
+            55,
+            58,
+            60
+          ],
+          "shadowedTokenCount": 10113,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 2918,
+            "outputTokens": 1888,
+            "totalTokens": 15046,
+            "cacheReadTokens": 10240,
+            "reasoningTokens": 288
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791861885755,
+          "startTime": 1791861875644,
+          "compactionId": "81e33238-c799-41d1-b438-d79bd0f2b576",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791861916790,
+          "startTime": 1791861905522,
+          "compactionId": "38640836-48c0-440e-aa4d-8023c929065a",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 91,
+            "end": 80
+          },
+          "shadowedSeqs": [
+            91,
+            63,
+            65,
+            68,
+            70,
+            73,
+            75,
+            78,
+            80
+          ],
+          "shadowedTokenCount": 6404,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 3489,
+            "outputTokens": 2384,
+            "totalTokens": 11249,
+            "cacheReadTokens": 5376,
+            "reasoningTokens": 385
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791861916791,
+          "startTime": 1791861905522,
+          "compactionId": "38640836-48c0-440e-aa4d-8023c929065a",
+          "turn": 1
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862018607,
+          "startTime": 1791861976045,
+          "compactionId": "d51ebf0e-ea51-46cb-966c-3dc7628c8b00",
+          "turn": 1,
+          "error": "summarization truncated at the token cap (incomplete checkpoint)"
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791862057250,
+          "startTime": 1791862039732,
+          "compactionId": "fdc9befd-dbc2-4c35-a554-b2864b433e2a",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 122,
+            "end": 133
+          },
+          "shadowedSeqs": [
+            122,
+            83,
+            85,
+            95,
+            97,
+            100,
+            101,
+            103,
+            106,
+            108,
+            111,
+            113,
+            116,
+            118,
+            126,
+            128,
+            131,
+            133
+          ],
+          "shadowedTokenCount": 15843,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 11796,
+            "outputTokens": 2794,
+            "totalTokens": 19966,
+            "cacheReadTokens": 5376,
+            "reasoningTokens": 128
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862057251,
+          "startTime": 1791862039732,
+          "compactionId": "fdc9befd-dbc2-4c35-a554-b2864b433e2a",
+          "turn": 1
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862125601,
+          "startTime": 1791862103803,
+          "compactionId": "2429eda0-a682-43a3-b3f1-8589c70a4c17",
+          "turn": 1,
+          "error": "summary is not smaller than the shadowed content (2375 estimated framed tokens >= 2349)"
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791862144740,
+          "startTime": 1791862131933,
+          "compactionId": "73915f15-77b3-4def-9b31-e55bd805e4a3",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 149,
+            "end": 138
+          },
+          "shadowedSeqs": [
+            149,
+            136,
+            138
+          ],
+          "shadowedTokenCount": 12170,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 3363,
+            "outputTokens": 3280,
+            "totalTokens": 12019,
+            "cacheReadTokens": 5376,
+            "reasoningTokens": 419
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862144740,
+          "startTime": 1791862131933,
+          "compactionId": "73915f15-77b3-4def-9b31-e55bd805e4a3",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791862211078,
+          "startTime": 1791862199515,
+          "compactionId": "622ddcb4-bcdb-4852-96e8-b3e56d1b5305",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 172,
+            "end": 178
+          },
+          "shadowedSeqs": [
+            172,
+            143,
+            145,
+            153,
+            155,
+            158,
+            159,
+            161,
+            166,
+            168,
+            176,
+            178
+          ],
+          "shadowedTokenCount": 12131,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 9260,
+            "outputTokens": 2831,
+            "totalTokens": 17467,
+            "cacheReadTokens": 5376,
+            "reasoningTokens": 0
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862211079,
+          "startTime": 1791862199515,
+          "compactionId": "622ddcb4-bcdb-4852-96e8-b3e56d1b5305",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791862242575,
+          "startTime": 1791862230524,
+          "compactionId": "6328d611-d2f9-4ceb-bb94-8d395aadfb37",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 197,
+            "end": 188
+          },
+          "shadowedSeqs": [
+            197,
+            181,
+            183,
+            186,
+            188
+          ],
+          "shadowedTokenCount": 7737,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4523,
+            "outputTokens": 3230,
+            "totalTokens": 13769,
+            "cacheReadTokens": 6016,
+            "reasoningTokens": 165
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862242576,
+          "startTime": 1791862230524,
+          "compactionId": "6328d611-d2f9-4ceb-bb94-8d395aadfb37",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791862288988,
+          "startTime": 1791862274793,
+          "compactionId": "ec15fb1d-d694-48d8-85d0-6e390dc10a78",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 218,
+            "end": 209
+          },
+          "shadowedSeqs": [
+            218,
+            191,
+            193,
+            201,
+            203,
+            206,
+            207,
+            209
+          ],
+          "shadowedTokenCount": 10154,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 6095,
+            "outputTokens": 3577,
+            "totalTokens": 15688,
+            "cacheReadTokens": 6016,
+            "reasoningTokens": 254
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862288989,
+          "startTime": 1791862274793,
+          "compactionId": "ec15fb1d-d694-48d8-85d0-6e390dc10a78",
+          "turn": 1
+        },
+        {
+          "type": "compaction/summary",
+          "time": 1791862326568,
+          "startTime": 1791862311866,
+          "compactionId": "603d5a33-64be-4e78-9f56-6b277d19da22",
+          "llmStreamCall": true,
+          "shadowedRange": {
+            "start": 238,
+            "end": 229
+          },
+          "shadowedSeqs": [
+            238,
+            212,
+            214,
+            222,
+            224,
+            227,
+            229
+          ],
+          "shadowedTokenCount": 10492,
+          "provider": "deepseek-official",
+          "model": "dsh-workbuddy/deepseek-v4.1-flash",
+          "maxTokens": 8192,
+          "usage": {
+            "inputTokens": 4894,
+            "outputTokens": 4026,
+            "totalTokens": 15064,
+            "cacheReadTokens": 6144,
+            "reasoningTokens": 206
+          }
+        },
+        {
+          "type": "compaction/end",
+          "time": 1791862326569,
+          "startTime": 1791862311866,
+          "compactionId": "603d5a33-64be-4e78-9f56-6b277d19da22",
+          "turn": 1
+        }
+      ],
+      "delegationResults": []
+    }
+  ]
+}

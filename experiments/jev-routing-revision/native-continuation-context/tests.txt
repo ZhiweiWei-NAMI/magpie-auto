@@ -1,0 +1,38 @@
+test_invalid (test_ops.Checks) ... ERROR
+test_label (test_ops.Checks) ... ERROR
+test_window (test_ops.Checks) ... ERROR
+
+======================================================================
+ERROR: test_invalid (test_ops.Checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/context/native-work/test_ops.py", line 9, in test_invalid
+    with self.assertRaises(ValueError):parse_window(value)
+  File "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/context/native-work/window.py", line 2, in parse_window
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_label (test_ops.Checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/context/native-work/test_ops.py", line 11, in test_label
+    self.assertEqual(normalize_label(' A  B '),'a-b');self.assertEqual(normalize_label(''),'')
+  File "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/context/native-work/labels.py", line 2, in normalize_label
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_window (test_ops.Checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/context/native-work/test_ops.py", line 6, in test_window
+    self.assertEqual(parse_window('2:5'),(2,5));self.assertEqual(parse_window(' 7 '),(7,7))
+  File "/mnt/data2/weizhiwei/magpie-auto/bench-runtime/routing-revision/context/native-work/window.py", line 2, in parse_window
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (errors=3)

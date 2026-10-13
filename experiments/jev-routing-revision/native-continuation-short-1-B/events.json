@@ -1,0 +1,87 @@
+[
+  {
+    "at": "2026-10-13T03:49:21.387Z",
+    "kind": "root_start",
+    "session": "session-4e6c23c5-3b4d-4b3a-ade5-189a20ffb569"
+  },
+  {
+    "at": "2026-10-13T03:49:23.390Z",
+    "kind": "execution_call",
+    "session": "session-4e6c23c5-3b4d-4b3a-ade5-189a20ffb569",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1847.063462,
+    "usage": {
+      "inputTokens": 5618,
+      "outputTokens": 94,
+      "totalTokens": 6224,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 6
+    }
+  },
+  {
+    "at": "2026-10-13T03:49:25.418Z",
+    "kind": "execution_call",
+    "session": "session-4e6c23c5-3b4d-4b3a-ade5-189a20ffb569",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1766.5707419999999,
+    "usage": {
+      "inputTokens": 5881,
+      "outputTokens": 191,
+      "totalTokens": 6584,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 0
+    }
+  },
+  {
+    "at": "2026-10-13T03:49:29.962Z",
+    "kind": "execution_call",
+    "session": "session-4e6c23c5-3b4d-4b3a-ade5-189a20ffb569",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 4317.727962000001,
+    "usage": {
+      "inputTokens": 6559,
+      "outputTokens": 566,
+      "totalTokens": 7637,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 219
+    }
+  },
+  {
+    "at": "2026-10-13T03:49:32.520Z",
+    "kind": "execution_call",
+    "session": "session-4e6c23c5-3b4d-4b3a-ade5-189a20ffb569",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 1975.5822169999992,
+    "usage": {
+      "inputTokens": 7031,
+      "outputTokens": 130,
+      "totalTokens": 7673,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 68
+    }
+  },
+  {
+    "at": "2026-10-13T03:49:35.175Z",
+    "kind": "execution_call",
+    "session": "session-4e6c23c5-3b4d-4b3a-ade5-189a20ffb569",
+    "model": "dsh-workbuddy/deepseek-v4.1-flash",
+    "effort": "high",
+    "purpose": "execution",
+    "wallMs": 2304.690689000001,
+    "usage": {
+      "inputTokens": 7197,
+      "outputTokens": 274,
+      "totalTokens": 7983,
+      "cacheReadTokens": 512,
+      "reasoningTokens": 26
+    }
+  }
+]

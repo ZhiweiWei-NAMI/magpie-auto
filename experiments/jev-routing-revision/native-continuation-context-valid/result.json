@@ -1,0 +1,14 @@
+{
+  "purpose": "Real Jev context scoring and native compaction integration; deliberately low pressure threshold, not a performance comparison",
+  "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+  "agentExitCode": 0,
+  "executionStatus": "finished",
+  "solveSeconds": 31.88239162787795,
+  "testExitCode": 0,
+  "finalTabRequirement": {
+    "input": " A\t  B ",
+    "actual": "a-b",
+    "passed": true
+  },
+  "contextReplacements": 2
+}

@@ -1,0 +1,1 @@
+Inspect window.py, labels.py and test_ops.py, implement both stubs and run python -m unittest -v. parse_window accepts ASCII nonnegative n or ordered a:b, trimming outer whitespace; invalid values including non-strings raise ValueError. normalize_label trims, lowercases and joins whitespace runs with a hyphen. Complete this small coding task promptly.

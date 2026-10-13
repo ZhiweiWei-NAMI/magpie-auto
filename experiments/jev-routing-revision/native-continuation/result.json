@@ -1,0 +1,10 @@
+{
+  "purpose": "Native continuation integration, not SWE-bench performance comparison",
+  "configuredModel": "dsh-workbuddy/deepseek-v4.1-flash",
+  "agentExitCode": 0,
+  "executionStatus": "finished",
+  "solveSeconds": 88.6363165974617,
+  "testExitCode": 0,
+  "continuationValidated": false,
+  "workflowFailure": "A completed continuable child rejected follow-up messages; the child also acted on parent-only instructions."
+}

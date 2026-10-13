@@ -1,0 +1,7 @@
+{
+  "network": "magpie-jev-controlled-20261012",
+  "internal": true,
+  "model_base": "http://172.25.0.1:3435/v1",
+  "decision_endpoint": "http://172.25.0.1:3437/v1/auto/decide",
+  "git": "Only base_commit/tree objects; no other refs or reflog"
+}
